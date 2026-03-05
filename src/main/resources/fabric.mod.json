@@ -3,13 +3,12 @@
 	"id": "anecdote",
 	"version": "${version}",
 	"name": "Anecdote",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A reality-bending story teller themed Origin.",
 	"authors": [
-		"Me!"
+		"Future Frost"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/FutureFrost/frostedlib"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/anecdote/icon.png",

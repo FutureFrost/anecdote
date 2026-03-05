@@ -1,0 +1,42 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "effects": {
+    "fog_color": 0,
+    "sky_color": 0,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:skeleton",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:spider",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": []
+}

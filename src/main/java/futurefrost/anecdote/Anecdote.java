@@ -1,24 +1,29 @@
 package futurefrost.anecdote;
 
+import futurefrost.anecdote.dimension.LibraryChunkGenerator;
+import futurefrost.anecdote.world.biome.SingleBiomeSource;
 import net.fabricmc.api.ModInitializer;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.minecraft.registry.*;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.dimension.DimensionType;
 
 public class Anecdote implements ModInitializer {
 	public static final String MOD_ID = "anecdote";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	// Identifiers
+	public static final Identifier LIBRARY_CHUNK_GENERATOR_ID = new Identifier(MOD_ID, "library");
+	public static final Identifier SINGLE_BIOME_SOURCE_ID = new Identifier(MOD_ID, "single_biome");
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		// Register chunk generator
+		Registry.register(Registries.CHUNK_GENERATOR, LIBRARY_CHUNK_GENERATOR_ID, LibraryChunkGenerator.CODEC);
 
-		LOGGER.info("Hello Fabric world!");
+		// Register biome source
+		Registry.register(Registries.BIOME_SOURCE, SINGLE_BIOME_SOURCE_ID, SingleBiomeSource.CODEC);
+
+		System.out.println("Anecdote mod initialized!");
 	}
 }
