@@ -15,10 +15,10 @@ public class LibraryEntityRenderer extends BipedEntityRenderer<LibraryEntity, Pl
     private static final Identifier TEXTURE = new Identifier(Anecdote.MOD_ID, "textures/entity/lesser_anecdote.png");
 
     public LibraryEntityRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx, new PlayerEntityModel<>(ctx.getPart(EntityModelLayers.PLAYER), false), 0.5f);
+        super(ctx, new PlayerEntityModel<>(ctx.getPart(EntityModelLayers.PLAYER_SLIM), true), 0.5f);
         this.addFeature(new ArmorFeatureRenderer<>(this,
-                new BipedEntityModel<>(ctx.getPart(EntityModelLayers.PLAYER_INNER_ARMOR)),
-                new BipedEntityModel<>(ctx.getPart(EntityModelLayers.PLAYER_OUTER_ARMOR)),
+                new BipedEntityModel<>(ctx.getPart(EntityModelLayers.PLAYER_SLIM_INNER_ARMOR)),
+                new BipedEntityModel<>(ctx.getPart(EntityModelLayers.PLAYER_SLIM_OUTER_ARMOR)),
                 ctx.getModelManager()));
     }
 
