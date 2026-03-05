@@ -181,19 +181,19 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         addCrackedBricks(chunk, chunkRandom, startX, startZ);
 
         // Third pass: add ladders
-        generateLadders(chunk, chunkRandom, startX, startZ);
+        generateLadders(chunk, startX, startZ);
 
         // Fourth pass: add bookshelves to the walls
         generateBookshelves(chunk, chunkRandom, startX, startZ);
 
         // Fifth pass: add lanterns
-        generateLanterns(chunk, chunkRandom, startX, startZ);
+        generateLanterns(chunk, startX, startZ);
 
         // Sixth pass: add carpet
         generateCarpet(chunk, startX, startZ);
     }
 
-    private void generateLadders(Chunk chunk, Random random, int startX, int startZ) {
+    private void generateLadders(Chunk chunk, int startX, int startZ) {
         // Loop through every wall block in the chunk
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
@@ -223,28 +223,24 @@ public class LibraryChunkGenerator extends ChunkGenerator {
                 }
 
                 // Check if the adjacent space is actually a corridor
-                boolean adjacentIsCorridor = false;
+                boolean adjacentIsCorridor;
                 int corridorX = worldX;
                 int corridorZ = worldZ;
 
                 if (isWestWall) {
                     // West wall faces east, so corridor is to the east (worldX + 1)
                     corridorX = worldX + 1;
-                    corridorZ = worldZ;
                     adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
                 } else if (isEastWall) {
                     // East wall faces west, so corridor is to the west (worldX - 1)
                     corridorX = worldX - 1;
-                    corridorZ = worldZ;
                     adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
                 } else if (isNorthWall) {
                     // North wall faces south, so corridor is to the south (worldZ + 1)
-                    corridorX = worldX;
                     corridorZ = worldZ + 1;
                     adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
-                } else if (isSouthWall) {
+                } else {
                     // South wall faces north, so corridor is to the north (worldZ - 1)
-                    corridorX = worldX;
                     corridorZ = worldZ - 1;
                     adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
                 }
@@ -314,16 +310,16 @@ public class LibraryChunkGenerator extends ChunkGenerator {
                     continue;
                 }
 
-                // Ladder always starts at floor+1 (just above the floor)
+                // Ladder always starts at floor+1
                 int startY = FLOOR_Y + 1;
 
-                // Random height (but always from the floor up)
+                // Random height
                 int ladderHeight = LADDER_MIN_HEIGHT + wallRandom.nextInt(LADDER_MAX_HEIGHT - LADDER_MIN_HEIGHT + 1);
 
                 // Ensure ladder doesn't exceed ceiling (leave 1 block gap at top)
                 ladderHeight = Math.min(ladderHeight, CEILING_Y - startY - 1);
 
-                // Place a SINGLE ladder column from the floor upward
+                // Place a single ladder column from the floor upward
                 for (int ladderY = startY; ladderY < startY + ladderHeight && ladderY < CEILING_Y - 1; ladderY++) {
                     BlockPos ladderPos = new BlockPos(ladderX, ladderY, ladderZ);
 
@@ -399,7 +395,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         }
     }
 
-    private void generateLanterns(Chunk chunk, Random chunkRandom, int startX, int startZ) {
+    private void generateLanterns(Chunk chunk, int startX, int startZ) {
         // Loop through every block in the chunk to find corridor centers
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
