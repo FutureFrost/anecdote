@@ -1,17 +1,25 @@
 package futurefrost.anecdote.entity;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.TimeHelper;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -85,5 +93,68 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
     @Override
     public void chooseRandomAngerTime() {
         this.setAngerTime(ANGER_TIME_RANGE.get(this.random));
+    }
+
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.ITEM_BOOK_PUT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.ITEM_BOOK_PAGE_TURN;
+    }
+
+    @Override
+    protected void dropLoot(DamageSource damageSource, boolean causedByPlayer) {
+        super.dropLoot(damageSource, causedByPlayer);
+
+        if (causedByPlayer) {
+            // Base amount 1-3
+            int paperCount = 1 + this.random.nextInt(3);
+
+            // Get looting level
+            int lootingMultiplier = 0;
+            if (damageSource.getAttacker() instanceof PlayerEntity player) {
+                lootingMultiplier = EnchantmentHelper.getLooting(player);
+            }
+
+            // Add looting bonus (each level gives chance for +1)
+            for (int i = 0; i < lootingMultiplier; i++) {
+                if (this.random.nextBoolean()) {
+                    paperCount++;
+                }
+            }
+
+            for (int i = 0; i < paperCount; i++) {
+                ItemEntity itemEntity = getItem();
+
+                this.getWorld().spawnEntity(itemEntity);
+            }
+        }
+    }
+
+    @Override
+    public int getXpToDrop() {
+        // Zombies drop 2-5 experience when killed by player
+        if (this.getAttacker() instanceof PlayerEntity) {
+            return 2 + this.random.nextInt(3);
+        }
+        return 0;
+    }
+
+    private @NotNull ItemEntity getItem() {
+        ItemStack paper = new ItemStack(Items.PAPER);
+
+        // Use the world's spawnEntity method directly
+        ItemEntity itemEntity = new ItemEntity(
+                this.getWorld(),
+                this.getX(),
+                this.getY() + 0.5, // Slightly above ground to prevent clipping
+                this.getZ(),
+                paper
+        );
+
+        // Set pickup delay to 10 ticks
+        itemEntity.setPickupDelay(10);
+        return itemEntity;
     }
 }

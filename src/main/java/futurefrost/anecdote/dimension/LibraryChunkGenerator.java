@@ -43,7 +43,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     // Define blocks as constants
     private static final BlockState FLOOR_BLOCK = Blocks.STONE_BRICKS.getDefaultState();
     private static final BlockState CRACKED_FLOOR_BLOCK = Blocks.CRACKED_STONE_BRICKS.getDefaultState();
-    private static final BlockState CEILING_BLOCK = Blocks.SPRUCE_PLANKS.getDefaultState();
+    private static final BlockState CEILING_BLOCK = Blocks.DARK_OAK_PLANKS.getDefaultState();
     private static final BlockState WALL_BLOCK = Blocks.OAK_PLANKS.getDefaultState();
     private static final BlockState BOOKSHELF_BLOCK = Blocks.BOOKSHELF.getDefaultState();
     private static final BlockState AIR_BLOCK = Blocks.AIR.getDefaultState();
