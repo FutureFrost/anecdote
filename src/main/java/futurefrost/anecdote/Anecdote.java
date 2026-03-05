@@ -5,9 +5,6 @@ import futurefrost.anecdote.world.biome.SingleBiomeSource;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.dimension.DimensionType;
 
 public class Anecdote implements ModInitializer {
 	public static final String MOD_ID = "anecdote";

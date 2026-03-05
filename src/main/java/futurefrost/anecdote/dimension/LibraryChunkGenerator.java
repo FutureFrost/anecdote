@@ -2,9 +2,7 @@ package futurefrost.anecdote.dimension;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.LanternBlock;
+import net.minecraft.block.*;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -39,11 +37,11 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     );
 
     private final RegistryEntry<ChunkGeneratorSettings> settings;
-    private final Random random;
     private final long seed;
 
     // Define blocks as constants
     private static final BlockState FLOOR_BLOCK = Blocks.STONE_BRICKS.getDefaultState();
+    private static final BlockState CRACKED_FLOOR_BLOCK = Blocks.CRACKED_STONE_BRICKS.getDefaultState();
     private static final BlockState CEILING_BLOCK = Blocks.SPRUCE_PLANKS.getDefaultState();
     private static final BlockState WALL_BLOCK = Blocks.OAK_PLANKS.getDefaultState();
     private static final BlockState BOOKSHELF_BLOCK = Blocks.BOOKSHELF.getDefaultState();
@@ -52,12 +50,6 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     private static final BlockState BEDROCK_BLOCK = Blocks.BEDROCK.getDefaultState();
     private static final BlockState LANTERN_BLOCK = Blocks.LANTERN.getDefaultState().with(LanternBlock.HANGING, true);
     private static final BlockState RED_CARPET_BLOCK = Blocks.RED_CARPET.getDefaultState();
-
-    // Lantern generation parameters
-    private static final int LANTERN_CHANCE = 20; // 1 in 20 chance per corridor cell
-
-    // Carpet generation parameters
-    private static final int CARPET_CHANCE = 100;
 
     // Maze dimensions
     private static final int CORRIDOR_WIDTH = 5;      // 5 blocks wide
@@ -85,11 +77,13 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     private static final int BOOKSHELF_VEIN_MIN = 8;       // Minimum blocks per vein
     private static final int BOOKSHELF_VEIN_MAX = 32;      // Maximum blocks per vein
 
+    // Cracked brick chance (1 in 8 chance)
+    private static final int CRACKED_BRICK_CHANCE = 8;
+
     public LibraryChunkGenerator(BiomeSource biomeSource, RegistryEntry<ChunkGeneratorSettings> settings, long seed) {
         super(biomeSource);
         this.settings = settings;
         this.seed = seed;
-        this.random = new Xoroshiro128PlusPlusRandom(seed);
     }
 
     @Override
@@ -130,13 +124,13 @@ public class LibraryChunkGenerator extends ChunkGenerator {
                     Random bedrockRandom = new Xoroshiro128PlusPlusRandom(seed + worldX * 49632L + worldZ * 325176L + y);
 
                     // Bottom bedrock layers (Nether floor style)
-                    if (shouldPlaceBedrock(y, worldX, worldZ, bedrockRandom, true)) {
+                    if (shouldPlaceBedrock(y, bedrockRandom, true)) {
                         chunk.setBlockState(pos, BEDROCK_BLOCK, false);
                         continue;
                     }
 
                     // Top bedrock layers (Nether ceiling style)
-                    if (shouldPlaceBedrock(y, worldX, worldZ, bedrockRandom, false)) {
+                    if (shouldPlaceBedrock(y, bedrockRandom, false)) {
                         chunk.setBlockState(pos, BEDROCK_BLOCK, false);
                         continue;
                     }
@@ -155,10 +149,10 @@ public class LibraryChunkGenerator extends ChunkGenerator {
 
                     // Inside the maze vertical space
                     if (y == FLOOR_Y) {
-                        // Floor level - always stone bricks
+                        // Floor level - always stone bricks (will be replaced with cracked later)
                         chunk.setBlockState(pos, FLOOR_BLOCK, false);
                     } else if (y == CEILING_Y) {
-                        // Ceiling level - always spruce planks
+                        // Ceiling level - will be replaced with vaulted ceiling later
                         chunk.setBlockState(pos, CEILING_BLOCK, false);
                     } else if (isWall) {
                         // Wall interior levels (between floor and ceiling)
@@ -171,14 +165,35 @@ public class LibraryChunkGenerator extends ChunkGenerator {
             }
         }
 
-        // Second pass: add bookshelves to the walls (like ore generation)
+        // Second pass: add cracked bricks to the floor
+        addCrackedBricks(chunk, chunkRandom, startX, startZ);
+
+        // Third pass: add bookshelves to the walls
         generateBookshelves(chunk, chunkRandom, startX, startZ);
 
-        // Third pass: add lanterns hanging from ceilings (rare)
-        generateLanterns(chunk, chunkRandom, startX, startZ);
+        // Fourth pass: add lanterns
+        generateLanterns(chunk, startX, startZ);
 
-        // Fourth pass: add red carpet
-        generateCarpet(chunk, chunkRandom, startX, startZ);
+        // Fifth pass: add carpet
+        generateCarpet(chunk, startX, startZ);
+    }
+
+    private void addCrackedBricks(Chunk chunk, Random random, int startX, int startZ) {
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
+                int worldX = startX + x;
+                int worldZ = startZ + z;
+
+                // Only check floor level
+                BlockPos floorPos = new BlockPos(worldX, FLOOR_Y, worldZ);
+
+                // If this is a floor block (stone bricks) and random chance succeeds
+                if (chunk.getBlockState(floorPos).isOf(Blocks.STONE_BRICKS) &&
+                        random.nextInt(CRACKED_BRICK_CHANCE) == 0) {
+                    chunk.setBlockState(floorPos, CRACKED_FLOOR_BLOCK, false);
+                }
+            }
+        }
     }
 
     private void generateBookshelves(Chunk chunk, Random random, int startX, int startZ) {
@@ -220,7 +235,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         }
     }
 
-    private void generateLanterns(Chunk chunk, Random random, int startX, int startZ) {
+    private void generateLanterns(Chunk chunk, int startX, int startZ) {
         // Loop through every block in the chunk to find corridor centers
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
@@ -262,7 +277,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         }
     }
 
-    private void generateCarpet(Chunk chunk, Random random, int startX, int startZ) {
+    private void generateCarpet(Chunk chunk, int startX, int startZ) {
         // Loop through every block in the chunk
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
@@ -428,7 +443,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         }
 
         // We're on a wall in one direction only
-        if (isOnXWall && !isOnZWall) {
+        if (isOnXWall) {
             // Vertical wall segment (wall running along Z direction)
             // Doorways should be in the middle of the corridor (positions 2-4)
             boolean isDoorwayZ = inCellZ >= 2 && inCellZ <= 4;
@@ -448,25 +463,22 @@ public class LibraryChunkGenerator extends ChunkGenerator {
             }
         }
 
-        if (!isOnXWall && isOnZWall) {
-            // Horizontal wall segment (wall running along X direction)
-            boolean isDoorwayX = inCellX >= 2 && inCellX <= 4;
+        // Horizontal wall segment (wall running along X direction)
+        boolean isDoorwayX = inCellX >= 2 && inCellX <= 4;
 
-            if (isDoorwayX) {
-                if (inCellZ == 0) {
-                    // Bottom wall - connects to cell below
-                    Random downCellRandom = new Xoroshiro128PlusPlusRandom(seed + cellX * 49632L + (cellZ - 1) * 325176L);
-                    return !downCellRandom.nextBoolean(); // false = open passage
-                } else { // inCellZ == 6
-                    // Top wall - connects to cell above
-                    return !cellRandom.nextBoolean(); // false = open passage
-                }
-            } else {
-                return true; // Solid wall
+        if (isDoorwayX) {
+            if (inCellZ == 0) {
+                // Bottom wall - connects to cell below
+                Random downCellRandom = new Xoroshiro128PlusPlusRandom(seed + cellX * 49632L + (cellZ - 1) * 325176L);
+                return !downCellRandom.nextBoolean(); // false = open passage
+            } else { // inCellZ == 6
+                // Top wall - connects to cell above
+                return !cellRandom.nextBoolean(); // false = open passage
             }
+        } else {
+            return true; // Solid wall
         }
 
-        return true;
     }
 
     @Override
@@ -522,7 +534,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         return new VerticalBlockSample(world.getBottomY(), states);
     }
 
-    private boolean shouldPlaceBedrock(int y, int x, int z, Random random, boolean isBottom) {
+    private boolean shouldPlaceBedrock(int y, Random random, boolean isBottom) {
         if (isBottom) {
             if (y == FILLER_MIN_Y) return true;
             if (y == FILLER_MIN_Y + 1) return random.nextInt(3) == 0; // 33% chance for second layer
@@ -557,10 +569,6 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         if (isDoorwayX || isDoorwayZ) {
             text.add("Potential Doorway");
         }
-    }
-
-    public void carve(ChunkRegion chunkRegion, long seed, NoiseConfig noiseConfig, Blender blender,
-                      StructureAccessor structureAccessor, Chunk chunk, GenerationStep.Carver carver) {
     }
 
     @Override
