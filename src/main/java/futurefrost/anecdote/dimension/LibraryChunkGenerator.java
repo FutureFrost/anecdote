@@ -6,6 +6,7 @@ import net.minecraft.block.*;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.math.random.Xoroshiro128PlusPlusRandom;
 import net.minecraft.world.ChunkRegion;
@@ -49,19 +50,25 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     private static final BlockState FILLER_BLOCK = Blocks.STONE.getDefaultState();
     private static final BlockState BEDROCK_BLOCK = Blocks.BEDROCK.getDefaultState();
     private static final BlockState LANTERN_BLOCK = Blocks.LANTERN.getDefaultState().with(LanternBlock.HANGING, true);
+    private static final BlockState CHAIN_BLOCK = Blocks.CHAIN.getDefaultState();
     private static final BlockState RED_CARPET_BLOCK = Blocks.RED_CARPET.getDefaultState();
 
     // Maze dimensions
     private static final int CORRIDOR_WIDTH = 5;      // 5 blocks wide
-    private static final int CORRIDOR_HEIGHT = 5;     // 5 blocks tall
+    private static final int CORRIDOR_HEIGHT = 32;     // 5 blocks tall
     private static final int WALL_THICKNESS = 1;      // Walls are 1 block thick
 
+    // Lantern parameters
+    private static final int LANTERN_BASE_HEIGHT = 5;      // Base height above floor
+    private static final int LANTERN_HEIGHT_VARIATION = 5; // Can be up to 5 blocks higher
+    private static final int LANTERN_CHANCE = 10;          // 1 in 10 chance per cell
+
     // Each cell is wall + corridor + wall = 7 blocks
-    private static final int CELL_SIZE = WALL_THICKNESS + CORRIDOR_WIDTH + WALL_THICKNESS; // 1 + 5 + 1 = 7
+    private static final int CELL_SIZE = WALL_THICKNESS + CORRIDOR_WIDTH + WALL_THICKNESS;
 
     // Y-levels - corridor space only
     private static final int FLOOR_Y = 10;
-    private static final int CEILING_Y = FLOOR_Y + CORRIDOR_HEIGHT + 1; // 64 + 4 = 68 (64,65,66,67,68 = 5 blocks)
+    private static final int CEILING_Y = FLOOR_Y + CORRIDOR_HEIGHT + 1;
 
     // Wall vertical range - walls only exist within the corridor vertical space
     private static final int WALL_MIN_Y = FLOOR_Y + 1;
@@ -72,10 +79,15 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     private static final int FILLER_MAX_Y = CEILING_Y + 10;
 
     // Bookshelf generation parameters - adjust these to control frequency
-    private static final int BOOKSHELF_CLUSTERS_MIN = 32;  // Minimum clusters per chunk
-    private static final int BOOKSHELF_CLUSTERS_MAX = 96;  // Maximum clusters per chunk
-    private static final int BOOKSHELF_VEIN_MIN = 8;       // Minimum blocks per vein
-    private static final int BOOKSHELF_VEIN_MAX = 32;      // Maximum blocks per vein
+    private static final int BOOKSHELF_CLUSTERS_MIN = 64;  // Minimum clusters per chunk
+    private static final int BOOKSHELF_CLUSTERS_MAX = 128;  // Maximum clusters per chunk
+    private static final int BOOKSHELF_VEIN_MIN = 16;       // Minimum blocks per vein
+    private static final int BOOKSHELF_VEIN_MAX = 48;      // Maximum blocks per vein
+
+    // Ladder parameters
+    private static final int LADDER_CHANCE = 10;           // 1 in 10 chance per wall section
+    private static final int LADDER_MIN_HEIGHT = 4;        // Minimum ladder height (blocks)
+    private static final int LADDER_MAX_HEIGHT = CORRIDOR_HEIGHT;       // Maximum ladder height (up to ceiling)
 
     // Cracked brick chance (1 in 8 chance)
     private static final int CRACKED_BRICK_CHANCE = 8;
@@ -168,14 +180,166 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         // Second pass: add cracked bricks to the floor
         addCrackedBricks(chunk, chunkRandom, startX, startZ);
 
-        // Third pass: add bookshelves to the walls
+        // Third pass: add ladders
+        generateLadders(chunk, chunkRandom, startX, startZ);
+
+        // Fourth pass: add bookshelves to the walls
         generateBookshelves(chunk, chunkRandom, startX, startZ);
 
-        // Fourth pass: add lanterns
-        generateLanterns(chunk, startX, startZ);
+        // Fifth pass: add lanterns
+        generateLanterns(chunk, chunkRandom, startX, startZ);
 
-        // Fifth pass: add carpet
+        // Sixth pass: add carpet
         generateCarpet(chunk, startX, startZ);
+    }
+
+    private void generateLadders(Chunk chunk, Random random, int startX, int startZ) {
+        // Loop through every wall block in the chunk
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
+                int worldX = startX + x;
+                int worldZ = startZ + z;
+
+                // Check if this is a wall block
+                if (!isGridWall(worldX, worldZ)) {
+                    continue;
+                }
+
+                // Get position within cell
+                int inCellX = Math.floorMod(worldX, CELL_SIZE);
+                int inCellZ = Math.floorMod(worldZ, CELL_SIZE);
+
+                if (inCellX < 0) inCellX += CELL_SIZE;
+                if (inCellZ < 0) inCellZ += CELL_SIZE;
+
+                // Check if this wall faces a corridor (walls at positions 0 or 6)
+                boolean isWestWall = inCellX == 0;   // Wall on west side, faces east
+                boolean isEastWall = inCellX == 6;   // Wall on east side, faces west
+                boolean isNorthWall = inCellZ == 0;  // Wall on north side, faces south
+                boolean isSouthWall = inCellZ == 6;  // Wall on south side, faces north
+
+                if (!isWestWall && !isEastWall && !isNorthWall && !isSouthWall) {
+                    continue;
+                }
+
+                // Check if the adjacent space is actually a corridor
+                boolean adjacentIsCorridor = false;
+                int corridorX = worldX;
+                int corridorZ = worldZ;
+
+                if (isWestWall) {
+                    // West wall faces east, so corridor is to the east (worldX + 1)
+                    corridorX = worldX + 1;
+                    corridorZ = worldZ;
+                    adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
+                } else if (isEastWall) {
+                    // East wall faces west, so corridor is to the west (worldX - 1)
+                    corridorX = worldX - 1;
+                    corridorZ = worldZ;
+                    adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
+                } else if (isNorthWall) {
+                    // North wall faces south, so corridor is to the south (worldZ + 1)
+                    corridorX = worldX;
+                    corridorZ = worldZ + 1;
+                    adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
+                } else if (isSouthWall) {
+                    // South wall faces north, so corridor is to the north (worldZ - 1)
+                    corridorX = worldX;
+                    corridorZ = worldZ - 1;
+                    adjacentIsCorridor = !isGridWall(corridorX, corridorZ);
+                }
+
+                if (!adjacentIsCorridor) {
+                    continue;
+                }
+
+                // Get cell coordinates for deterministic random
+                int cellX = Math.floorDiv(worldX, CELL_SIZE);
+                int cellZ = Math.floorDiv(worldZ, CELL_SIZE);
+
+                // Create a deterministic random for this specific wall section
+                long faceSeed = seed;
+                if (isWestWall) faceSeed += 1000000L;
+                if (isEastWall) faceSeed += 2000000L;
+                if (isNorthWall) faceSeed += 3000000L;
+                if (isSouthWall) faceSeed += 4000000L;
+
+                Random wallRandom = new Xoroshiro128PlusPlusRandom(faceSeed + cellX * 7342789L + cellZ * 23456789L);
+
+                // 1 in LADDER_CHANCE chance per wall section
+                if (wallRandom.nextInt(LADDER_CHANCE) != 0) {
+                    continue;
+                }
+
+                // Determine ladder facing
+                Direction ladderFacing = null;
+
+                if (isWestWall) {
+                    ladderFacing = Direction.EAST;   // Ladder faces east (away from west wall)
+                } else if (isEastWall) {
+                    ladderFacing = Direction.WEST;   // Ladder faces west (away from east wall)
+                } else if (isNorthWall) {
+                    ladderFacing = Direction.SOUTH;  // Ladder faces south (away from north wall)
+                } else if (isSouthWall) {
+                    ladderFacing = Direction.NORTH;  // Ladder faces north (away from south wall)
+                }
+
+                // Choose a random horizontal offset along the wall (positions 1-5 are corridor-facing)
+                int ladderX = corridorX;
+                int ladderZ = corridorZ;
+                int wallX = worldX;
+                int wallZ = worldZ;
+
+                if (isWestWall || isEastWall) {
+                    // Wall runs along Z direction, so random Z offset
+                    int zOffset = 1 + wallRandom.nextInt(5); // 1 to 5
+                    ladderZ = (worldZ - inCellZ) + zOffset; // Base cell start + offset
+                    wallZ = ladderZ; // The wall block behind the ladder is at the same Z
+                } else { // isNorthWall or isSouthWall
+                    // Wall runs along X direction, so random X offset
+                    int xOffset = 1 + wallRandom.nextInt(5); // 1 to 5
+                    ladderX = (worldX - inCellX) + xOffset; // Base cell start + offset
+                    wallX = ladderX; // The wall block behind the ladder is at the same X
+                }
+
+                // Make sure ladder position is within chunk bounds
+                if (ladderX < startX || ladderX >= startX + 16 ||
+                        ladderZ < startZ || ladderZ >= startZ + 16) {
+                    continue;
+                }
+
+                // Verify that the block behind the ladder is actually a wall
+                BlockPos wallPos = new BlockPos(wallX, FLOOR_Y + 1, wallZ);
+                if (!chunk.getBlockState(wallPos).isOf(Blocks.OAK_PLANKS)) {
+                    continue;
+                }
+
+                // Ladder always starts at floor+1 (just above the floor)
+                int startY = FLOOR_Y + 1;
+
+                // Random height (but always from the floor up)
+                int ladderHeight = LADDER_MIN_HEIGHT + wallRandom.nextInt(LADDER_MAX_HEIGHT - LADDER_MIN_HEIGHT + 1);
+
+                // Ensure ladder doesn't exceed ceiling (leave 1 block gap at top)
+                ladderHeight = Math.min(ladderHeight, CEILING_Y - startY - 1);
+
+                // Place a SINGLE ladder column from the floor upward
+                for (int ladderY = startY; ladderY < startY + ladderHeight && ladderY < CEILING_Y - 1; ladderY++) {
+                    BlockPos ladderPos = new BlockPos(ladderX, ladderY, ladderZ);
+
+                    // Only place if the space is air
+                    if (chunk.getBlockState(ladderPos).isAir()) {
+                        // Double-check that the wall behind at this Y is still a wall
+                        BlockPos currentWallPos = new BlockPos(wallX, ladderY, wallZ);
+                        if (chunk.getBlockState(currentWallPos).isOf(Blocks.OAK_PLANKS)) {
+                            BlockState ladderState = Blocks.LADDER.getDefaultState()
+                                    .with(LadderBlock.FACING, ladderFacing);
+                            chunk.setBlockState(ladderPos, ladderState, false);
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private void addCrackedBricks(Chunk chunk, Random random, int startX, int startZ) {
@@ -235,7 +399,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
         }
     }
 
-    private void generateLanterns(Chunk chunk, int startX, int startZ) {
+    private void generateLanterns(Chunk chunk, Random chunkRandom, int startX, int startZ) {
         // Loop through every block in the chunk to find corridor centers
         for (int x = 0; x < 16; x++) {
             for (int z = 0; z < 16; z++) {
@@ -255,8 +419,7 @@ public class LibraryChunkGenerator extends ChunkGenerator {
                 if (inCellX < 0) inCellX += CELL_SIZE;
                 if (inCellZ < 0) inCellZ += CELL_SIZE;
 
-                // The center 3x3 area of the corridor is positions 2, 3, 4 in both axes
-                // For a lantern, we want the exact center of the cell, which is position 3,3
+                // We want the exact center of the cell, which is position 3,3
                 if (inCellX == 3 && inCellZ == 3) {
 
                     // Get the cell coordinates for deterministic random
@@ -266,11 +429,29 @@ public class LibraryChunkGenerator extends ChunkGenerator {
                     // Create a deterministic random for this cell
                     Random cellRandom = new Xoroshiro128PlusPlusRandom(seed + cellX * 7342789L + cellZ * 23456789L);
 
-                    // Check if this cell should have a lantern (1 in 20 chance)
-                    if (cellRandom.nextInt(20) == 0) {
-                        // Place lantern hanging from ceiling
-                        BlockPos lanternPos = new BlockPos(worldX, CEILING_Y - 1, worldZ);
-                        chunk.setBlockState(lanternPos, LANTERN_BLOCK, false);
+                    // Check if this cell should have a lantern using the configurable chance
+                    if (cellRandom.nextInt(LANTERN_CHANCE) == 0) {
+
+                        // Calculate lantern Y position: base height + random variation
+                        // Use the cell random so the same cell always gets the same height
+                        int variation = cellRandom.nextInt(LANTERN_HEIGHT_VARIATION + 1); // 0 to LANTERN_HEIGHT_VARIATION
+                        int lanternY = FLOOR_Y + LANTERN_BASE_HEIGHT + variation;
+
+                        // Make sure lantern doesn't go into the ceiling (leave at least 1 block for chain)
+                        if (lanternY < CEILING_Y - 1) {
+                            // Place lantern at calculated height
+                            BlockPos lanternPos = new BlockPos(worldX, lanternY, worldZ);
+                            chunk.setBlockState(lanternPos, LANTERN_BLOCK, false);
+
+                            // Add chains from lantern up to ceiling
+                            for (int chainY = lanternY + 1; chainY < CEILING_Y; chainY++) {
+                                BlockPos chainPos = new BlockPos(worldX, chainY, worldZ);
+                                // Only place chain if the space is air
+                                if (chunk.getBlockState(chainPos).isAir()) {
+                                    chunk.setBlockState(chainPos, CHAIN_BLOCK, false);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -577,16 +758,16 @@ public class LibraryChunkGenerator extends ChunkGenerator {
 
     @Override
     public int getSeaLevel() {
-        return 63;
+        return 0;
     }
 
     @Override
     public int getMinimumY() {
-        return -64;
+        return 0;
     }
 
     @Override
     public int getWorldHeight() {
-        return 384;
+        return 64;
     }
 }
