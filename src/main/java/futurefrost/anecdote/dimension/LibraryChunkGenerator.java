@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.LanternBlock;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -49,6 +50,14 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     private static final BlockState AIR_BLOCK = Blocks.AIR.getDefaultState();
     private static final BlockState FILLER_BLOCK = Blocks.STONE.getDefaultState();
     private static final BlockState BEDROCK_BLOCK = Blocks.BEDROCK.getDefaultState();
+    private static final BlockState LANTERN_BLOCK = Blocks.LANTERN.getDefaultState().with(LanternBlock.HANGING, true);
+    private static final BlockState RED_CARPET_BLOCK = Blocks.RED_CARPET.getDefaultState();
+
+    // Lantern generation parameters
+    private static final int LANTERN_CHANCE = 20; // 1 in 20 chance per corridor cell
+
+    // Carpet generation parameters
+    private static final int CARPET_CHANCE = 100;
 
     // Maze dimensions
     private static final int CORRIDOR_WIDTH = 5;      // 5 blocks wide
@@ -164,6 +173,12 @@ public class LibraryChunkGenerator extends ChunkGenerator {
 
         // Second pass: add bookshelves to the walls (like ore generation)
         generateBookshelves(chunk, chunkRandom, startX, startZ);
+
+        // Third pass: add lanterns hanging from ceilings (rare)
+        generateLanterns(chunk, chunkRandom, startX, startZ);
+
+        // Fourth pass: add red carpet
+        generateCarpet(chunk, chunkRandom, startX, startZ);
     }
 
     private void generateBookshelves(Chunk chunk, Random random, int startX, int startZ) {
@@ -198,6 +213,184 @@ public class LibraryChunkGenerator extends ChunkGenerator {
                         // Only replace oak planks with bookshelves
                         if (chunk.getBlockState(veinPos).isOf(Blocks.OAK_PLANKS)) {
                             chunk.setBlockState(veinPos, BOOKSHELF_BLOCK, false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void generateLanterns(Chunk chunk, Random random, int startX, int startZ) {
+        // Loop through every block in the chunk to find corridor centers
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
+                int worldX = startX + x;
+                int worldZ = startZ + z;
+
+                // Skip if this is a wall
+                if (isGridWall(worldX, worldZ)) {
+                    continue;
+                }
+
+                // Get the position within the cell
+                int inCellX = Math.floorMod(worldX, CELL_SIZE);
+                int inCellZ = Math.floorMod(worldZ, CELL_SIZE);
+
+                // Fix negative modulo
+                if (inCellX < 0) inCellX += CELL_SIZE;
+                if (inCellZ < 0) inCellZ += CELL_SIZE;
+
+                // The center 3x3 area of the corridor is positions 2, 3, 4 in both axes
+                // For a lantern, we want the exact center of the cell, which is position 3,3
+                if (inCellX == 3 && inCellZ == 3) {
+
+                    // Get the cell coordinates for deterministic random
+                    int cellX = Math.floorDiv(worldX, CELL_SIZE);
+                    int cellZ = Math.floorDiv(worldZ, CELL_SIZE);
+
+                    // Create a deterministic random for this cell
+                    Random cellRandom = new Xoroshiro128PlusPlusRandom(seed + cellX * 7342789L + cellZ * 23456789L);
+
+                    // Check if this cell should have a lantern (1 in 20 chance)
+                    if (cellRandom.nextInt(20) == 0) {
+                        // Place lantern hanging from ceiling
+                        BlockPos lanternPos = new BlockPos(worldX, CEILING_Y - 1, worldZ);
+                        chunk.setBlockState(lanternPos, LANTERN_BLOCK, false);
+                    }
+                }
+            }
+        }
+    }
+
+    private void generateCarpet(Chunk chunk, Random random, int startX, int startZ) {
+        // Loop through every block in the chunk
+        for (int x = 0; x < 16; x++) {
+            for (int z = 0; z < 16; z++) {
+                int worldX = startX + x;
+                int worldZ = startZ + z;
+
+                // Skip if this is a wall
+                if (isGridWall(worldX, worldZ)) {
+                    continue;
+                }
+
+                // Get the cell coordinates and position within cell
+                int cellX = Math.floorDiv(worldX, CELL_SIZE);
+                int cellZ = Math.floorDiv(worldZ, CELL_SIZE);
+                int inCellX = Math.floorMod(worldX, CELL_SIZE);
+                int inCellZ = Math.floorMod(worldZ, CELL_SIZE);
+
+                // Fix negative modulo
+                if (inCellX < 0) inCellX += CELL_SIZE;
+                if (inCellZ < 0) inCellZ += CELL_SIZE;
+
+                // In a 7-block cell (0-6), corridor is positions 1-5
+                // We want carpet in the middle 3 blocks (positions 2, 3, 4)
+                boolean inCarpetX = inCellX >= 2 && inCellX <= 4;
+                boolean inCarpetZ = inCellZ >= 2 && inCellZ <= 4;
+
+                // Always place carpet in the center 3x3 area (positions 2-4 in both axes)
+                if (inCarpetX && inCarpetZ) {
+                    BlockPos carpetPos = new BlockPos(worldX, FLOOR_Y + 1, worldZ);
+                    chunk.setBlockState(carpetPos, RED_CARPET_BLOCK, false);
+                    continue;
+                }
+
+                // Check for connections and extend carpet through doorways
+
+                // Get the random for this cell to check connections
+                Random cellRandom = new Xoroshiro128PlusPlusRandom(seed + cellX * 49632L + cellZ * 325176L);
+
+                // RIGHT connection (+X direction)
+                // Doorway positions are at inCellX = 5 (right edge) and inCellZ in carpet range (2-4)
+                if (inCellX == 5 && inCarpetZ) {
+                    // Check if there's a connection to the right
+                    if (cellRandom.nextBoolean()) {
+                        // Place carpet in this doorway block
+                        BlockPos carpetPos = new BlockPos(worldX, FLOOR_Y + 1, worldZ);
+                        chunk.setBlockState(carpetPos, RED_CARPET_BLOCK, false);
+
+                        // Also place carpet in the next TWO blocks to the right
+                        // This ensures the carpet extends fully into the adjacent cell
+                        for (int offset = 1; offset <= 2; offset++) {
+                            int adjacentX = worldX + offset;
+                            if (adjacentX >= startX && adjacentX < startX + 16) {
+                                BlockPos adjacentPos = new BlockPos(adjacentX, FLOOR_Y + 1, worldZ);
+                                if (!isGridWall(adjacentX, worldZ)) {
+                                    chunk.setBlockState(adjacentPos, RED_CARPET_BLOCK, false);
+                                }
+                            }
+                        }
+                    }
+                    continue;
+                }
+
+                // LEFT connection (-X direction)
+                // Doorway positions are at inCellX = 1 (left edge) and inCellZ in carpet range (2-4)
+                if (inCellX == 1 && inCarpetZ) {
+                    // Check if there's a connection to the left
+                    Random leftCellRandom = new Xoroshiro128PlusPlusRandom(seed + (cellX - 1) * 49632L + cellZ * 325176L);
+                    if (leftCellRandom.nextBoolean()) {
+                        // Place carpet in this doorway block
+                        BlockPos carpetPos = new BlockPos(worldX, FLOOR_Y + 1, worldZ);
+                        chunk.setBlockState(carpetPos, RED_CARPET_BLOCK, false);
+
+                        // Also place carpet in the next TWO blocks to the left
+                        for (int offset = 1; offset <= 2; offset++) {
+                            int adjacentX = worldX - offset;
+                            if (adjacentX >= startX && adjacentX < startX + 16) {
+                                BlockPos adjacentPos = new BlockPos(adjacentX, FLOOR_Y + 1, worldZ);
+                                if (!isGridWall(adjacentX, worldZ)) {
+                                    chunk.setBlockState(adjacentPos, RED_CARPET_BLOCK, false);
+                                }
+                            }
+                        }
+                    }
+                    continue;
+                }
+
+                // TOP connection (+Z direction)
+                // Doorway positions are at inCellZ = 5 (top edge) and inCellX in carpet range (2-4)
+                if (inCellZ == 5 && inCarpetX) {
+                    // Check if there's a connection upward
+                    if (cellRandom.nextBoolean()) {
+                        // Place carpet in this doorway block
+                        BlockPos carpetPos = new BlockPos(worldX, FLOOR_Y + 1, worldZ);
+                        chunk.setBlockState(carpetPos, RED_CARPET_BLOCK, false);
+
+                        // Also place carpet in the next TWO blocks upward
+                        for (int offset = 1; offset <= 2; offset++) {
+                            int adjacentZ = worldZ + offset;
+                            if (adjacentZ >= startZ && adjacentZ < startZ + 16) {
+                                BlockPos adjacentPos = new BlockPos(worldX, FLOOR_Y + 1, adjacentZ);
+                                if (!isGridWall(worldX, adjacentZ)) {
+                                    chunk.setBlockState(adjacentPos, RED_CARPET_BLOCK, false);
+                                }
+                            }
+                        }
+                    }
+                    continue;
+                }
+
+                // BOTTOM connection (-Z direction)
+                // Doorway positions are at inCellZ = 1 (bottom edge) and inCellX in carpet range (2-4)
+                if (inCellZ == 1 && inCarpetX) {
+                    // Check if there's a connection downward
+                    Random downCellRandom = new Xoroshiro128PlusPlusRandom(seed + cellX * 49632L + (cellZ - 1) * 325176L);
+                    if (downCellRandom.nextBoolean()) {
+                        // Place carpet in this doorway block
+                        BlockPos carpetPos = new BlockPos(worldX, FLOOR_Y + 1, worldZ);
+                        chunk.setBlockState(carpetPos, RED_CARPET_BLOCK, false);
+
+                        // Also place carpet in the next TWO blocks downward
+                        for (int offset = 1; offset <= 2; offset++) {
+                            int adjacentZ = worldZ - offset;
+                            if (adjacentZ >= startZ && adjacentZ < startZ + 16) {
+                                BlockPos adjacentPos = new BlockPos(worldX, FLOOR_Y + 1, adjacentZ);
+                                if (!isGridWall(worldX, adjacentZ)) {
+                                    chunk.setBlockState(adjacentPos, RED_CARPET_BLOCK, false);
+                                }
+                            }
                         }
                     }
                 }
