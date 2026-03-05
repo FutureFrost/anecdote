@@ -17,8 +17,6 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.Heightmap;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 
 import static futurefrost.anecdote.dimension.LibraryChunkGenerator.CEILING_Y;
 import static futurefrost.anecdote.dimension.LibraryChunkGenerator.FLOOR_Y;
@@ -29,16 +27,7 @@ public class Anecdote implements ModInitializer {
 	// Identifiers
 	public static final Identifier LIBRARY_CHUNK_GENERATOR_ID = new Identifier(MOD_ID, "library");
 	public static final Identifier SINGLE_BIOME_SOURCE_ID = new Identifier(MOD_ID, "single_biome");
-	public static final Identifier LIBRARY_DIMENSION_TYPE_ID = new Identifier(MOD_ID, "library_type");
-	public static final Identifier LIBRARY_DIMENSION_ID = new Identifier(MOD_ID, "library_dimension");
-	public static final Identifier LIBRARY_BIOME_ID = new Identifier(MOD_ID, "library_biome");
 	public static final Identifier LIBRARY_ENTITY_ID = new Identifier(MOD_ID, "lesser_anecdote");
-
-	// Registry Keys
-	public static final RegistryKey<World> MAZE_WORLD_KEY =
-			RegistryKey.of(RegistryKeys.WORLD, LIBRARY_DIMENSION_ID);
-	public static final RegistryKey<Biome> MAZE_BIOME_KEY =
-			RegistryKey.of(RegistryKeys.BIOME, LIBRARY_BIOME_ID);
 
 	// Entity Type
 	public static final EntityType<LibraryEntity> LIBRARY_ENTITY = Registry.register(
@@ -77,18 +66,13 @@ public class Anecdote implements ModInitializer {
 						return false;
 					}
 
-					// Check for solid ground
-					if (!world.getBlockState(pos.down()).isSolid()) {
-						return false;
-					}
-
-					return true;
+					// Check for solid ground.
+					return world.getBlockState(pos.down()).isFullCube(world, pos.down());
 				});
 
 		// Register Lesser Anecdote spawn egg
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "lesser_anecdote_spawn_egg"), LIBRARY_ENTITY_SPAWN_EGG);
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> {content.add(LIBRARY_ENTITY_SPAWN_EGG);
-		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(LIBRARY_ENTITY_SPAWN_EGG));
 
 		System.out.println("Anecdote mod initialized!");
 	}
