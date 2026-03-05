@@ -67,8 +67,8 @@ public class LibraryChunkGenerator extends ChunkGenerator {
     private static final int CELL_SIZE = WALL_THICKNESS + CORRIDOR_WIDTH + WALL_THICKNESS;
 
     // Y-levels - corridor space only
-    private static final int FLOOR_Y = 10;
-    private static final int CEILING_Y = FLOOR_Y + CORRIDOR_HEIGHT + 1;
+    public static final int FLOOR_Y = 10;
+    public static final int CEILING_Y = FLOOR_Y + CORRIDOR_HEIGHT + 1;
 
     // Wall vertical range - walls only exist within the corridor vertical space
     private static final int WALL_MIN_Y = FLOOR_Y + 1;

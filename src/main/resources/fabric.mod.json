@@ -10,15 +10,15 @@
 	"contact": {
 		"sources": "https://github.com/FutureFrost/frostedlib"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/anecdote/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"futurefrost.anecdote.Anecdote"
 		],
-		"fabric-datagen": [
-			"futurefrost.anecdote.AnecdoteDataGenerator"
+		"client": [
+			"futurefrost.anecdote.AnecdoteClient"
 		]
 	},
 	"mixins": [

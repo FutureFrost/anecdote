@@ -17,22 +17,10 @@
   "spawners": {
     "monster": [
       {
-        "type": "minecraft:zombie",
-        "weight": 10,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:skeleton",
-        "weight": 10,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:spider",
-        "weight": 10,
-        "minCount": 2,
-        "maxCount": 4
+        "type": "anecdote:lesser_anecdote",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 3
       }
     ]
   },
