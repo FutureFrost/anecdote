@@ -7,8 +7,6 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
-import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
-import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
@@ -18,13 +16,16 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
+import org.slf4j.Logger;
 import net.minecraft.world.Heightmap;
+import org.slf4j.LoggerFactory;
 
 import static futurefrost.anecdote.dimension.LibraryChunkGenerator.CEILING_Y;
 import static futurefrost.anecdote.dimension.LibraryChunkGenerator.FLOOR_Y;
 
 public class Anecdote implements ModInitializer {
 	public static final String MOD_ID = "anecdote";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	// Identifiers
 	public static final Identifier LIBRARY_CHUNK_GENERATOR_ID = new Identifier(MOD_ID, "library");
@@ -76,6 +77,6 @@ public class Anecdote implements ModInitializer {
 		Registry.register(Registries.ITEM, new Identifier(MOD_ID, "lesser_anecdote_spawn_egg"), LIBRARY_ENTITY_SPAWN_EGG);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(LIBRARY_ENTITY_SPAWN_EGG));
 
-		System.out.println("Anecdote mod initialized!");
+		LOGGER.info("Anecdote mod initialized!");
 	}
 }
