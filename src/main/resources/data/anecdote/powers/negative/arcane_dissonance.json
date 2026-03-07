@@ -1,5 +1,166 @@
 {
     "name": "§cArcane Dissonance",
     "description": "§b[Passive]\n§fEnchanted armors and tools hum with a frequency that is dissonant to your own. They interfere with your dominion over narrative, forcing you to pay increased tithes of knowledge for every reality you dare to twist.",
-    "type": "origins:simple"
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 6,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "actor": {
+        "type": "origins:action_over_time",
+        "interval": 60,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:negative/arcane_dissonance_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:modify_resource",
+                        "resource": "anecdote:negative/arcane_dissonance_resource",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:modify_resource",
+                        "resource": "anecdote:negative/arcane_dissonance_resource",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "head",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:modify_resource",
+                        "resource": "anecdote:negative/arcane_dissonance_resource",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "chest",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:modify_resource",
+                        "resource": "anecdote:negative/arcane_dissonance_resource",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "legs",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:modify_resource",
+                        "resource": "anecdote:negative/arcane_dissonance_resource",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "feet",
+                        "item_condition": {
+                            "type": "origins:enchantment",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:modify_resource",
+                        "resource": "anecdote:negative/arcane_dissonance_resource",
+                        "modifier": {
+                            "operation": "add_base_early",
+                            "value": 1
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                }
+            ]
+        }
+    }
 }
