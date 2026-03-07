@@ -232,7 +232,7 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
 
         // Add health_change
         NbtCompound healthChangePower = new NbtCompound();
-        healthChangePower.putString("Type", "anecdote:neutral/desecrated_codex_health_change");
+        healthChangePower.putString("Type", "anecdote:negative/skin_of_a_story_health_change");
         healthChangePower.put("Data", new NbtCompound());
         NbtList healthChangeSources = new NbtList();
         healthChangeSources.add(NbtString.of("anecdote:spawn"));
