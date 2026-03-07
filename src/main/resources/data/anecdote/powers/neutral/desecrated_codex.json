@@ -1,5 +1,434 @@
 {
     "name": "§eDesecrated Codex§r",
     "description": "§b[Passive]\n§fYour stature is a measure of your integrity; as wounds accumulate and your essence is torn away, you shrink, collapsing into a smaller, more tattered version of your former self.",
-    "type": "origins:simple"
+    "type": "origins:multiple",
+    "scale_actor": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 16
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.8"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.8"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 0
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 14
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.76"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.76"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 12
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.722"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.722"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 2
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.6859"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.6859"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 3
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 8
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.6516"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.6516"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 6
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.619"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.619"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.588"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.588"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 6
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.5586"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.5586"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 7
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:height 0.5307"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 0.5307"
+                            },
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+                                "value": 8
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "action_lost": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.8"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.8"
+                }
+            ]
+        },
+        "execute_chosen_when_orb": true,
+        "entity_action_gained": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.8"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.8"
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
+        },
+        "entity_action_added": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.8"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.8"
+                }
+            ]
+        },
+        "entity_action_removed": {
+            "type": "origins:execute_command",
+            "command": "scale reset @s"
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.8"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.8"
+                }
+            ]
+        }
+    },
+    "health_change": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "generic.max_health",
+            "operation": "addition",
+            "value": -4
+        },
+        "update_health": true
+    },
+    "transparency_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 8,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "transparency_1": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.95
+    },
+    "transparency_2": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.9025
+    },
+    "transparency_3": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 3
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.8573
+    },
+    "transparency_4": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 4
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.8145
+    },
+    "transparency_5": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 5
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.7737
+    },
+    "transparency_6": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 6
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.735
+    },
+    "transparency_7": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 7
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.6983
+    },
+    "transparency_8": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": "==",
+            "compare_to": 8
+        },
+        "type": "origins:model_color",
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "alpha": 0.6634
+    },
+    "shaking": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:neutral/desecrated_codex_transparency_resource",
+            "comparison": ">=",
+            "compare_to": 5
+        },
+        "type": "origins:shaking"
+    }
 }

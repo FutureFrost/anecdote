@@ -30,6 +30,7 @@
 		"java": ">=17",
 		"fabric-api": "*",
 		"frostedlib": ">=1.1.3",
-		"origins": ">=1.10.0"
+		"origins": ">=1.10.0",
+		"pehkui": ">=3.8.0"
 	}
 }

@@ -1,5 +1,18 @@
 {
     "name": "§aTimeless Parchment§r",
     "description": "§b[Passive]\n§fYou are an entity of ink and fiber, a construct that does not hunger for the sustenance of mortal flesh, but merely endures, timeless and patient.",
-    "type": "origins:simple"
+    "type": "origins:multiple",
+    "stay_full": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:feed",
+            "food": 20,
+            "saturation": 20
+        }
+    },
+    "prevent_hunger": {
+        "type": "origins:effect_immunity",
+        "effect": "minecraft:hunger"
+    }
 }

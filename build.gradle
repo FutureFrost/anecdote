@@ -42,6 +42,9 @@ repositories {
 			includeGroup "com.jamieswhiteshirt"
 		}
 	}
+	maven {
+		url = "https://jitpack.io"
+	}
 }
 
 fabricApi {
@@ -65,8 +68,22 @@ dependencies {
 	// Origins by Apace100
 	modImplementation "com.github.apace100:origins-fabric:${project.origins_version}"
 
+	// Apoli by Apace100
+	modImplementation "com.github.apace100:apoli:${project.apoli_version}"
+
 	// FrostedLib
 	modImplementation "maven.modrinth:frostedlib:${project.frostedlib_version}"
+
+	// Pehkui by Virtuoel
+	modImplementation "curse.maven:pehkui-319596:5208259"
+	modImplementation ("com.github.Virtuoel:KanosConfig:${project.kanos_config_tag}")
+
+	// Cardinal Components API for entity data
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+	modImplementation "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
+
+	include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
+	include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
 }
 
 processResources {
