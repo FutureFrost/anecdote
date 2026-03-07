@@ -10,6 +10,8 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -45,6 +47,18 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
 
     public LibraryEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
         super(entityType, world);
+
+        // Add permanent slow falling effect when entity is created
+        if (!world.isClient) {
+            this.addStatusEffect(new StatusEffectInstance(
+                    StatusEffects.SLOW_FALLING,
+                    -1,           // -1 = infinite duration
+                    0,            // Amplifier 0
+                    false,        // No particles
+                    false,        // No icon
+                    false         // No ambient
+            ));
+        }
     }
 
     public static DefaultAttributeContainer.Builder createAttributes() {
@@ -102,7 +116,7 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
             // Set revenge target directly
             nearby.setTarget(target);
 
-            // Set anger time (like zombie piglins do)
+            // Set anger time
             nearby.setAngerTime(MAX_ANGER_TIME);
 
             // If they have an anger UUID system, set that too
@@ -112,7 +126,6 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
         }
     }
 
-    // Optional: Add a tick-based propagation system for more reliable spread
     @Override
     public void tick() {
         super.tick();
@@ -143,6 +156,18 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData, @Nullable NbtCompound entityNbt) {
         EntityData data = super.initialize(world, difficulty, spawnReason, entityData, entityNbt);
 
+        // Add slow falling on spawn (in case constructor didn't run)
+        if (!world.isClient()) {
+            this.addStatusEffect(new StatusEffectInstance(
+                    StatusEffects.SLOW_FALLING,
+                    -1,
+                    0,
+                    false,
+                    false,
+                    false
+            ));
+        }
+
         // Add powers when the entity is initialized (only on server side)
         if (!this.getWorld().isClient && !powersAdded) {
             addPowersToEntity();
@@ -168,6 +193,18 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
         super.readCustomDataFromNbt(nbt);
         this.readAngerFromNbt(this.getWorld(), nbt);
 
+        // Ensure slow falling effect is present when loading from NBT
+        if (!this.getWorld().isClient && !this.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
+            this.addStatusEffect(new StatusEffectInstance(
+                    StatusEffects.SLOW_FALLING,
+                    -1,
+                    0,
+                    false,
+                    false,
+                    false
+            ));
+        }
+
         // When loading from NBT, check if powers exist and add them if missing
         if (!this.getWorld().isClient && !hasPowersInNbt(nbt)) {
             addPowersToNbt(nbt);
@@ -175,9 +212,6 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
         }
     }
 
-    /**
-     * Adds powers directly to the entity when spawned
-     */
     private void addPowersToEntity() {
         NbtCompound nbt = new NbtCompound();
         this.writeNbt(nbt);
@@ -239,7 +273,7 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
         healthChangePower.put("Sources", healthChangeSources);
         powersList.add(healthChangePower);
 
-        // Add transparency_resource - Data should be an INTEGER (current value)
+        // Add transparency_resource
         NbtCompound resourcePower = new NbtCompound();
         resourcePower.putString("Type", "anecdote:neutral/desecrated_codex_transparency_resource");
         resourcePower.putInt("Data", 0); // Current resource value (0-8)
@@ -268,13 +302,19 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
         shakingPower.put("Sources", shakingSources);
         powersList.add(shakingPower);
 
+        // Add resonant shroud
+        NbtCompound resonantShroudPower = new NbtCompound();
+        resonantShroudPower.putString("Type", "anecdote:neutral/resonant_shroud");
+        resonantShroudPower.put("Data", new NbtCompound());
+        NbtList resonantShroudSources = new NbtList();
+        resonantShroudSources.add(NbtString.of("anecdote:spawn"));
+        resonantShroudPower.put("Sources", resonantShroudSources);
+        powersList.add(resonantShroudPower);
+
         // Add the powers list to apoli:powers
         apoliPowers.put("Powers", powersList);
     }
 
-    /**
-     * Ensures powers are present in the NBT when saving
-     */
     private void ensurePowersInNbt(NbtCompound nbt) {
         if (!hasPowersInNbt(nbt)) {
             addPowersToNbt(nbt);
@@ -298,13 +338,14 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
 
         NbtList powersList = apoliPowers.getList("Powers", NbtCompound.COMPOUND_TYPE);
 
-        // Check if we have all 9 powers
+        // Check if we have all powers
         boolean hasScaleActor = false;
         boolean hasActionLost = false;
         boolean hasHealthChange = false;
         boolean hasTransparencyResource = false;
         boolean[] hasTransparency = new boolean[9]; // indices 1-8
         boolean hasShaking = false;
+        boolean hasResonantShroud = false;
 
         for (int i = 0; i < powersList.size(); i++) {
             NbtCompound power = powersList.getCompound(i);
@@ -314,12 +355,14 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
                 hasScaleActor = true;
             } else if ("anecdote:neutral/desecrated_codex_action_lost".equals(type)) {
                 hasActionLost = true;
-            } else if ("anecdote:neutral/desecrated_codex_health_change".equals(type)) {
+            } else if ("anecdote:negative/skin_of_a_story_health_change".equals(type)) {
                 hasHealthChange = true;
             } else if ("anecdote:neutral/desecrated_codex_transparency_resource".equals(type)) {
                 hasTransparencyResource = true;
             } else if ("anecdote:neutral/desecrated_codex_shaking".equals(type)) {
                 hasShaking = true;
+            } else if ("anecdote:neutral/resonant_shroud".equals(type)) {
+                hasResonantShroud = true;
             } else {
                 // Check for transparency powers
                 for (int t = 1; t <= 8; t++) {
@@ -341,7 +384,8 @@ public class LibraryEntity extends PathAwareEntity implements Angerable {
         }
 
         return hasScaleActor && hasActionLost && hasHealthChange &&
-                hasTransparencyResource && allTransparencyPresent && hasShaking;
+                hasTransparencyResource && allTransparencyPresent &&
+                hasShaking && hasResonantShroud;
     }
 
     // Angerable implementation

@@ -1,5 +1,424 @@
 {
     "name": "§eWeight of the Written§r",
     "description": "§b[Passive]\n§fYour form is dreadfully light, making you swift as a rumor spreads and slow to fall. Yet this ephemeral grace holds a curse; the weight of armor anchors you to the earth, slowing your step and hastening your descent.",
-    "type": "origins:simple"
+    "type": "origins:multiple",
+    "movement_speed": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "inverted": true,
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifiers": [
+            {
+                "operation": "multiply_base_multiplicative",
+                "value": -0.25
+            },
+            {
+                "operation": "multiply_base_multiplicative",
+                "resource": "anecdote:neutral/weight_of_the_written_resource",
+                "value": 0,
+                "modifier": {
+                    "operation": "multiply_total_multiplicative",
+                    "value": -0.9375
+                }
+            }
+        ],
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "start_value": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "armor_tracker": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 20
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 0
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 19
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 18
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 2
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 17
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 3
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 16
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 15
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 5
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 14
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 6
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 13
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 7
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 12
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 8
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 11
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 9
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 10
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 9
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 11
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 8
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 12
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 7
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 13
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 6
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 14
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 5
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 15
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 16
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 17
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 18
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 19
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:constant",
+                        "value": true
+                    },
+                    "action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:neutral/weight_of_the_written_resource",
+                        "value": 20
+                    }
+                }
+            ]
+        }
+    },
+    "falling": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": "<=",
+                        "compare_to": 5
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slow_falling",
+                            "duration": 40,
+                            "amplifier": 1,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": "<=",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slow_falling",
+                            "duration": 40,
+                            "amplifier": 0,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:attribute",
+                        "attribute": "generic.armor",
+                        "comparison": "<=",
+                        "compare_to": 15
+                    },
+                    "action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:water"
+                        }
+                    },
+                    "action": {
+                        "type": "origins:apply_effect",
+                        "effect": {
+                            "effect": "minecraft:slow_falling",
+                            "duration": 40,
+                            "amplifier": 0,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "water_actor": {
+        "condition": {
+            "type": "origins:attribute",
+            "attribute": "generic.armor",
+            "comparison": ">=",
+            "compare_to": 15
+        },
+        "type": "origins:ignore_water"
+    }
 }

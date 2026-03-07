@@ -1,5 +1,32 @@
 {
     "name": "§eResonant Shroud§r",
     "description": "§b[Passive]\n§fRaw, unassimilated knowledge resonates around your form, coalescing into a palpable swarm of thoughts and truths that clings to you like a shroud.",
-    "type": "origins:simple"
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+        "type": "origins:choice",
+        "actions": [
+            {
+                "weight": 3,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle enchant ~ ~1 ~ 0.5 0.5 0.5 2 1"
+                }
+            },
+            {
+                "weight": 2,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle enchant ~ ~1 ~ 0.5 0.5 0.5 2 2"
+                }
+            },
+            {
+                "weight": 1,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle enchant ~ ~1 ~ 0.5 0.5 0.5 2 3"
+                }
+            }
+        ]
+    }
 }
