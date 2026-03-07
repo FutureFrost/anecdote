@@ -13,7 +13,7 @@
     },
     "actor": {
         "type": "origins:action_over_time",
-        "interval": 60,
+        "interval": 10,
         "entity_action": {
             "type": "origins:and",
             "actions": [
