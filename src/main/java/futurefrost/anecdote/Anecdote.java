@@ -1,5 +1,6 @@
 package futurefrost.anecdote;
 
+import futurefrost.anecdote.condition.TotalXpCondition;
 import futurefrost.anecdote.dimension.LibraryChunkGenerator;
 import futurefrost.anecdote.entity.LibraryEntity;
 import futurefrost.anecdote.world.biome.SingleBiomeSource;
@@ -51,6 +52,9 @@ public class Anecdote implements ModInitializer {
 
 		// Register biome source
 		Registry.register(Registries.BIOME_SOURCE, SINGLE_BIOME_SOURCE_ID, SingleBiomeSource.CODEC);
+
+		// Register anecdote:total_xp
+		TotalXpCondition.register();
 
 		// Register entity attributes
 		FabricDefaultAttributeRegistry.register(LIBRARY_ENTITY, LibraryEntity.createAttributes());

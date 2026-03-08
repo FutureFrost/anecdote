@@ -71,6 +71,9 @@ dependencies {
 	// Apoli by Apace100
 	modImplementation "com.github.apace100:apoli:${project.apoli_version}"
 
+	// Calio by Apace100
+	modImplementation "com.github.apace100:calio:${project.calio_version}"
+
 	// FrostedLib
 	modImplementation "maven.modrinth:frostedlib:${project.frostedlib_version}"
 
