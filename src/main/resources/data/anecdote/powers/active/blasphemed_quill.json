@@ -408,7 +408,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Collector\\'s Little Helper\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A short tale of an allay that never \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"forgot its purpose: to gather, to \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"carry, to bring. When read, the \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"story\\'s devotion seeps into the \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"world, compelling all dropped items \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"within sixteen blocks to drift toward \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"you for two minutes.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:allay}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Collector\\'s Little Helper\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A short tale of an allay that never\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"forgot its purpose: to gather, to\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"carry, to bring. When read, the\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"story\\'s devotion seeps into the\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"world, compelling all dropped items\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"within sixteen blocks to drift toward\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"you for two minutes.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:allay}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -852,7 +852,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Regenerative Heart\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The axolotl in this story gives and \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"gives, regenerating from wounds \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"that should be fatal, yet in its healing, \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"it forgets how to fight. When read, you \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"are granted the same gift: powerful \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"regeneration for half a minute, but \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"during this time, your hands are \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"capable only of healing, never harming.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:axolotl}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Regenerative Heart\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The axolotl in this story gives and\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"gives, regenerating from wounds\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"that should be fatal, yet in its healing,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"it forgets how to fight. When read, you\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"are granted the same gift: powerful\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"regeneration for half a minute, but\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"during this time, your hands are\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"capable only of healing, never harming.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:axolotl}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -1296,7 +1296,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Echoes in the Dark\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A bat\\'s journey through endless \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"caves, navigating not by sight but \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"by sound bouncing off unseen \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"walls. When read, the echoes linger \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"in your ears, granting you night \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"vision and the ability to see entities \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"through solid stone for two minutes.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:bat}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Echoes in the Dark\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A bat\\'s journey through endless\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"caves, navigating not by sight but\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"by sound bouncing off unseen\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"walls. When read, the echoes linger\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"in your ears, granting you night\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"vision and the ability to see entities\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"through solid stone for two minutes.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:bat}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -1740,7 +1740,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Pollinator\\'s Path\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The bee in this story visits flower \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"after flower, each touch sparking \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"new growth in its wake. When read, \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"for fifteen seconds, nearby plant-life \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"remembers the bee\\'s touch and surges \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"toward the sky with impossible speed.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:bee}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Pollinator\\'s Path\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The bee in this story visits flower\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"after flower, each touch sparking\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"new growth in its wake. When read,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"for fifteen seconds, nearby plant-life\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"remembers the bee\\'s touch and surges\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"toward the sky with impossible speed.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:bee}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -2184,7 +2184,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Fires That Do Not Forget\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A blaze\\'s fury, trapped in a story \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"that cannot cool, cannot forgive. \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"When read, a prolonged barrage \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"of flames erupts in the direction \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"you face; not merely burning, but\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\" leaving its victims crippled and \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"slowed, as though the heat itself \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"remembers their trespass.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:blaze}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Fires That Do Not Forget\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A blaze\\'s fury, trapped in a story\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"that cannot cool, cannot forgive.\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"When read, a prolonged barrage\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"of flames erupts in the direction\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"you face; not merely burning, but\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"leaving its victims crippled and\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"slowed, as though the heat itself\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"remembers their trespass.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:blaze}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -2628,7 +2628,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Desert\\'s Patient Stride\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The camel\\'s tale is one of endless \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"sand and distant horizons, walked \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"with patience that outlasts the sun. \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"When read, a spectral camel \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"materializes beside you for five \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"minutes, moving with a speed no living \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"camel could match, as though the \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"desert itself urges it forward.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:camel}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Desert\\'s Patient Stride\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The camel\\'s tale is one of endless\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"sand and distant horizons, walked\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"with patience that outlasts the sun.\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"When read, a spectral camel\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"materializes beside you for five\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"minutes, moving with a speed no living\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"camel could match, as though the\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"desert itself urges it forward.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:camel}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -3072,7 +3072,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Nine Whispers\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A cat\\'s nine lives, each one a \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"secret whispered to those who \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"earn its trust. When read, one of \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"those lives is bestowed upon you. \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"For five minutes, death will pause, \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"consider you, and look away. The \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"gift does not stack; a life can only \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"be given once per telling.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cat}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Nine Whispers\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A cat\\'s nine lives, each one a\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"secret whispered to those who\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"earn its trust. When read, one of\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"those lives is bestowed upon you.\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"For five minutes, death will pause,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"consider you, and look away. The\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"gift does not stack; a life can only\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"be given once per telling.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cat}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -3516,7 +3516,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Venom Weaves\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The cave spider\\'s venom is not \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"merely poison; it is a story of \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"paralysis and slow demise, woven \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"into fangs over generations. For \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"the two minutes after reading, that \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"venom weaves around your \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"implements, and any creature you \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"strike receives poison deep enough \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"to remember.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cave_spider}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Venom Weaves\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The cave spider\\'s venom is not\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"merely poison; it is a story of\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"paralysis and slow demise, woven\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"into fangs over generations. For\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"the two minutes after reading, that\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"venom weaves around your\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"implements, and any creature you\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"strike receives poison deep enough\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"to remember.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cave_spider}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -3960,7 +3960,7 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Egg and What Follows\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A chicken\\'s egg contains more \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"than a chick; it contains potential, \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"violence waiting to hatch. When read, \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"an egg materializes beneath you. \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"After five seconds, it erupts, sending \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"a plume of damaging feathers outward \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"like shrapnel from a broken shell.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:chicken}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"The Egg and What Follows\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"A chicken\\'s egg contains more\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"than a chick; it contains potential,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"violence waiting to hatch. When read,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"an egg materializes beneath you.\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"After five seconds, it erupts, sending\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"a plume of damaging feathers outward\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"like shrapnel from a broken shell.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:chicken}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
@@ -4404,7 +4404,451 @@
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Currents Below\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The cod knows nothing but water, \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"currents, and the quiet drift of \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"existence beneath waves. When \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"read in the ocean, you inherit that \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"existence for a minute; underwater \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"breathing along with amplified \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"swimming speed, as though the sea \",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"has accepted you as one of its own.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cod}}"
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Currents Below\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The cod knows nothing but water,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"currents, and the quiet drift of\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"existence beneath waves. When\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"read in the ocean, you inherit that\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"existence for a minute; underwater\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"breathing along with amplified\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"swimming speed, as though the sea\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"has accepted you as one of its own.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cod}}"
+                                                                },
+                                                                {
+                                                                    "type": "origins:choice",
+                                                                    "actions": [
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:item.book.page_turn",
+                                                                                "volume": 1,
+                                                                                "pitch": 0.9
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:item.book.page_turn",
+                                                                                "volume": 1,
+                                                                                "pitch": 1
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:item.book.page_turn",
+                                                                                "volume": 1,
+                                                                                "pitch": 1.1
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "origins:choice",
+                                                                    "actions": [
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:block.enchantment_table.use",
+                                                                                "volume": 1,
+                                                                                "pitch": 0.9
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:block.enchantment_table.use",
+                                                                                "volume": 1,
+                                                                                "pitch": 1
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:block.enchantment_table.use",
+                                                                                "volume": 1,
+                                                                                "pitch": 1.1
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "else_action": {
+                                                "type": "origins:nothing"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:entity_type",
+                                        "entity_type": "minecraft:cow"
+                                    }
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:if_else_list",
+                                            "actions": [
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "inverted": true,
+                                                            "type": "origins:advancement",
+                                                            "advancement": "minecraft:husbandry/breed_an_animal"
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:execute_command",
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[The Parrots and the Bats]\",\"color\":\"green\"}]"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 0
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 6
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -6 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 1
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 7
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -7 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 2
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 7
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -7 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 3
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 8
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -8 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 4
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 8
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -8 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 5
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 9
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -9 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 6
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 10
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -10 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:actor_condition",
+                                                "condition": {
+                                                    "type": "origins:resource",
+                                                    "resource": "anecdote:active/blasphemed_quill_resource",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
+                                                }
+                                            },
+                                            "if_action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:target_action",
+                                                        "action": {
+                                                            "type": "origins:and",
+                                                            "actions": [
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                },
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "tp @s ~ -4096 ~"
+                                                                },
+                                                                {
+                                                                    "type": "origins:delay",
+                                                                    "action": {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "kill @s"
+                                                                    },
+                                                                    "ticks": 1
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:and",
+                                                            "actions": [
+                                                                {
+                                                                    "type": "origins:equipped_item_action",
+                                                                    "equipment_slot": "mainhand",
+                                                                    "action": {
+                                                                        "type": "origins:consume",
+                                                                        "amount": 1
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Hide of the Pasture\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"The cow\\'s hide has weathered\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"countless storms, standing patient\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"in the face of nature\\'s cruelty.\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"When read, that patience wraps\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"around you, reducing all damage\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"for one minute.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:cow}}"
                                                                 },
                                                                 {
                                                                     "type": "origins:choice",
