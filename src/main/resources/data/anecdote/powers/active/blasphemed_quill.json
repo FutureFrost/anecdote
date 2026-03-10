@@ -30681,6 +30681,450 @@
                                         }
                                     ]
                                 }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:entity_type",
+                                        "entity_type": "minecraft:wither_skeleton"
+                                    }
+                                },
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:if_else_list",
+                                            "actions": [
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "inverted": true,
+                                                            "type": "origins:advancement",
+                                                            "advancement": "minecraft:nether/get_wither_skull"
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:execute_command",
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Spooky Scary Skeleton]\",\"color\":\"green\"}]"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 0
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 24
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -24 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 1
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 26
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -26 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 2
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 29
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -29 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 3
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 31
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -31 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 4
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 34
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -34 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 5
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 36
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -36 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "condition": {
+                                                        "type": "origins:actor_condition",
+                                                        "condition": {
+                                                            "type": "origins:resource",
+                                                            "resource": "anecdote:negative/arcane_dissonance_resource",
+                                                            "comparison": "==",
+                                                            "compare_to": 6
+                                                        }
+                                                    },
+                                                    "action": {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:if_else",
+                                                            "condition": {
+                                                                "type": "anecdote:total_xp",
+                                                                "comparison": ">=",
+                                                                "compare_to": 38
+                                                            },
+                                                            "if_action": {
+                                                                "type": "origins:and",
+                                                                "actions": [
+                                                                    {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "experience add @s -38 points"
+                                                                    },
+                                                                    {
+                                                                        "type": "origins:set_resource",
+                                                                        "resource": "anecdote:active/blasphemed_quill_resource",
+                                                                        "value": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "else_action": {
+                                                                "type": "origins:execute_command",
+                                                                "command": "title @s actionbar [{\"text\":\"Your experience is insufficient. The story refuses to be rewritten.\",\"color\":\"dark_red\"}]"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:actor_condition",
+                                                "condition": {
+                                                    "type": "origins:resource",
+                                                    "resource": "anecdote:active/blasphemed_quill_resource",
+                                                    "comparison": "==",
+                                                    "compare_to": 1
+                                                }
+                                            },
+                                            "if_action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:target_action",
+                                                        "action": {
+                                                            "type": "origins:and",
+                                                            "actions": [
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                },
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "tp @s ~ -4096 ~"
+                                                                },
+                                                                {
+                                                                    "type": "origins:delay",
+                                                                    "action": {
+                                                                        "type": "origins:execute_command",
+                                                                        "command": "kill @s"
+                                                                    },
+                                                                    "ticks": 1
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "origins:actor_action",
+                                                        "action": {
+                                                            "type": "origins:and",
+                                                            "actions": [
+                                                                {
+                                                                    "type": "origins:equipped_item_action",
+                                                                    "equipment_slot": "mainhand",
+                                                                    "action": {
+                                                                        "type": "origins:consume",
+                                                                        "amount": 1
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "give @s book{display:{Name:'[{\"text\":\"Black Bone\",\"italic\":false,\"color\":\"aqua\"}]',Lore:['[{\"text\":\"Wither skeletons are black bone\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"and withering hate, their story is\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"one of skulls that never stop\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"grinning. When read, for the\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"following two minutes, your health\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"is greatly increased, and the\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"targets you strike receive withering,\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"as though black bone now grows\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"within your pages.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],Tags:{anecdote_book:1b, anecdote_mob:wither_skeleton}}"
+                                                                },
+                                                                {
+                                                                    "type": "origins:choice",
+                                                                    "actions": [
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:item.book.page_turn",
+                                                                                "volume": 1,
+                                                                                "pitch": 0.9
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:item.book.page_turn",
+                                                                                "volume": 1,
+                                                                                "pitch": 1
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:item.book.page_turn",
+                                                                                "volume": 1,
+                                                                                "pitch": 1.1
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "origins:choice",
+                                                                    "actions": [
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:block.enchantment_table.use",
+                                                                                "volume": 1,
+                                                                                "pitch": 0.9
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:block.enchantment_table.use",
+                                                                                "volume": 1,
+                                                                                "pitch": 1
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "weight": 1,
+                                                                            "element": {
+                                                                                "type": "origins:play_sound",
+                                                                                "sound": "minecraft:block.enchantment_table.use",
+                                                                                "volume": 1,
+                                                                                "pitch": 1.1
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "else_action": {
+                                                "type": "origins:nothing"
+                                            }
+                                        }
+                                    ]
+                                }
                             }
                         ]
                     }
