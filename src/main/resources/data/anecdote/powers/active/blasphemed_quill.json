@@ -33341,6 +33341,68 @@
                                         }
                                     ]
                                 }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
+                                        "type": "origins:in_tag",
+                                        "tag": "anecdote:ff_objects"
+                                    }
+                                },
+                                "action": {
+                                    "type": "origins:nothing"
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:constant",
+                                    "value": true
+                                },
+                                "action": {
+                                    "type": "origins:actor_action",
+                                    "action": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "title @s actionbar [{\"text\":\"The story resists. It does not recognize your authority.\",\"color\":\"dark_red\"}]"
+                                            },
+                                            {
+                                                "type": "origins:choice",
+                                                "actions": [
+                                                    {
+                                                        "weight": 1,
+                                                        "element": {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "block.chiseled_bookshelf.insert",
+                                                            "volume": 1,
+                                                            "pitch": 0.9
+                                                        }
+                                                    },
+                                                    {
+                                                        "weight": 1,
+                                                        "element": {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "block.chiseled_bookshelf.insert",
+                                                            "volume": 1,
+                                                            "pitch": 1
+                                                        }
+                                                    },
+                                                    {
+                                                        "weight": 1,
+                                                        "element": {
+                                                            "type": "origins:play_sound",
+                                                            "sound": "block.chiseled_bookshelf.insert",
+                                                            "volume": 1,
+                                                            "pitch": 1.1
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                }
                             }
                         ]
                     }
