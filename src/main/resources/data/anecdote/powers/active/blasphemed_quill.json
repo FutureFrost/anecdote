@@ -376,7 +376,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.3 ~ 0.09 0.15 0.09 0 4"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -820,7 +820,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.21 ~ 0.19 0.11 0.19 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -1264,7 +1264,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.45 ~ 0.13 0.23 0.13 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -1708,7 +1708,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.3 ~ 0.18 0.15 0.18 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -2152,7 +2152,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.9 ~ 0.15 0.45 0.15 0 10"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -2596,7 +2596,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.19 ~ 0.43 0.59 0.43 0 17"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -3040,7 +3040,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.35 ~ 0.15 0.18 0.15 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -3484,7 +3484,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.25 ~ 0.18 0.13 0.18 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -3928,7 +3928,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.35 ~ 0.10 0.18 0.10 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -4372,7 +4372,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.15 ~ 0.13 0.08 0.13 0 4"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -4816,7 +4816,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.7 ~ 0.23 0.35 0.23 0 10"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -5260,7 +5260,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.85 ~ 0.15 0.43 0.15 0 10"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -5704,7 +5704,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.3 ~ 0.23 0.15 0.23 0 7"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -6148,7 +6148,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.75 ~ 0.35 0.38 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -6592,7 +6592,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -7036,7 +7036,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.0 ~ 0.50 0.50 0.50 0 16"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -7480,7 +7480,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~4.0 ~ 4.00 2.00 4.00 0 96"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -7924,7 +7924,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.45 ~ 0.15 0.73 0.15 0 15"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -8368,7 +8368,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.15 ~ 0.10 0.08 0.10 0 3"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -8812,7 +8812,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -9256,7 +9256,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.35 ~ 0.15 0.18 0.15 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -9700,7 +9700,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.25 ~ 0.13 0.13 0.13 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -10144,7 +10144,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~2.0 ~ 1.00 1.00 1.00 0 32"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -10588,7 +10588,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.4 ~ 0.20 0.20 0.20 0 7"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -11032,7 +11032,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.65 ~ 0.23 0.33 0.23 0 9"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -11476,7 +11476,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.43 ~ 0.21 0.21 0.21 0 7"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -11920,7 +11920,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.7 ~ 0.35 0.35 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -12364,7 +12364,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.8 ~ 0.35 0.40 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -12808,7 +12808,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -13252,7 +13252,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.35 ~ 0.35 0.68 0.35 0 17"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -13696,7 +13696,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.94 ~ 0.23 0.47 0.23 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -14140,11 +14140,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:flame ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
-                                                                },
-                                                                {
-                                                                    "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:lava ~ ~0.5 ~ 0.35 0.35 0.35 0 5"
+                                                                    "command": "particle minecraft:poof ~ ~0.51 ~ 0.26 0.26 0.26 0 9"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -14588,7 +14584,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.7 ~ 0.23 0.35 0.23 0 10"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -15032,7 +15028,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.8 ~ 0.35 0.40 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -15476,7 +15472,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.35 ~ 0.15 0.18 0.15 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -15920,7 +15916,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.5 0.3 0.5 0 15"
+                                                                    "command": "particle minecraft:poof ~ ~0.63 ~ 0.33 0.31 0.33 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -16364,7 +16360,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.45 ~ 0.13 0.23 0.13 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -16808,7 +16804,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.25 ~ 0.13 0.13 0.13 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -17252,7 +17248,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.45 ~ 0.23 0.23 0.23 0 8"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -17696,7 +17692,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -18140,7 +18136,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -18584,7 +18580,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -19028,7 +19024,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.7 ~ 0.35 0.35 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -19472,7 +19468,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.35 ~ 0.18 0.18 0.18 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -19916,7 +19912,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.25 ~ 0.10 0.13 0.10 0 4"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -20360,7 +20356,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.1 ~ 0.49 0.55 0.49 0 17"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -20804,7 +20800,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.2 ~ 0.18 0.10 0.18 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -21248,7 +21244,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.65 ~ 0.23 0.33 0.23 0 9"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -21692,7 +21688,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.25 0.25 0.25 0 8"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -22136,7 +22132,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.15 ~ 0.10 0.08 0.10 0 3"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -22580,7 +22576,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.0 ~ 0.15 0.50 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -23024,7 +23020,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.8 ~ 0.35 0.40 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -23468,7 +23464,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.51 ~ 0.26 0.26 0.26 0 9"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -23912,7 +23908,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.88 ~ 0.48 0.44 0.48 0 15"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -24356,7 +24352,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.95 ~ 0.18 0.48 0.18 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -24800,7 +24796,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.45 ~ 0.35 0.23 0.35 0 10"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -25244,7 +25240,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.4 ~ 0.20 0.20 0.20 0 7"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -25688,7 +25684,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.0 ~ 0.15 0.50 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -26132,7 +26128,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.85 ~ 0.23 0.43 0.23 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -26576,7 +26572,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.15 ~ 0.10 0.08 0.10 0 3"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -27020,7 +27016,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.2 ~ 0.13 0.10 0.13 0 4"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -27464,7 +27460,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.2 ~ 0.30 0.10 0.30 0 7"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -27908,7 +27904,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.4 ~ 0.10 0.20 0.10 0 5"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -28352,7 +28348,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -28796,7 +28792,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -29240,7 +29236,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -29684,7 +29680,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:sonic_boom ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.45 ~ 0.23 0.73 0.23 0 16"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -30128,7 +30124,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -30572,7 +30568,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.75 ~ 0.23 0.88 0.23 0 18"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -31016,7 +31012,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~1.2 ~ 0.18 0.60 0.18 0 13"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -31460,7 +31456,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.43 ~ 0.15 0.21 0.15 0 6"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -31904,7 +31900,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.7 ~ 0.35 0.35 0.35 0 12"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -32348,7 +32344,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -32792,7 +32788,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
@@ -33236,7 +33232,7 @@
                                                             "actions": [
                                                                 {
                                                                     "type": "origins:execute_command",
-                                                                    "command": "particle minecraft:poof ~ ~0.5 ~ 0.35 0.35 0.35 0 10"
+                                                                    "command": "particle minecraft:poof ~ ~0.98 ~ 0.15 0.49 0.15 0 11"
                                                                 },
                                                                 {
                                                                     "type": "origins:execute_command",
