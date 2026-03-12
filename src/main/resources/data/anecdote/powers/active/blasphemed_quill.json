@@ -9837,7 +9837,7 @@
                                                         "type": "origins:actor_action",
                                                         "action": {
                                                             "type": "origins:execute_command",
-                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Return to Sender]\",\"color\":\"green\"}]"
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Return to Sender]\",\"color\":\"dark_purple\"}]"
                                                         }
                                                     }
                                                 },
@@ -20049,7 +20049,7 @@
                                                         "type": "origins:actor_action",
                                                         "action": {
                                                             "type": "origins:execute_command",
-                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Hero of the Village]\",\"color\":\"green\"}]"
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Hero of the Village]\",\"color\":\"dark_purple\"}]"
                                                         }
                                                     }
                                                 },
@@ -21381,7 +21381,7 @@
                                                         "type": "origins:actor_action",
                                                         "action": {
                                                             "type": "origins:execute_command",
-                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Great View From Up Here]\",\"color\":\"green\"}]"
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Great View From Up Here]\",\"color\":\"dark_purple\"}]"
                                                         }
                                                     }
                                                 },
@@ -28041,7 +28041,7 @@
                                                         "type": "origins:actor_action",
                                                         "action": {
                                                             "type": "origins:execute_command",
-                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Hero of the Village]\",\"color\":\"green\"}]"
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[Hero of the Village]\",\"color\":\"dark_purple\"}]"
                                                         }
                                                     }
                                                 },
@@ -29373,7 +29373,7 @@
                                                         "type": "origins:actor_action",
                                                         "action": {
                                                             "type": "origins:execute_command",
-                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[It Spreads]\",\"color\":\"green\"}]"
+                                                            "command": "title @s actionbar [{\"text\":\"To scribe this story into being, you must first achieve: \",\"color\":\"white\"},{\"text\":\"[It Spreads]\",\"color\":\"dark_purple\"}]"
                                                         }
                                                     }
                                                 },
