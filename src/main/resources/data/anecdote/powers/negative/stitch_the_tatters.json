@@ -38,6 +38,27 @@
                             }
                         }
                     ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:sneaking"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:raycast",
+                            "distance": 4.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "none",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "anecdote:ff_interactable"
+                            }
+                        }
+                    ]
                 }
             ]
         },
