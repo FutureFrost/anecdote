@@ -16,8 +16,14 @@
                 "type": "origins:and",
                 "actions": [
                     {
+                        "type": "origins:passenger_action",
+                        "action": {
+                            "type": "origins:dismount"
+                        }
+                    },
+                    {
                         "type": "origins:execute_command",
-                        "command": "particle minecraft:soul ~ ~1.19 ~ 0.43 0.59 0.43 0 20"
+                        "command": "particle minecraft:soul ~ ~1.19 ~ 0.43 0.59 0.43 0 34"
                     },
                     {
                         "type": "origins:choice",
