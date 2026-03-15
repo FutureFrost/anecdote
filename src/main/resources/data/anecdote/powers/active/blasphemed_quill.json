@@ -46,6 +46,22 @@
                                 "condition": {
                                     "type": "origins:target_condition",
                                     "condition": {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:[\"anecdote_summoned\"]}"
+                                    }
+                                },
+                                "action": {
+                                    "type": "origins:actor_action",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "title @s actionbar [{\"text\":\"This one remembers being written. It will not be written again.\",\"color\":\"dark_red\"}]"
+                                    }
+                                }
+                            },
+                            {
+                                "condition": {
+                                    "type": "origins:target_condition",
+                                    "condition": {
                                         "type": "origins:entity_type",
                                         "entity_type": "minecraft:allay"
                                     }

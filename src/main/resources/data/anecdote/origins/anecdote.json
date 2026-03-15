@@ -86,7 +86,8 @@
         "anecdote:books/zoglin",
         "anecdote:books/zombie",
         "anecdote:books/zombie_villager",
-        "anecdote:books/zombified_piglin"
+        "anecdote:books/zombified_piglin",
+        "anecdote:books/resources/mount_summon"
     ],
     "icon": {
         "item": "minecraft:player_head",
