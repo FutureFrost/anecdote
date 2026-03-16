@@ -137,7 +137,7 @@
         "shader": "minecraft:shaders/post/sobel.json",
         "toggleable": false
     },
-    "audio": {
+    "heartbeat": {
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -235,7 +235,7 @@
             ]
         }
     },
-    "enter_exit": {
+    "dig": {
         "condition": {
             "type": "origins:and",
             "conditions": [
