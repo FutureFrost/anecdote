@@ -1,99 +1,251 @@
 {
     "hidden": true,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "inverted": true,
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:paper"
-                            }
-                        }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:paper"
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+    "type": "origins:multiple",
+    "flight": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:book"
                                 }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                            },
+                            {
+                                "type": "origins:nbt",
+                                "nbt": "{Tags:{anecdote_mob:wither}}"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:book"
                                 }
-                            ]
-                        }
+                            },
+                            {
+                                "type": "origins:nbt",
+                                "nbt": "{Tags:{anecdote_mob:wither}}"
+                            }
+                        ]
                     }
-                ]
-            },
-            {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:sneaking"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:raycast",
-                        "distance": 4.5,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "block_condition": {
-                            "type": "origins:in_tag",
-                            "tag": "anecdote:ff_interactable"
-                        }
-                    }
-                ]
-            }
-        ]
+                }
+            ]
+        },
+        "type": "origins:creative_flight"
     },
-    "type": "origins:simple"
+    "particles": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "weight": 3,
+                    "element": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0 0 0 1 0.26 0 0 ~ ~0.1 ~ 0.5 0.2 0.5 0 1"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle ash ~ ~0.1 ~ 0.5 0.2 0.5 0 3"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "weight": 2,
+                    "element": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0 0 0 1 0.26 0 0 ~ ~0.1 ~ 0.5 0.2 0.5 0 2"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle ash ~ ~0.1 ~ 0.5 0.2 0.5 0 2"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0 0 0 1 0.26 0 0 ~ ~0.1 ~ 0.5 0.2 0.5 0 3"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle ash ~ ~0.1 ~ 0.5 0.2 0.5 0 1"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "rising_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.wither.ambient",
+                        "volume": 0.5,
+                        "pitch": 0.65
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.wither.ambient",
+                        "volume": 0.5,
+                        "pitch": 0.75
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:play_sound",
+                        "sound": "entity.wither.ambient",
+                        "volume": 0.5,
+                        "pitch": 0.85
+                    }
+                }
+            ]
+        }
+    },
+    "outline": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:self_glow",
+        "bientity_condition": {
+            "type": "origins:can_see"
+        },
+        "use_teams": false,
+        "red": 0,
+        "green": 0,
+        "blue": 0
+    }
 }
