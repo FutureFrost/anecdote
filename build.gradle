@@ -87,6 +87,10 @@ dependencies {
 
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-base:${project.cardinal_components_version}"
 	include "dev.onyxstudios.cardinal-components-api:cardinal-components-entity:${project.cardinal_components_version}"
+
+	// Disable Custom Worlds Advice by naritanara
+	modImplementation "maven.modrinth:dcwa:${project.dcwa_version}"
+	include "maven.modrinth:dcwa:${project.dcwa_version}"
 }
 
 processResources {
