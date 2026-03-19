@@ -88,7 +88,8 @@
         "anecdote:books/zombie_villager",
         "anecdote:books/zombified_piglin",
         "anecdote:books/resources/mount_summon",
-        "anecdote:books/resources/magnet"
+        "anecdote:books/resources/magnet",
+        "anecdote:books/resources/pacifist_regen"
     ],
     "icon": {
         "item": "minecraft:player_head",
