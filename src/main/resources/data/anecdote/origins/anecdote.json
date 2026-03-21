@@ -89,7 +89,8 @@
         "anecdote:books/zombified_piglin",
         "anecdote:books/resources/mount_summon",
         "anecdote:books/resources/magnet",
-        "anecdote:books/resources/pacifist_regen"
+        "anecdote:books/resources/pacifist_regen",
+        "anecdote:books/resources/bat_sight"
     ],
     "icon": {
         "item": "minecraft:player_head",
