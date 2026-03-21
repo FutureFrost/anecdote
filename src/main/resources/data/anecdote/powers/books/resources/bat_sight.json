@@ -31,85 +31,131 @@
             "type": "origins:and",
             "actions": [
                 {
-                    "type": "origins:if_else",
-                    "condition": {
-                        "type": "origins:resource",
-                        "resource": "anecdote:books/resources/bat_sight_resource",
-                        "comparison": "==",
-                        "compare_to": 1
-                    },
-                    "if_action": {
-                        "type": "origins:and",
-                        "actions": [
-                            {
-                                "type": "origins:choice",
-                                "actions": [
-                                    {
-                                        "weight": 1,
-                                        "element": {
-                                            "type": "origins:play_sound",
-                                            "sound": "entity.bat.death",
-                                            "volume": 0.25,
-                                            "pitch": 0.9
-                                        }
-                                    },
-                                    {
-                                        "weight": 1,
-                                        "element": {
-                                            "type": "origins:play_sound",
-                                            "sound": "entity.bat.death",
-                                            "volume": 0.25,
-                                            "pitch": 1
-                                        }
-                                    },
-                                    {
-                                        "weight": 1,
-                                        "element": {
-                                            "type": "origins:play_sound",
-                                            "sound": "entity.bat.death",
-                                            "volume": 0.25,
-                                            "pitch": 1.1
-                                        }
-                                    }
-                                ]
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/bat_sight_resource",
+                                "comparison": "==",
+                                "compare_to": 1
                             },
-                            {
-                                "type": "origins:choice",
+                            "action": {
+                                "type": "origins:and",
                                 "actions": [
                                     {
-                                        "weight": 1,
-                                        "element": {
-                                            "type": "origins:play_sound",
-                                            "sound": "ui.toast.out",
-                                            "volume": 1,
-                                            "pitch": 1.4
-                                        }
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.bat.death",
+                                                    "volume": 0.25,
+                                                    "pitch": 0.9
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.bat.death",
+                                                    "volume": 0.25,
+                                                    "pitch": 1
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.bat.death",
+                                                    "volume": 0.25,
+                                                    "pitch": 1.1
+                                                }
+                                            }
+                                        ]
                                     },
                                     {
-                                        "weight": 1,
-                                        "element": {
-                                            "type": "origins:play_sound",
-                                            "sound": "ui.toast.out",
-                                            "volume": 1,
-                                            "pitch": 1.5
-                                        }
-                                    },
-                                    {
-                                        "weight": 1,
-                                        "element": {
-                                            "type": "origins:play_sound",
-                                            "sound": "ui.toast.out",
-                                            "volume": 1,
-                                            "pitch": 1.6
-                                        }
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "ui.toast.out",
+                                                    "volume": 1,
+                                                    "pitch": 1.4
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "ui.toast.out",
+                                                    "volume": 1,
+                                                    "pitch": 1.5
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "ui.toast.out",
+                                                    "volume": 1,
+                                                    "pitch": 1.6
+                                                }
+                                            }
+                                        ]
                                     }
                                 ]
                             }
-                        ]
-                    },
-                    "else_action": {
-                        "type": "origins:nothing"
-                    }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/bat_sight_resource",
+                                "comparison": "<=",
+                                "compare_to": 6
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.bat.hurt",
+                                                    "volume": 0.25,
+                                                    "pitch": 0.9
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.bat.hurt",
+                                                    "volume": 0.25,
+                                                    "pitch": 1
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.bat.hurt",
+                                                    "volume": 0.25,
+                                                    "pitch": 1.1
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 },
                 {
                     "type": "origins:modify_resource",

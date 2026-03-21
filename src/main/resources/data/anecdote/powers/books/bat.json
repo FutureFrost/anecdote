@@ -270,22 +270,12 @@
             "key": "key.use"
         }
     },
-    "night_vision": {
-        "condition": {
-            "type": "origins:resource",
-            "resource": "anecdote:books/resources/bat_sight_resource",
-            "comparison": "!=",
-            "compare_to": 0
-        },
-        "type": "origins:night_vision",
-        "strength": 1
-    },
     "glowing": {
         "condition": {
             "type": "origins:resource",
             "resource": "anecdote:books/resources/bat_sight_resource",
-            "comparison": "!=",
-            "compare_to": 0
+            "comparison": ">",
+            "compare_to": 5
         },
         "type": "origins:entity_glow",
         "entity_condition": {
@@ -320,5 +310,65 @@
         "red": 0.75,
         "green": 0.75,
         "blue": 0.75
+    },
+    "night_vision_max": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/bat_sight_resource",
+            "comparison": ">",
+            "compare_to": 5
+        },
+        "type": "origins:night_vision",
+        "strength": 1
+    },
+    "night_vision_fading_5": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/bat_sight_resource",
+            "comparison": "==",
+            "compare_to": 5
+        },
+        "type": "origins:night_vision",
+        "strength": 0.83
+    },
+    "night_vision_fading_4": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/bat_sight_resource",
+            "comparison": "==",
+            "compare_to": 4
+        },
+        "type": "origins:night_vision",
+        "strength": 0.66
+    },
+    "night_vision_fading_3": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/bat_sight_resource",
+            "comparison": "==",
+            "compare_to": 3
+        },
+        "type": "origins:night_vision",
+        "strength": 0.5
+    },
+    "night_vision_fading_2": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/bat_sight_resource",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "type": "origins:night_vision",
+        "strength": 0.33
+    },
+    "night_vision_fading_1": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/bat_sight_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:night_vision",
+        "strength": 0.16
     }
 }
