@@ -90,7 +90,8 @@
         "anecdote:books/resources/mount_summon",
         "anecdote:books/resources/magnet",
         "anecdote:books/resources/pacifist_regen",
-        "anecdote:books/resources/bat_sight"
+        "anecdote:books/resources/bat_sight",
+        "anecdote:books/resources/plant_growth"
     ],
     "icon": {
         "item": "minecraft:player_head",
