@@ -92,7 +92,8 @@
         "anecdote:books/resources/pacifist_regen",
         "anecdote:books/resources/bat_sight",
         "anecdote:books/resources/plant_growth",
-        "anecdote:books/resources/flamethrower"
+        "anecdote:books/resources/flamethrower",
+        "anecdote:books/resources/revive"
     ],
     "icon": {
         "item": "minecraft:player_head",
