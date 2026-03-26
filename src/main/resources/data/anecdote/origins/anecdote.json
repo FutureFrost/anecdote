@@ -93,7 +93,8 @@
         "anecdote:books/resources/bat_sight",
         "anecdote:books/resources/plant_growth",
         "anecdote:books/resources/flamethrower",
-        "anecdote:books/resources/revive"
+        "anecdote:books/resources/revive",
+        "anecdote:books/resources/poison_coated"
     ],
     "icon": {
         "item": "minecraft:player_head",

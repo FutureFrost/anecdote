@@ -621,5 +621,40 @@
                 }
             ]
         }
+    },
+    "cancel": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/pacifist_regen_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/flamethrower_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/flamethrower_resource",
+                    "value": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The Regenerative Heart begins to beat within you. Your flames fade.\",\"color\":\"dark_red\"}]"
+                }
+            ]
+        }
     }
 }
