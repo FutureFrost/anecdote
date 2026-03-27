@@ -95,7 +95,8 @@
         "anecdote:books/resources/flamethrower",
         "anecdote:books/resources/revive",
         "anecdote:books/resources/poison_coated",
-        "anecdote:books/resources/egg_bomb"
+        "anecdote:books/resources/egg_bomb",
+        "anecdote:books/resources/fish_enhancement"
     ],
     "icon": {
         "item": "minecraft:player_head",
