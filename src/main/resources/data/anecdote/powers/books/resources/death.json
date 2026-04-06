@@ -1,4 +1,5 @@
 {
+    "hidden": true,
     "type": "origins:action_on_callback",
     "execute_chosen_when_orb": false,
     "entity_action_respawned": {
