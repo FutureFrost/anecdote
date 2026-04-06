@@ -94,6 +94,70 @@
                             }
                         }
                     ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },

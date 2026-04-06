@@ -1,0 +1,104 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_book:1b}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:warden}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_book:1b}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:warden}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:sneaking"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:raycast",
+                        "distance": 4.5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "anecdote:ff_interactable"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "title @s actionbar [{\"text\":\"Your pages are torn between two tales. You cannot read both at once.\",\"color\":\"dark_red\"}]"
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
+}
