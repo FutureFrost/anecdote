@@ -97,7 +97,8 @@
         "anecdote:books/resources/pacifist_regen",
         "anecdote:books/resources/plant_growth",
         "anecdote:books/resources/poison_coated",
-        "anecdote:books/resources/revive"
+        "anecdote:books/resources/revive",
+        "anecdote:books/resources/thick_skin"
     ],
     "icon": {
         "item": "minecraft:player_head",
