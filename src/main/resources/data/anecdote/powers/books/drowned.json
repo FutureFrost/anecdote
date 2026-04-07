@@ -374,9 +374,19 @@
                     "bientity_condition": {
                         "type": "origins:target_condition",
                         "condition": {
-                            "inverted": true,
-                            "type": "origins:in_tag",
-                            "tag": "anecdote:ff_objects"
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_objects"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_aquatic"
+                                }
+                            ]
                         }
                     },
                     "bientity_action": {
