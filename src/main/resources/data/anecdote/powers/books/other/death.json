@@ -24,6 +24,11 @@
                 },
                 {
                     "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/dolphin_enhancement_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
                     "resource": "anecdote:books/resources/egg_bomb_resource",
                     "value": 0
                 },
