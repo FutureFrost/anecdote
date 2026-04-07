@@ -1,0 +1,199 @@
+{
+    "type": "origins:multiple",
+    "actor": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/target/force_drown_player_condition_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16,
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "anecdote:books/resources/force_drown_resource",
+                                    "comparison": "!=",
+                                    "compare_to": 0
+                                }
+                            ]
+                        }
+                    },
+                    "bientity_action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/target/force_drown_player_condition_resource",
+                            "value": 1
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/target/force_drown_player_condition_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:gamemode",
+                                "gamemode": "creative"
+                            }
+                        ]
+                    },
+                    "if_action": {
+                        "type": "origins:if_else",
+                        "condition": {
+                            "type": "origins:submerged_in",
+                            "fluid": "minecraft:water"
+                        },
+                        "if_action": {
+                            "type": "origins:revoke_power",
+                            "power": "origins:water_breathing",
+                            "source": "force_drown"
+                        },
+                        "else_action": {
+                            "type": "origins:grant_power",
+                            "power": "origins:water_breathing",
+                            "source": "force_drown"
+                        }
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "origins:water_breathing",
+                                "source": "force_drown"
+                            },
+                            {
+                                "type": "origins:revoke_power",
+                                "power": "anecdote:books/target/force_drown_player",
+                                "source": "force_drown"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "condition_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "change_death_message": {
+        "type": "origins:prevent_death",
+        "damage_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:name",
+                    "name": "no_water_for_gills"
+                },
+                {
+                    "type": "origins:name",
+                    "name": "no_water_for_gills.player"
+                }
+            ]
+        },
+        "entity_action": {
+            "type": "origins:damage",
+            "amount": 256,
+            "source": {
+                "name": "drown",
+                "bypasses_armor": true,
+                "unblockable": true
+            }
+        }
+    },
+    "particles": {
+        "type": "origins:action_over_time",
+        "interval": 6,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle bubble_pop ~ ~1 ~ 1 1 1 0 3"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle bubble_pop ~ ~1 ~ 1 1 1 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle bubble_pop ~ ~1 ~ 1 1 1 0 1"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:chance",
+                    "chance": 0.5,
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.bubble_column.bubble_pop",
+                                    "volume": 1,
+                                    "pitch": 0.9
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.bubble_column.bubble_pop",
+                                    "volume": 1,
+                                    "pitch": 1
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "block.bubble_column.bubble_pop",
+                                    "volume": 1,
+                                    "pitch": 1.1
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
