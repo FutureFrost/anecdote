@@ -49,6 +49,16 @@
                 },
                 {
                     "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/forager_pig_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/forager_sniffer_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
                     "resource": "anecdote:books/resources/force_drown_resource",
                     "value": 0
                 },
