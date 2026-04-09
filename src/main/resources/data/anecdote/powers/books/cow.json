@@ -165,10 +165,21 @@
         "entity_action": {
             "type": "origins:if_else",
             "condition": {
-                "type": "origins:resource",
-                "resource": "anecdote:books/resources/thick_skin_resource",
-                "comparison": "!=",
-                "compare_to": 0
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/thick_skin_sheep_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/thick_skin_cow_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    }
+                ]
             },
             "if_action": {
                 "type": "origins:execute_command",
@@ -179,7 +190,7 @@
                 "actions": [
                     {
                         "type": "origins:set_resource",
-                        "resource": "anecdote:books/resources/thick_skin_resource",
+                        "resource": "anecdote:books/resources/thick_skin_cow_resource",
                         "value": 60
                     },
                     {
@@ -337,7 +348,7 @@
     "damage_reduction": {
         "condition": {
             "type": "origins:resource",
-            "resource": "anecdote:books/resources/thick_skin_resource",
+            "resource": "anecdote:books/resources/thick_skin_cow_resource",
             "comparison": "!=",
             "compare_to": 0
         },
@@ -350,7 +361,7 @@
     "glow": {
         "condition": {
             "type": "origins:resource",
-            "resource": "anecdote:books/resources/thick_skin_resource",
+            "resource": "anecdote:books/resources/thick_skin_cow_resource",
             "comparison": "!=",
             "compare_to": 0
         },
