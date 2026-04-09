@@ -579,5 +579,18 @@
         "hud_render": {
             "should_render": false
         }
+    },
+    "model_color": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/magnet_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:model_color",
+        "red": 0.58,
+        "green": 0.94,
+        "blue": 1,
+        "alpha": 1
     }
 }
