@@ -103,6 +103,7 @@
         "anecdote:books/resources/plant_growth",
         "anecdote:books/resources/poison_coated",
         "anecdote:books/resources/revive",
+        "anecdote:books/resources/spread_rot",
         "anecdote:books/resources/thick_skin"
     ],
     "icon": {

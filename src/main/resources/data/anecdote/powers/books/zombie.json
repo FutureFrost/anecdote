@@ -1,163 +1,819 @@
 {
     "hidden": true,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
+    "type": "origins:multiple",
+    "activate": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:paper"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:paper"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:zombie}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:zombie}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:sneaking"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:raycast",
+                            "distance": 4.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "none",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "anecdote:ff_interactable"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/pacifist_regen_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "title @s actionbar [{\"text\":\"The Regenerative Heart still beats within you. You cannot harm while you heal.\",\"color\":\"dark_red\"}]"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/spread_rot_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:constant",
+                        "value": true
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:books/resources/spread_rot_resource",
+                                "value": 60
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:zombie}}"
+                                    }
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:equipped_item_action",
+                                            "equipment_slot": "mainhand",
+                                            "action": {
+                                                "type": "origins:consume",
+                                                "amount": 1
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:swing_hand",
+                                            "hand": "MAIN_HAND"
+                                        }
+                                    ]
+                                },
+                                "else_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:equipped_item_action",
+                                            "equipment_slot": "offhand",
+                                            "action": {
+                                                "type": "origins:consume",
+                                                "amount": 1
+                                            }
+                                        },
+                                        {
+                                            "type": "origins:swing_hand",
+                                            "hand": "OFF_HAND"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "item.book.page_turn",
+                                            "volume": 1,
+                                            "pitch": 0.9
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "item.book.page_turn",
+                                            "volume": 1,
+                                            "pitch": 1
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "item.book.page_turn",
+                                            "volume": 1,
+                                            "pitch": 1.1
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "block.fire.extinguish",
+                                            "volume": 0.25,
+                                            "pitch": 0.9
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "block.fire.extinguish",
+                                            "volume": 0.25,
+                                            "pitch": 1
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "block.fire.extinguish",
+                                            "volume": 0.25,
+                                            "pitch": 1.1
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "entity.zombie.ambient",
+                                            "volume": 1,
+                                            "pitch": 0.9
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "entity.zombie.ambient",
+                                            "volume": 1,
+                                            "pitch": 1
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "entity.zombie.ambient",
+                                            "volume": 1,
+                                            "pitch": 1.1
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use"
+        }
+    },
+    "attack": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/spread_rot_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~1 ~ 0.5 0.5 0.5 0.1 10"
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:power",
+                                    "power": "anecdote:books/target/rotting",
+                                    "source": "rotting"
+                                },
+                                "if_action": {
+                                    "type": "origins:set_resource",
+                                    "resource": "anecdote:books/target/rotting_resource",
+                                    "value": 5
+                                },
+                                "else_action": {
+                                    "type": "origins:grant_power",
+                                    "power": "anecdote:books/target/rotting",
+                                    "source": "rotting"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.zombie.infect",
+                                    "volume": 1,
+                                    "pitch": 0.9
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.zombie.infect",
+                                    "volume": 1,
+                                    "pitch": 1
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.zombie.infect",
+                                    "volume": 1,
+                                    "pitch": 1.1
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
                 "inverted": true,
                 "type": "origins:or",
                 "conditions": [
                     {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:paper"
-                            }
-                        }
+                        "type": "origins:in_tag",
+                        "tag": "anecdote:ff_undead"
                     },
                     {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:paper"
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:zombie}}"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:zombie}}"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:sneaking"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:raycast",
-                        "distance": 4.5,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "block_condition": {
-                            "type": "origins:in_tag",
-                            "tag": "anecdote:ff_interactable"
-                        }
-                    }
-                ]
-            },
-            {
-                "inverted": true,
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_book:1b}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:warden}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:wither}}"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_book:1b}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:warden}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:wither}}"
-                                }
-                            ]
-                        }
+                        "type": "origins:in_tag",
+                        "tag": "anecdote:ff_objects"
                     }
                 ]
             }
-        ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
     },
-    "type": "origins:simple"
+    "cancel": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/pacifist_regen_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/spread_rot_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/spread_rot_resource",
+                    "value": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The Regenerative Heart begins to beat within you. Your rot fades.\",\"color\":\"dark_red\"}]"
+                }
+            ]
+        }
+    },
+    "particles": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/spread_rot_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 16
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.72 ~ 0.24 0.48 0.24 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.72 ~ 0.24 0.48 0.24 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.72 ~ 0.24 0.48 0.24 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 14
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.684 ~ 0.228 0.456 0.228 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.684 ~ 0.228 0.456 0.228 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.684 ~ 0.228 0.456 0.228 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 12
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.649 ~ 0.2165 0.433 0.2165 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.649 ~ 0.2165 0.433 0.2165 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.649 ~ 0.2165 0.433 0.2165 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 10
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.617 ~ 0.2055 0.411 0.2055 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.617 ~ 0.2055 0.411 0.2055 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.617 ~ 0.2055 0.411 0.2055 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 8
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.586 ~ 0.195 0.39 0.195 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.586 ~ 0.195 0.39 0.195 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.586 ~ 0.195 0.39 0.195 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 6
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.557 ~ 0.1855 0.371 0.1855 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.557 ~ 0.1855 0.371 0.1855 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.557 ~ 0.1855 0.371 0.1855 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 4
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.529 ~ 0.176 0.352 0.176 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.529 ~ 0.176 0.352 0.176 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.529 ~ 0.176 0.352 0.176 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">=",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.502 ~ 0.1675 0.335 0.1675 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.502 ~ 0.1675 0.335 0.1675 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.502 ~ 0.1675 0.335 0.1675 2 3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:health",
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.477 ~ 0.159 0.318 0.159 2 1"
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.477 ~ 0.159 0.318 0.159 2 2"
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~0.477 ~ 0.159 0.318 0.159 2 3"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "model_color": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/spread_rot_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:model_color",
+        "red": 0.64,
+        "green": 0.6,
+        "blue": 0.2,
+        "alpha": 1
+    }
 }

@@ -94,6 +94,11 @@
                 },
                 {
                     "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/spread_rot_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
                     "resource": "anecdote:books/resources/thick_skin_cow_resource",
                     "value": 0
                 },
