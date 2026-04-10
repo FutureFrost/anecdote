@@ -19,6 +19,11 @@
                 },
                 {
                     "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/black_bone_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
                     "resource": "anecdote:books/resources/bomb_resource",
                     "value": 0
                 },
