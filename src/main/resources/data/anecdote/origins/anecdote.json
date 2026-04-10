@@ -105,7 +105,8 @@
         "anecdote:books/resources/poison_coated",
         "anecdote:books/resources/revive",
         "anecdote:books/resources/spread_rot",
-        "anecdote:books/resources/thick_skin"
+        "anecdote:books/resources/thick_skin",
+        "anecdote:books/resources/winters_arrow"
     ],
     "icon": {
         "item": "minecraft:player_head",

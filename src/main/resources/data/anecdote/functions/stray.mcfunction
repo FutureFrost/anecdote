@@ -1,0 +1,1 @@
+execute at @e[type=arrow,nbt={Tags:["winters_arrow"]}] run particle dust_color_transition 0.48 0.87 1 1 1 1 1 ~ ~ ~ 0 0 0 0.1 1

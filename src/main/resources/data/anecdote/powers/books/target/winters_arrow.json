@@ -1,0 +1,84 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 5,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "anecdote:books/target/winters_arrow_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "anecdote:books/target/winters_arrow",
+                "source": "winters_arrow"
+            },
+            "else_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "particle dust_color_transition 0.48 0.87 1 1 1 1 1 ~ ~1 ~ 1 1 1 0.1 5"
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "anecdote:books/target/winters_arrow_resource",
+                        "change": -1,
+                        "operation": "add"
+                    },
+                    {
+                        "type": "origins:damage",
+                        "amount": 1,
+                        "source": {
+                            "name": "freeze",
+                            "bypasses_armor": true,
+                            "unblockable": true
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "model_color": {
+        "type": "origins:model_color",
+        "red": 0.66,
+        "green": 0.91,
+        "blue": 1,
+        "alpha": 1
+    },
+    "shaking": {
+        "type": "origins:shaking"
+    },
+    "no_move": {
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "glow": {
+        "type": "origins:self_glow",
+        "bientity_condition": {
+            "type": "origins:can_see"
+        },
+        "use_teams": false,
+        "red": 0.66,
+        "green": 0.91,
+        "blue": 1
+    },
+    "visuals": {
+        "type": "origins:freeze"
+    }
+}
