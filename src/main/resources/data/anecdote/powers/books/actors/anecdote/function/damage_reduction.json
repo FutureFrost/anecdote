@@ -1,0 +1,30 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "cow": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/cow_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.25
+        }
+    },
+    "sheep": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/sheep_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.35
+        }
+    }
+}

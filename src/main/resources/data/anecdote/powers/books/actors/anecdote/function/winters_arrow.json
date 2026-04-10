@@ -1,0 +1,54 @@
+{
+    "hidden": true,
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:power",
+                        "power": "anecdote:books/actors/target/winters_arrow",
+                        "source": "winters_arrow"
+                    },
+                    "if_action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:books/actors/target/winters_arrow_resource",
+                        "value": 5
+                    },
+                    "else_action": {
+                        "type": "origins:grant_power",
+                        "power": "anecdote:books/actors/target/winters_arrow",
+                        "source": "winters_arrow"
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.48 0.87 1 1 1 1 1 ~ ~1 ~ 1 1 1 0.1 10"
+                }
+            ]
+        }
+    },
+    "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "anecdote:ff_objects"
+        }
+    },
+    "damage_condition": {
+        "type": "origins:projectile",
+        "projectile": "minecraft:arrow",
+        "projectile_condition": {
+            "type": "origins:nbt",
+            "nbt": "{Tags:[\"winters_arrow\"]}"
+        }
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    }
+}

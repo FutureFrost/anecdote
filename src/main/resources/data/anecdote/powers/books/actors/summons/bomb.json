@@ -1,0 +1,208 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 4,
+        "start_value": 4,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "anecdote:books/actors/summons/bomb_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.generic.explode",
+                                    "volume": 1.2,
+                                    "pitch": 0.9
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.generic.explode",
+                                    "volume": 1.2,
+                                    "pitch": 1
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.generic.explode",
+                                    "volume": 1.2,
+                                    "pitch": 1.1
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:block_action_at",
+                        "block_action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": 1,
+                                    "y": 1,
+                                    "z": 1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": 1,
+                                    "y": 1,
+                                    "z": -1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": -1,
+                                    "y": 1,
+                                    "z": 1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": -1,
+                                    "y": 1,
+                                    "z": -1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": 1,
+                                    "y": -1,
+                                    "z": 1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": 1,
+                                    "y": -1,
+                                    "z": -1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": -1,
+                                    "y": -1,
+                                    "z": 1
+                                },
+                                {
+                                    "type": "origins:offset",
+                                    "action": {
+                                        "type": "origins:execute_command",
+                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                    },
+                                    "x": -1,
+                                    "y": -1,
+                                    "z": -1
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:explode",
+                        "power": 7,
+                        "destruction_type": "break",
+                        "damage_self": false
+                    },
+                    {
+                        "type": "origins:passenger_action",
+                        "action": {
+                            "type": "origins:execute_command",
+                            "command": "kill @s"
+                        }
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "kill @s"
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "anecdote:books/actors/summons/bomb_resource",
+                "change": -1,
+                "operation": "add"
+            }
+        }
+    },
+    "particles": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "weight": 3,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle smoke ~ ~0.375 ~ 0.25 0.25 0.25 0 1"
+                    }
+                },
+                {
+                    "weight": 2,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle smoke ~ ~0.375 ~ 0.25 0.25 0.25 0 2"
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle smoke ~ ~0.375 ~ 0.25 0.25 0.25 0 1"
+                    }
+                }
+            ]
+        }
+    }
+}

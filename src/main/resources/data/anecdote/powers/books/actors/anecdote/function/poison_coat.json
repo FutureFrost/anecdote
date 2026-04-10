@@ -1,0 +1,76 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/cave_spider_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:apply_effect",
+                            "effect": {
+                                "effect": "minecraft:poison",
+                                "duration": 100,
+                                "amplifier": 1,
+                                "show_particles": true,
+                                "show_icon": true
+                            }
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "particle dust_color_transition 0.44 0.68 0 1 0.32 0.34 0 ~ ~1 ~ 0.5 0.5 0.5 0.1 10"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.spider.ambient",
+                                "volume": 0.25,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.spider.ambient",
+                                "volume": 0.25,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.spider.ambient",
+                                "volume": 0.25,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    }
+}

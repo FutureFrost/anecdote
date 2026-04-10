@@ -1,0 +1,52 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/salmon_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:fluid",
+                    "fluid_condition": {
+                        "type": "origins:in_tag",
+                        "tag": "minecraft:water"
+                    }
+                }
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+        "type": "origins:choice",
+        "actions": [
+            {
+                "weight": 3,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.69 0.25 0.21 1 0.28 0.63 1 ~ ~0.1 ~ 0.2 0.2 0.2 0 1"
+                }
+            },
+            {
+                "weight": 2,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.69 0.25 0.21 1 0.28 0.63 1 ~ ~0.1 ~ 0.2 0.2 0.2 0 2"
+                }
+            },
+            {
+                "weight": 1,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.69 0.25 0.21 1 0.28 0.63 1 ~ ~0.1 ~ 0.2 0.2 0.2 0 3"
+                }
+            }
+        ]
+    }
+}

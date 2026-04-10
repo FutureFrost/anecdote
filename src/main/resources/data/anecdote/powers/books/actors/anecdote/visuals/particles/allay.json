@@ -1,0 +1,250 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "particles": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/allay_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:set_resource",
+                        "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                        "value": 16
+                    },
+                    "else_action": {
+                        "type": "origins:nothing"
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/1"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/2"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/3"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 4
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/4"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 5
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/5"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 6
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/6"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 7
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/7"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 8
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/8"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 9
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/9"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 10
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/10"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 11
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/11"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 12
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/12"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 13
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/13"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 14
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/14"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 15
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/15"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                                "comparison": "==",
+                                "compare_to": 16
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "function anecdote:allay/16"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "anecdote:books/actors/anecdote/visuals/particles/allay_particles_resource",
+                    "modifier": {
+                        "operation": "add_base_early",
+                        "value": -1
+                    }
+                }
+            ]
+        }
+    },
+    "particles_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 16,
+        "start_value": 16,
+        "hud_render": {
+            "should_render": false
+        }
+    }
+}

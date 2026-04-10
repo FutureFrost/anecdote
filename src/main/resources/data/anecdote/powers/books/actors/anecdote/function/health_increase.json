@@ -1,0 +1,17 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/wither_skeleton_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "generic.max_health",
+        "operation": "addition",
+        "value": 8
+    },
+    "tick_rate": 20,
+    "update_health": true
+}

@@ -1,0 +1,62 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:creative_flying"
+            }
+        ]
+    },
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:can_see"
+    },
+    "use_teams": false,
+    "red": 0,
+    "green": 0,
+    "blue": 0
+}

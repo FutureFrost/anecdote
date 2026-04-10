@@ -1,0 +1,101 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/zombie_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.34 0.28 0 ~ ~1 ~ 0.5 0.5 0.5 0.1 10"
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:power",
+                                "power": "anecdote:books/actors/target/rotting",
+                                "source": "rotting"
+                            },
+                            "if_action": {
+                                "type": "origins:set_resource",
+                                "resource": "anecdote:books/actors/target/rotting_resource",
+                                "value": 5
+                            },
+                            "else_action": {
+                                "type": "origins:grant_power",
+                                "power": "anecdote:books/actors/target/rotting",
+                                "source": "rotting"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.zombie.infect",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.zombie.infect",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.zombie.infect",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+            "inverted": true,
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:in_tag",
+                    "tag": "anecdote:ff_undead"
+                },
+                {
+                    "type": "origins:in_tag",
+                    "tag": "anecdote:ff_objects"
+                }
+            ]
+        }
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    }
+}

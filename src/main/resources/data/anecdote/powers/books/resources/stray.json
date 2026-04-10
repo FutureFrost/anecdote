@@ -1,0 +1,126 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 9,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/stray_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            }
+        }
+    },
+    "clock": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/stray_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/stray_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.stray.death",
+                                                    "volume": 0.25,
+                                                    "pitch": 0.9
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.stray.death",
+                                                    "volume": 0.25,
+                                                    "pitch": 1
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.stray.death",
+                                                    "volume": 0.25,
+                                                    "pitch": 1.1
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "ui.toast.out",
+                                                    "volume": 1,
+                                                    "pitch": 1.4
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "ui.toast.out",
+                                                    "volume": 1,
+                                                    "pitch": 1.5
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "ui.toast.out",
+                                                    "volume": 1,
+                                                    "pitch": 1.6
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "anecdote:books/resources/stray_resource",
+                    "modifier": {
+                        "operation": "add_base_early",
+                        "value": -1
+                    }
+                }
+            ]
+        }
+    }
+}

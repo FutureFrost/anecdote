@@ -1,0 +1,23 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/bee_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:block_action_at",
+        "block_action": {
+            "type": "origins:area_of_effect",
+            "radius": 2,
+            "shape": "sphere",
+            "block_action": {
+                "type": "origins:bonemeal",
+                "effects": false
+            }
+        }
+    }
+}

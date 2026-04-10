@@ -1,0 +1,30 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "attack": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/axolotl_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "projectile": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/axolotl_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_projectile_damage",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

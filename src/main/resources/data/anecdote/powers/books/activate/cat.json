@@ -1,0 +1,339 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "inverted": true,
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "item": "minecraft:paper"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "item": "minecraft:paper"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:cat}}"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:cat}}"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:sneaking"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:raycast",
+                        "distance": 4.5,
+                        "block": true,
+                        "entity": true,
+                        "shape_type": "collider",
+                        "fluid_handling": "none",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "anecdote:ff_interactable"
+                        }
+                    }
+                ]
+            },
+            {
+                "inverted": true,
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_book:1b}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:warden}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:ingredient",
+                                    "ingredient": {
+                                        "item": "minecraft:book"
+                                    }
+                                },
+                                {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_book:1b}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:warden}}"
+                                },
+                                {
+                                    "inverted": true,
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:wither}}"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/cat_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "if_action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+        },
+        "else_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/cat_resource",
+                    "value": 300
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/cat_is_immortal",
+                    "value": 1
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{Tags:{anecdote_mob:cat}}"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "MAIN_HAND"
+                            }
+                        ]
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "offhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "OFF_HAND"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.cat.ambient",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.cat.ambient",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.cat.ambient",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
+}

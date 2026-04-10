@@ -1,0 +1,128 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "prevent_death": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/cat_is_immortal",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/cat_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:prevent_death",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.cat.hiss",
+                                "volume": 0.5,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.cat.hiss",
+                                "volume": 0.5,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.cat.hiss",
+                                "volume": 0.5,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.totem.use",
+                                "volume": 0.1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.totem.use",
+                                "volume": 0.1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.totem.use",
+                                "volume": 0.1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:heal",
+                    "amount": 7
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle totem_of_undying ~ ~0.586 ~ 0.390 1.172 0.390 0.5 10"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle totem_of_undying ~ ~0.586 ~ 0.390 1.172 0.390 0.5 15"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle totem_of_undying ~ ~0.586 ~ 0.390 1.172 0.390 0.5 20"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/cat_is_immortal",
+                    "value": 0
+                }
+            ]
+        }
+    }
+}

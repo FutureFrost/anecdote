@@ -1,0 +1,526 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "pig": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/pig_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_on_block_break",
+        "block_action": {
+            "type": "origins:chance",
+            "chance": 0.2,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:wheat_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:beetroot_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:carrot\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:potato\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:brown_mushroom\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:red_mushroom\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:pumpkin_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:melon_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:glow_berries\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:sweet_berries\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:golden_carrot\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:poisonous_potato\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:golden_apple\",Count:1b}}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 200,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:coal\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 100,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:raw_iron\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 80,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:raw_copper\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 40,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:redstone\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 40,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:emerald\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 40,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:raw_gold\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 20,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:lapis_lazuli\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 20,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:quartz\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:diamond\",Count:1b}}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle crit ~ ~0.5 ~ 0.25 0.25 0.25 0 9"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust_color_transition 1 0.58 0.75 1 1 1 1 ~ ~0.5 ~ 0.25 0.25 0.25 0 3"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle crit ~ ~0.5 ~ 0.25 0.25 0.25 0 6"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust_color_transition 1 0.58 0.75 1 1 1 1 ~ ~0.5 ~ 0.25 0.25 0.25 6"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle crit ~ ~0.5 ~ 0.25 0.25 0.25 0 3"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust_color_transition 1 0.58 0.75 1 1 1 1 ~ ~0.5 ~ 0.25 0.25 0.25 0 9"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "only_when_harvested": true
+    },
+    "sniffer": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/sniffer_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_on_block_break",
+        "block_action": {
+            "type": "origins:chance",
+            "chance": 0.6,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:wheat_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:beetroot_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:carrot\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 30,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:potato\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:brown_mushroom\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:red_mushroom\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:pumpkin_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:melon_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:glow_berries\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 15,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:sweet_berries\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:golden_carrot\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:poisonous_potato\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:torchflower_seeds\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:pitcher_pod\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 5,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:golden_apple\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:enchanted_golden_apple\",Count:1b}}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:choice",
+                                    "actions": [
+                                        {
+                                            "weight": 200,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:coal\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 100,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:raw_iron\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 80,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:raw_copper\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 40,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:redstone\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 40,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:emerald\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 40,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:raw_gold\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 20,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:lapis_lazuli\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 20,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:quartz\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 10,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:diamond\",Count:1b}}"
+                                            }
+                                        },
+                                        {
+                                            "weight": 1,
+                                            "element": {
+                                                "type": "origins:execute_command",
+                                                "command": "/summon item ~ ~ ~ {Item:{id:\"minecraft:ancient_debris\",Count:1b}}"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 3,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle crit ~ ~0.5 ~ 0.25 0.25 0.25 0 9"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust_color_transition 0.51 0.73 0.41 1 1 1 1 ~ ~0.5 ~ 0.25 0.25 0.25 0 3"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 2,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle crit ~ ~0.5 ~ 0.25 0.25 0.25 0 6"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust_color_transition 0.51 0.73 0.41 1 1 1 1 ~ ~0.5 ~ 0.25 0.25 0.25 0 6"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle crit ~ ~0.5 ~ 0.25 0.25 0.25 0 3"
+                                        },
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle dust_color_transition 0.51 0.73 0.41 1 1 1 1 ~ ~0.5 ~ 0.25 0.25 0.25 0 9"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "only_when_harvested": true
+    }
+}

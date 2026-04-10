@@ -1,0 +1,67 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/cod_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/salmon_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    }
+                ]
+            },
+            {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/cod_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:biome",
+                        "condition": {
+                            "type": "origins:category",
+                            "category": "ocean"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/salmon_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:biome",
+                        "condition": {
+                            "type": "origins:category",
+                            "category": "river"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+        "type": "origins:gain_air",
+        "value": 20
+    }
+}

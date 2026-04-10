@@ -1,0 +1,82 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "cod_and_salmon": {
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/cod_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/salmon_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/cod_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:category",
+                                "category": "ocean"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/salmon_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        },
+                        {
+                            "type": "origins:biome",
+                            "condition": {
+                                "type": "origins:category",
+                                "category": "river"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 1.5
+        }
+    },
+    "dolphin": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/dolphin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 1.5
+        }
+    }
+}

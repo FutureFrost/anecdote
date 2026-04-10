@@ -9,112 +9,342 @@
             "actions": [
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:active/crease_the_page_clock_resource",
+                    "resource": "anecdote:books/resources/allay_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/bat_sight_resource",
+                    "resource": "anecdote:books/resources/axolotl_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/black_bone_resource",
+                    "resource": "anecdote:books/resources/bat_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/bomb_resource",
+                    "resource": "anecdote:books/resources/bee_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/dolphin_enhancement_resource",
+                    "resource": "anecdote:books/resources/blaze_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/egg_bomb_resource",
+                    "resource": "anecdote:books/resources/cat_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/fish_enhancement_cod_resource",
+                    "resource": "anecdote:books/resources/cave_spider_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/fish_enhancement_salmon_resource",
+                    "resource": "anecdote:books/resources/chicken_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/flamethrower_resource",
+                    "resource": "anecdote:books/resources/cod_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/forager_pig_resource",
+                    "resource": "anecdote:books/resources/cow_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/forager_sniffer_resource",
+                    "resource": "anecdote:books/resources/creeper_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/force_drown_resource",
+                    "resource": "anecdote:books/resources/dolphin_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/magnet_resource",
+                    "resource": "anecdote:books/resources/drowned_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/mount_summon_resource",
+                    "resource": "anecdote:books/resources/elder_guardian_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/pacifist_regen_resource",
+                    "resource": "anecdote:books/resources/ender_dragon_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/plant_growth_resource",
+                    "resource": "anecdote:books/resources/enderman_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/poison_coated_resource",
+                    "resource": "anecdote:books/resources/endermite_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/revive_resource",
+                    "resource": "anecdote:books/resources/evoker_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/spread_rot_resource",
+                    "resource": "anecdote:books/resources/fox_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/thick_skin_cow_resource",
+                    "resource": "anecdote:books/resources/frog_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/thick_skin_sheep_resource",
+                    "resource": "anecdote:books/resources/ghast_resource",
                     "value": 0
                 },
                 {
                     "type": "origins:set_resource",
-                    "resource": "anecdote:books/resources/winters_arrow_resource",
+                    "resource": "anecdote:books/resources/glow_squid_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/goat_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/guardian_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/hoglin_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/husk_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/iron_golem_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/llama_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/magma_cube_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/mooshroom_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/ocelot_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/panda_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/parrot_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/phantom_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/pig_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/piglin_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/piglin_brute_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/pillager_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/polar_bear_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/pufferfish_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/rabbit_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/ravager_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/salmon_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/sheep_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/silverfish_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/skeleton_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/slime_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/sniffer_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/snow_golem_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/spider_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/squid_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/stray_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/strider_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/tadpole_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/tropical_fish_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/turtle_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/vex_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/villager_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/vindicator_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/wandering_trader_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/witch_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/wither_skeleton_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/wolf_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/zoglin_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/zombie_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/zombie_villager_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/zombified_piglin_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/multi/mounts_resource",
                     "value": 0
                 }
             ]
