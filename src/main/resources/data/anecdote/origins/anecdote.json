@@ -164,6 +164,8 @@
         "anecdote:books/actors/anecdote/function/force_drown",
         "anecdote:books/actors/anecdote/function/health_increase",
         "anecdote:books/actors/anecdote/function/immortal",
+        "anecdote:books/actors/anecdote/function/jump_height",
+        "anecdote:books/actors/anecdote/function/land_movement_speed",
         "anecdote:books/actors/anecdote/function/magnetism",
         "anecdote:books/actors/anecdote/function/plant_growth",
         "anecdote:books/actors/anecdote/function/poison_coat",
@@ -188,6 +190,7 @@
         "anecdote:books/actors/anecdote/visuals/particles/bee",
         "anecdote:books/actors/anecdote/visuals/particles/cod",
         "anecdote:books/actors/anecdote/visuals/particles/dolphin",
+        "anecdote:books/actors/anecdote/visuals/particles/rabbit",
         "anecdote:books/actors/anecdote/visuals/particles/salmon",
         "anecdote:books/actors/anecdote/visuals/particles/wither",
         "anecdote:books/actors/anecdote/visuals/particles/zombie"
