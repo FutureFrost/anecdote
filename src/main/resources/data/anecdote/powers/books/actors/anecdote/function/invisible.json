@@ -1,0 +1,101 @@
+{
+    "type": "origins:multiple",
+    "attack": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/ocelot_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:set_resource",
+            "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
+            "value": 0
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "take_damage": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/ocelot_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:set_resource",
+            "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
+            "value": 0
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "invisibility": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/ocelot_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:invisibility",
+                "duration": 2,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": true
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "origins:multiple",
+    "ocelot": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/ocelot_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:phasing",
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:leaves"
+        },
+        "render_type": "none",
+        "view_distance": 10,
+        "phase_down_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    }
+}

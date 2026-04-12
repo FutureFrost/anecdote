@@ -129,5 +129,46 @@
             "x",
             "z"
         ]
+    },
+    "ocelot": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/ocelot_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "inverted": true,
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
     }
 }

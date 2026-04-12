@@ -190,6 +190,12 @@
                             "resource": "anecdote:books/resources/frog_resource",
                             "comparison": "!=",
                             "compare_to": 0
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/ocelot_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
                         }
                     ]
                 },
