@@ -45,5 +45,50 @@
         "axes": [
             "y"
         ]
+    },
+    "frog": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/frog_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "inverted": true,
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 1.75
+        },
+        "axes": [
+            "y"
+        ]
     }
 }

@@ -1,0 +1,20 @@
+{
+    "type": "origins:multiple",
+    "frog": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/frog_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:is_fall"
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}

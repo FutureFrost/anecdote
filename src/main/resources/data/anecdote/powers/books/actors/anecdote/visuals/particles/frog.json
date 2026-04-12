@@ -1,0 +1,53 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/frog_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            },
+            {
+                "inverted": true,
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:fluid",
+                    "fluid_condition": {
+                        "inverted": true,
+                        "type": "origins:empty"
+                    }
+                }
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+        "type": "origins:choice",
+        "actions": [
+            {
+                "weight": 3,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.51 0.82 0 1 0.15 0.24 0 ~ ~0.1 ~ 0.2 0.2 0.2 0 1"
+                }
+            },
+            {
+                "weight": 2,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.51 0.82 0 1 0.15 0.24 0 ~ ~0.1 ~ 0.2 0.2 0.2 0 2"
+                }
+            },
+            {
+                "weight": 1,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.51 0.82 0 1 0.15 0.24 0 ~ ~0.1 ~ 0.2 0.2 0.2 0 3"
+                }
+            }
+        ]
+    }
+}
