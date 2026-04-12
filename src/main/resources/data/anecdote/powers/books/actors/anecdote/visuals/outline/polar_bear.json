@@ -1,0 +1,17 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/polar_bear_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:can_see"
+    },
+    "use_teams": false,
+    "red": 1,
+    "green": 1,
+    "blue": 1
+}

@@ -1,0 +1,17 @@
+{
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/polar_bear_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:in_tag",
+        "tag": "minecraft:is_freezing"
+    },
+    "modifier": {
+        "operation": "set_total",
+        "value": 0
+    }
+}

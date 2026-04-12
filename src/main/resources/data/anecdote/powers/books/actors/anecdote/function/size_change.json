@@ -1,0 +1,42 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/tadpole_resource",
+                            "comparison": "<=",
+                            "compare_to": 60
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/tadpole_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:base 2"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:constant",
+                    "value": true
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:base 1"
+                }
+            }
+        ]
+    }
+}
