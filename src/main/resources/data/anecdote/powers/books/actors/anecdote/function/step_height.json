@@ -1,0 +1,24 @@
+{
+    "type": "origins:multiple",
+    "fox": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/fox_resource",
+                "comparison": ">",
+                "compare_to": 15
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 2 @s"
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 1 @s"
+            }
+        }
+    }
+}

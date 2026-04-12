@@ -39,7 +39,7 @@
         },
         "type": "origins:modify_velocity",
         "modifier": {
-            "operation": "multiply_base",
+            "operation": "multiply_total_multiplicative",
             "value": 1.25
         },
         "axes": [

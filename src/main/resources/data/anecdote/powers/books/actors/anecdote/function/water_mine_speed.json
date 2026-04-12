@@ -23,7 +23,7 @@
     },
     "type": "origins:modify_break_speed",
     "modifier": {
-        "operation": "multiply_base",
-        "value": 1.5
+        "operation": "multiply_total_multiplicative",
+        "value": 1
     }
 }

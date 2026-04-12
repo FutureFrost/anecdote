@@ -62,8 +62,8 @@
         },
         "type": "origins:modify_swim_speed",
         "modifier": {
-            "operation": "multiply_base",
-            "value": 1.5
+            "operation": "multiply_total",
+            "value": 1
         }
     },
     "dolphin": {
@@ -75,8 +75,8 @@
         },
         "type": "origins:modify_swim_speed",
         "modifier": {
-            "operation": "multiply_base",
-            "value": 1.5
+            "operation": "multiply_total",
+            "value": 1
         }
     }
 }
