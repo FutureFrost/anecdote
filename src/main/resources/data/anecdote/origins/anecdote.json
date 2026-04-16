@@ -159,6 +159,7 @@
         "anecdote:books/actors/anecdote/function/axolotl_healing",
         "anecdote:books/actors/anecdote/function/cannot_attack",
         "anecdote:books/actors/anecdote/function/damage_reduction",
+        "anecdote:books/actors/anecdote/function/damage_reflect",
         "anecdote:books/actors/anecdote/function/echolocation",
         "anecdote:books/actors/anecdote/function/fall_damage",
         "anecdote:books/actors/anecdote/function/flamethrower",
@@ -193,6 +194,7 @@
         "anecdote:books/actors/anecdote/visuals/outline/cow",
         "anecdote:books/actors/anecdote/visuals/outline/polar_bear",
         "anecdote:books/actors/anecdote/visuals/outline/sheep",
+        "anecdote:books/actors/anecdote/visuals/outline/slime",
         "anecdote:books/actors/anecdote/visuals/outline/wither",
         "anecdote:books/actors/anecdote/visuals/particles/allay",
         "anecdote:books/actors/anecdote/visuals/particles/bee",
@@ -203,6 +205,7 @@
         "anecdote:books/actors/anecdote/visuals/particles/polar_bear",
         "anecdote:books/actors/anecdote/visuals/particles/rabbit",
         "anecdote:books/actors/anecdote/visuals/particles/salmon",
+        "anecdote:books/actors/anecdote/visuals/particles/slime",
         "anecdote:books/actors/anecdote/visuals/particles/tadpole",
         "anecdote:books/actors/anecdote/visuals/particles/wither",
         "anecdote:books/actors/anecdote/visuals/particles/zombie"
