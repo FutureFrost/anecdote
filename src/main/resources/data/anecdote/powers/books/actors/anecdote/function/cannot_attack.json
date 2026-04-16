@@ -3,10 +3,21 @@
     "type": "origins:multiple",
     "attack": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "anecdote:books/resources/axolotl_resource",
-            "comparison": "!=",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/axolotl_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/panda_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:modify_damage_dealt",
         "modifier": {
@@ -16,10 +27,21 @@
     },
     "projectile": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "anecdote:books/resources/axolotl_resource",
-            "comparison": "!=",
-            "compare_to": 0
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/axolotl_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/panda_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:modify_projectile_damage",
         "modifier": {

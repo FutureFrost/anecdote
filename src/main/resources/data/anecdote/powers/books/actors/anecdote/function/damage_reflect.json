@@ -1,4 +1,5 @@
 {
+    "hidden": true,
     "condition": {
         "type": "origins:resource",
         "resource": "anecdote:books/resources/slime_resource",

@@ -39,5 +39,18 @@
             "operation": "multiply_total_multiplicative",
             "value": -0.4
         }
+    },
+    "panda": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/panda_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
     }
 }

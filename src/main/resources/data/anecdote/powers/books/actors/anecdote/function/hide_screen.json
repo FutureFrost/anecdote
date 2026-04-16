@@ -1,0 +1,42 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "panda_overlay": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/panda_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/stone.png",
+        "strength": 1,
+        "red": 0,
+        "green": 0,
+        "blue": 0,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "panda_blindness": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/panda_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "minecraft:blindness",
+                "duration": 2,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": false
+            }
+        }
+    }
+}
