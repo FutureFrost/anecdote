@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/phantom_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:model_color",
+    "red": 0.3,
+    "green": 0.45,
+    "blue": 0.66,
+    "alpha": 1
+}

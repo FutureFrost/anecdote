@@ -1,0 +1,10 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/phantom_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:swimming"
+}

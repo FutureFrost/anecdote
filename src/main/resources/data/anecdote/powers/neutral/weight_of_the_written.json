@@ -392,11 +392,22 @@
                 },
                 {
                     "condition": {
-                        "type": "origins:in_block",
-                        "block_condition": {
-                            "type": "origins:block",
-                            "block": "minecraft:water"
-                        }
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:block",
+                                    "block": "minecraft:water"
+                                }
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/phantom_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
                     },
                     "action": {
                         "type": "origins:apply_effect",
@@ -414,10 +425,21 @@
     },
     "water_actor": {
         "condition": {
-            "type": "origins:attribute",
-            "attribute": "generic.armor",
-            "comparison": ">=",
-            "compare_to": 15
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:attribute",
+                    "attribute": "generic.armor",
+                    "comparison": ">=",
+                    "compare_to": 15
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/phantom_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:ignore_water"
     }

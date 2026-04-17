@@ -24,5 +24,27 @@
             "operation": "multiply_total_multiplicative",
             "value": 0.5
         }
+    },
+    "phantom": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/phantom_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.5
+        }
     }
 }
