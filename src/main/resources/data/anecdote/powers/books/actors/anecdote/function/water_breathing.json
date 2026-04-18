@@ -55,6 +55,12 @@
                         }
                     }
                 ]
+            },
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/tropical_fish_resource",
+                "comparison": "!=",
+                "compare_to": 0
             }
         ]
     },
