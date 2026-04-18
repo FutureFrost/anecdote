@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/hoglin_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:model_color",
+    "red": 0.64,
+    "green": 0.45,
+    "blue": 0.2,
+    "alpha": 1
+}

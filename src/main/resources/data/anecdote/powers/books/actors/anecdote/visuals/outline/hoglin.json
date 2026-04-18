@@ -1,0 +1,17 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/hoglin_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:can_see"
+    },
+    "use_teams": false,
+    "red": 0.71,
+    "green": 0.35,
+    "blue": 0.31
+}

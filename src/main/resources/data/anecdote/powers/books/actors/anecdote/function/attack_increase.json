@@ -46,5 +46,41 @@
             "operation": "multiply_total_multiplicative",
             "value": 0.5
         }
+    },
+    "hoglin": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/hoglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "resource": "anecdote:books/resources/hoglin_rage_resource",
+            "value": 0,
+            "modifier": {
+                "operation": "multiply_total_multiplicative",
+                "value": 0.2
+            }
+        }
+    },
+    "zoglin": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zoglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "resource": "anecdote:books/resources/zoglin_rage_resource",
+            "value": 0,
+            "modifier": {
+                "operation": "multiply_total_multiplicative",
+                "value": 0.18
+            }
+        }
     }
 }

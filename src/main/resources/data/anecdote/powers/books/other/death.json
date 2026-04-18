@@ -346,6 +346,16 @@
                     "type": "origins:set_resource",
                     "resource": "anecdote:books/resources/multi/mounts_resource",
                     "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/hoglin_rage_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/zoglin_rage_resource",
+                    "value": 0
                 }
             ]
         },

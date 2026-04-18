@@ -204,6 +204,24 @@
                                 "resource": "anecdote:books/resources/wither_skeleton_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/phantom_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/hoglin_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/zoglin_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },
