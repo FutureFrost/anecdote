@@ -1,0 +1,17 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/guardian_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:can_see"
+    },
+    "use_teams": false,
+    "red": 0.36,
+    "green": 0.79,
+    "blue": 0.8
+}

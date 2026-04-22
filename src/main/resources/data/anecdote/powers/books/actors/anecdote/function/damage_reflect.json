@@ -1,21 +1,50 @@
 {
     "hidden": true,
-    "condition": {
-        "type": "origins:resource",
-        "resource": "anecdote:books/resources/slime_resource",
-        "comparison": "!=",
-        "compare_to": 0
-    },
-    "type": "origins:action_when_hit",
-    "bientity_action": {
-        "type": "origins:actor_action",
-        "action": {
-            "type": "origins:damage",
-            "amount": 2,
-            "source": {
-                "name": "thorns"
+    "type": "origins:multiple",
+    "slime": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/slime_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:damage",
+                "amount": 2,
+                "source": {
+                    "name": "thorns"
+                }
             }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
         }
     },
-    "cooldown": 1
+    "guardian": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/guardian_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:damage",
+                "amount": 4,
+                "source": {
+                    "name": "thorns"
+                }
+            }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    }
 }
