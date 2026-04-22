@@ -1,0 +1,734 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 10,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "inverted": true,
+                                "type": "origins:entity_type",
+                                "entity_type": "minecraft:player"
+                            },
+                            "action": {
+                                "type": "origins:nothing"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 10
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 1 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 1 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 1 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 9
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.9 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.9 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.9 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 8
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.8 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.8 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.8 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 7
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.7 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.7 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.7 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 6
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.6 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.6 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.6 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 5
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.5 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.5 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.5 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 4
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.4 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.4 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.4 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.3 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.3 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.3 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.2 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.2 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.2 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.1 0.9"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.1 1"
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:execute_command",
+                                            "command": "playsound minecraft:entity.glow_squid.ambient hostile @s ~ ~ ~ 0.1 1.1"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:revoke_power",
+                        "power": "anecdote:books/actors/target/glow_squid_blinded",
+                        "source": "glow_squid"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle glow ~ ~1 ~ 0.5 0.5 0.5 0.1 3"
+                }
+            ]
+        }
+    },
+    "no_move": {
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "no_jump": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/glow_squid_blinded_grounded_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        },
+        "axes": [
+            "y"
+        ]
+    },
+    "grounded_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "grounded_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_grounded_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:movement_blocking"
+                    }
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "anecdote:books/actors/target/glow_squid_blinded_grounded_resource",
+            "change": 1,
+            "operation": "set"
+        }
+    },
+    "blinded_10": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 10
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 1,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_9": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 9
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.9,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_8": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 8
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.8,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_7": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 7
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.7,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_6": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 6
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.6,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_5": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 5
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.5,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_4": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 4
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.4,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_3": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 3
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.3,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_2": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.2,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    },
+    "blinded_1": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/verdant_froglight_top.png",
+        "strength": 0.1,
+        "red": 1,
+        "green": 1,
+        "blue": 1,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": true
+    }
+}

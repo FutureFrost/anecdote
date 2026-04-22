@@ -1,0 +1,17 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/glow_squid_resource",
+        "comparison": ">=",
+        "compare_to": 14
+    },
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:can_see"
+    },
+    "use_teams": false,
+    "red": 0.54,
+    "green": 0.88,
+    "blue": 0.7
+}

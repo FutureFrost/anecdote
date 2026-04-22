@@ -159,5 +159,318 @@
             }
         ]
     },
-    "type": "origins:simple"
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/glow_squid_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:constant",
+                    "value": true
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/resources/glow_squid_resource",
+                            "value": 15
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:glow_squid}}"
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "mainhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "MAIN_HAND"
+                                    }
+                                ]
+                            },
+                            "else_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "offhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "OFF_HAND"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.glow_squid.squirt",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.glow_squid.squirt",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.glow_squid.squirt",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "particle glow_squid_ink ~ ~1 ~ 1 1 1 1 75"
+                                            },
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "particle glow ~ ~1 ~ 1 1 1 1 25"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "weight": 2,
+                                    "element": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "particle glow_squid_ink ~ ~1 ~ 1 1 1 1 70"
+                                            },
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "particle glow ~ ~1 ~ 1 1 1 1 30"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:and",
+                                        "actions": [
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "particle glow_squid_ink ~ ~1 ~ 1 1 1 1 65"
+                                            },
+                                            {
+                                                "type": "origins:execute_command",
+                                                "command": "particle glow ~ ~1 ~ 1 1 1 1 35"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:area_of_effect",
+                            "radius": 24,
+                            "bientity_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:target_condition",
+                                        "condition": {
+                                            "inverted": true,
+                                            "type": "origins:in_tag",
+                                            "tag": "anecdote:ff_objects"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:invert",
+                                        "condition": {
+                                            "type": "origins:can_see"
+                                        }
+                                    }
+                                ]
+                            },
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "anecdote:books/actors/target/glow_squid_blinded",
+                                        "source": "glow_squid"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                        "change": 10,
+                                        "operation": "set"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "anecdote:books/actors/target/glow_squid_blinded",
+                                        "source": "glow_squid"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:area_of_effect",
+                            "radius": 12,
+                            "bientity_condition": {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_objects"
+                                }
+                            },
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:if_else",
+                                    "condition": {
+                                        "type": "origins:power",
+                                        "power": "anecdote:books/actors/target/glow_squid_blinded",
+                                        "source": "glow_squid"
+                                    },
+                                    "if_action": {
+                                        "type": "origins:change_resource",
+                                        "resource": "anecdote:books/actors/target/glow_squid_blinded_resource",
+                                        "change": 10,
+                                        "operation": "set"
+                                    },
+                                    "else_action": {
+                                        "type": "origins:grant_power",
+                                        "power": "anecdote:books/actors/target/glow_squid_blinded",
+                                        "source": "glow_squid"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
 }
