@@ -1,0 +1,86 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 5,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "anecdote:books/actors/target/rammed_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "anecdote:books/actors/target/rammed",
+                "source": "goat_ram"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "anecdote:books/actors/target/rammed_resource",
+                "change": -1,
+                "operation": "add"
+            }
+        }
+    },
+    "no_move": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/rammed_grounded_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "grounded_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "grounded_check": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/target/rammed_grounded_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:on_block",
+                    "block_condition": {
+                        "type": "origins:movement_blocking"
+                    }
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "anecdote:books/actors/target/rammed_grounded_resource",
+            "change": 1,
+            "operation": "set"
+        }
+    }
+}

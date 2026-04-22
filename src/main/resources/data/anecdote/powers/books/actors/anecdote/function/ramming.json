@@ -1,0 +1,146 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/goat_resource",
+        "comparison": ">=",
+        "compare_to": 2
+    },
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+        "type": "origins:area_of_effect",
+        "radius": 2,
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:in_tag",
+                        "tag": "anecdote:ff_objects"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:power",
+                                "power": "anecdote:books/actors/target/rammed",
+                                "source": "goat_ram"
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/rammed_resource",
+                                "comparison": "!=",
+                                "compare_to": 5
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute anchored eyes facing entity @a[sort=nearest,limit=1,nbt={cardinal_components: {\"origins:origin\": {OriginLayers: [{Origin: \"anecdote:anecdote\", Layer: \"origins:origin\"}]}}}] eyes run tp @s ~ ~ ~ ~ ~"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle poof ~ ~1 ~ 1 1 1 0.1 5"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:add_velocity",
+                                            "x": 0,
+                                            "y": 0.5,
+                                            "z": -1,
+                                            "space": "local_horizontal",
+                                            "client": true,
+                                            "server": true
+                                        },
+                                        {
+                                            "type": "origins:if_else",
+                                            "condition": {
+                                                "type": "origins:power",
+                                                "power": "anecdote:books/actors/target/rammed",
+                                                "source": "goat_ram"
+                                            },
+                                            "if_action": {
+                                                "type": "origins:change_resource",
+                                                "resource": "anecdote:books/actors/target/rammed_resource",
+                                                "change": 5,
+                                                "operation": "set"
+                                            },
+                                            "else_action": {
+                                                "type": "origins:grant_power",
+                                                "power": "anecdote:books/actors/target/rammed",
+                                                "source": "goat_ram"
+                                            }
+                                        }
+                                    ]
+                                },
+                                "ticks": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:damage",
+                    "amount": 8,
+                    "source": {
+                        "name": "player",
+                        "unblockable": true
+                    }
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.goat.ram_impact",
+                                    "volume": 1,
+                                    "pitch": 0.9
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.goat.ram_impact",
+                                    "volume": 1,
+                                    "pitch": 1
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.goat.ram_impact",
+                                    "volume": 1,
+                                    "pitch": 1.1
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}
