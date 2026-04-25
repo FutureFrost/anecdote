@@ -1,0 +1,376 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "parrot": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/parrot_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.5,
+            "action": {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "entity.parrot.ambient",
+                            "volume": 1,
+                            "pitch": 0.9
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "entity.parrot.ambient",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "entity.parrot.ambient",
+                            "volume": 1,
+                            "pitch": 1.1
+                        }
+                    },
+                    {
+                        "weight": 2,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "entity.parrot.fly",
+                            "volume": 1,
+                            "pitch": 0.9
+                        }
+                    },
+                    {
+                        "weight": 2,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "entity.parrot.fly",
+                            "volume": 1,
+                            "pitch": 1
+                        }
+                    },
+                    {
+                        "weight": 2,
+                        "element": {
+                            "type": "origins:play_sound",
+                            "sound": "entity.parrot.fly",
+                            "volume": 1,
+                            "pitch": 1.1
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "other_sounds": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/parrot_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.25,
+            "action": {
+                "type": "origins:choice",
+                "actions": [
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.creeper",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.creeper",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.creeper",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.drowned",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.drowned",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.drowned",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.phantom",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.phantom",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.phantom",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.pillager",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.pillager",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.pillager",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.skeleton",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.skeleton",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.skeleton",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.slime",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.slime",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.slime",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.spider",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.spider",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.spider",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "element": {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.zombie",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.zombie",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.parrot.imitate.zombie",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

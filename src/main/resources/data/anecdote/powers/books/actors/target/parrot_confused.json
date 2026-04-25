@@ -1,0 +1,198 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "actor": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/actors/target/parrot_confused_condition_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16,
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/parrot_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    },
+                    "bientity_action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/actors/target/parrot_confused_condition_resource",
+                            "value": 1
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/parrot_confused_condition_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:revoke_power",
+                                "power": "anecdote:books/actors/target/parrot_confused",
+                                "source": "parrot_confuse"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 3,
+                                    "element": {
+                                        "type": "origins:execute_command",
+                                        "command": "tp @s ~ ~ ~ ~1 ~"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:execute_command",
+                                        "command": "tp @s ~ ~ ~ ~-1 ~"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:execute_command",
+                                        "command": "tp @s ~ ~ ~ ~ ~1"
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:execute_command",
+                                        "command": "tp @s ~ ~ ~ ~ ~-1"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:add_velocity",
+                                        "x": 0.1,
+                                        "y": 0,
+                                        "z": 0,
+                                        "space": "local_horizontal",
+                                        "client": true,
+                                        "server": true
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:add_velocity",
+                                        "x": -0.1,
+                                        "y": 0,
+                                        "z": 0,
+                                        "space": "local_horizontal",
+                                        "client": true,
+                                        "server": true
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:add_velocity",
+                                        "x": 0,
+                                        "y": 0,
+                                        "z": 0.1,
+                                        "space": "local_horizontal",
+                                        "client": true,
+                                        "server": true
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:add_velocity",
+                                        "x": 0,
+                                        "y": 0,
+                                        "z": -0.1,
+                                        "space": "local_horizontal",
+                                        "client": true,
+                                        "server": true
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "condition_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "particles": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "weight": 3,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle entity_effect ~ ~1 ~ 0.25 0.25 0.25 1 3"
+                    }
+                },
+                {
+                    "weight": 2,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle entity_effect ~ ~1 ~ 0.25 0.25 0.25 1 2"
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle entity_effect ~ ~1 ~ 0.25 0.25 0.25 1 1"
+                    }
+                }
+            ]
+        }
+    },
+    "slowed": {
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.5
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    }
+}
