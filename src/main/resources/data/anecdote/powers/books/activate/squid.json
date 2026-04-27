@@ -159,5 +159,400 @@
             }
         ]
     },
-    "type": "origins:simple"
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/squid_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/glow_squid_resource",
+                            "comparison": "!=",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"A conflicting narrative lingers. The new tale must wait its turn.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:constant",
+                    "value": true
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/resources/squid_resource",
+                            "value": 15
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:squid}}"
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "mainhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "MAIN_HAND"
+                                    }
+                                ]
+                            },
+                            "else_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "offhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "OFF_HAND"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.squid.squirt",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.squid.squirt",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.squid.squirt",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:fluid",
+                                    "fluid_condition": {
+                                        "type": "origins:fluid",
+                                        "fluid": "minecraft:water"
+                                    }
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:area_of_effect",
+                                        "radius": 16,
+                                        "bientity_condition": {
+                                            "type": "origins:target_condition",
+                                            "condition": {
+                                                "inverted": true,
+                                                "type": "origins:in_tag",
+                                                "tag": "anecdote:ff_objects"
+                                            }
+                                        },
+                                        "bientity_action": {
+                                            "type": "origins:target_action",
+                                            "action": {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "anecdote:books/actors/target/squid_blinded",
+                                                    "source": "squid"
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "anecdote:books/actors/target/squid_blinded_resource",
+                                                    "change": 10,
+                                                    "operation": "set"
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "anecdote:books/actors/target/squid_blinded",
+                                                    "source": "squid"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 3,
+                                                "element": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle squid_ink ~ ~1 ~ 2 2 2 1 150"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle dust 0 0 0 1 ~ ~1 ~ 2 2 2 1 50"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "weight": 2,
+                                                "element": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle squid_ink ~ ~1 ~ 2 2 2 1 140"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle dust 0 0 0 1 ~ ~1 ~ 2 2 2 1 60"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle squid_ink ~ ~1 ~ 2 2 2 1 130"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle dust 0 0 0 1 ~ ~1 ~ 2 2 2 1 70"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "else_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:area_of_effect",
+                                        "radius": 8,
+                                        "bientity_condition": {
+                                            "type": "origins:target_condition",
+                                            "condition": {
+                                                "inverted": true,
+                                                "type": "origins:in_tag",
+                                                "tag": "anecdote:ff_objects"
+                                            }
+                                        },
+                                        "bientity_action": {
+                                            "type": "origins:target_action",
+                                            "action": {
+                                                "type": "origins:if_else",
+                                                "condition": {
+                                                    "type": "origins:power",
+                                                    "power": "anecdote:books/actors/target/squid_blinded",
+                                                    "source": "squid"
+                                                },
+                                                "if_action": {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "anecdote:books/actors/target/squid_blinded_resource",
+                                                    "change": 10,
+                                                    "operation": "set"
+                                                },
+                                                "else_action": {
+                                                    "type": "origins:grant_power",
+                                                    "power": "anecdote:books/actors/target/squid_blinded",
+                                                    "source": "squid"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 3,
+                                                "element": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle squid_ink ~ ~1 ~ 1 1 1 1 75"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle dust 0 0 0 1 ~ ~1 ~ 1 1 1 1 25"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "weight": 2,
+                                                "element": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle squid_ink ~ ~1 ~ 1 1 1 1 70"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle dust 0 0 0 1 ~ ~1 ~ 1 1 1 1 30"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:and",
+                                                    "actions": [
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle squid_ink ~ ~1 ~ 1 1 1 1 65"
+                                                        },
+                                                        {
+                                                            "type": "origins:execute_command",
+                                                            "command": "particle dust 0 0 0 1 ~ ~1 ~ 1 1 1 1 35"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
 }
