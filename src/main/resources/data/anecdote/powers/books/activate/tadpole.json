@@ -222,6 +222,12 @@
                                 "resource": "anecdote:books/resources/zoglin_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/pufferfish_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },
