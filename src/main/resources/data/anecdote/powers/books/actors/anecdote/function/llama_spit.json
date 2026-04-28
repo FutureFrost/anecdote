@@ -1,0 +1,77 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "actor": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:power",
+                                    "power": "anecdote:books/actors/target/llama_blinded",
+                                    "source": "llama_spit"
+                                },
+                                "if_action": {
+                                    "type": "origins:set_resource",
+                                    "resource": "anecdote:books/actors/target/llama_blinded_resource",
+                                    "value": 10
+                                },
+                                "else_action": {
+                                    "type": "origins:grant_power",
+                                    "power": "anecdote:books/actors/target/llama_blinded",
+                                    "source": "llama_spit"
+                                }
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle spit ~ ~1 ~ 0.25 0.25 0.25 0.1 3"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "anecdote:ff_objects"
+            }
+        },
+        "damage_condition": {
+            "type": "origins:projectile",
+            "projectile": "minecraft:llama_spit",
+            "projectile_condition": {
+                "type": "origins:nbt",
+                "nbt": "{Tags:[\"llama_spit\"]}"
+            }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "damage": {
+        "type": "origins:modify_projectile_damage",
+        "damage_condition": {
+            "type": "origins:projectile",
+            "projectile": "minecraft:llama_spit",
+            "projectile_condition": {
+                "type": "origins:nbt",
+                "nbt": "{Tags:[\"llama_spit\"]}"
+            }
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 9
+        }
+    }
+}

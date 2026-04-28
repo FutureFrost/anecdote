@@ -173,6 +173,7 @@
         "anecdote:books/actors/anecdote/function/jump_height",
         "anecdote:books/actors/anecdote/function/land_movement_speed",
         "anecdote:books/actors/anecdote/function/leaves_phase",
+        "anecdote:books/actors/anecdote/function/llama_spit",
         "anecdote:books/actors/anecdote/function/magnetism",
         "anecdote:books/actors/anecdote/function/mine_speed",
         "anecdote:books/actors/anecdote/function/parrot_confuse",
