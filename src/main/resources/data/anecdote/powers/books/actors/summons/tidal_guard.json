@@ -1,0 +1,96 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "start_value": 30,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "anecdote:books/actors/summons/tidal_guard_resource",
+                    "change": -1,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/summons/tidal_guard_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "kill @s"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "actor": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:area_of_effect",
+            "radius": 16,
+            "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "inverted": true,
+                            "type": "origins:in_tag",
+                            "tag": "anecdote:ff_objects"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:power",
+                            "power": "anecdote:books/actors/target/tidal_guard",
+                            "source": "tidal_guard"
+                        }
+                    ]
+                }
+            },
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:grant_power",
+                    "power": "anecdote:books/actors/target/tidal_guard",
+                    "source": "tidal_guard"
+                }
+            }
+        }
+    },
+    "particles": {
+        "type": "origins:action_over_time",
+        "interval": 3,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tp @s ~ ~ ~ ~1 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run function anecdote:turtle"
+                }
+            ]
+        }
+    }
+}

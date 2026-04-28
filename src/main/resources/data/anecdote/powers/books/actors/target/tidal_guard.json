@@ -1,0 +1,85 @@
+{
+    "type": "origins:multiple",
+    "condition_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "actor": {
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/actors/target/tidal_guard_condition_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 16,
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:power",
+                            "power": "anecdote:books/actors/summons/tidal_guard",
+                            "source": "tidal_guard"
+                        }
+                    },
+                    "bientity_action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/actors/target/tidal_guard_condition_resource",
+                            "value": 1
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/tidal_guard_condition_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:revoke_power",
+                                "power": "anecdote:books/actors/target/tidal_guard",
+                                "source": "tidal_guard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "no_attack": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "no_damage": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    },
+    "no_attack_projectile": {
+        "type": "origins:modify_projectile_damage",
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
+}
