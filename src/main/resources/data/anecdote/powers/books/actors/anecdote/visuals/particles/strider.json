@@ -1,0 +1,67 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/strider_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:on_block",
+                        "block_condition": {
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "minecraft:lava"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:fluid",
+                            "fluid_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "minecraft:lava"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+        "type": "origins:choice",
+        "actions": [
+            {
+                "weight": 3,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.61 0.23 0.21 1 1 0.45 0 ~ ~0.3 ~ 0.2 0.2 0.2 0 1"
+                }
+            },
+            {
+                "weight": 2,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.61 0.23 0.21 1 1 0.45 0 ~ ~0.3 ~ 0.2 0.2 0.2 0 2"
+                }
+            },
+            {
+                "weight": 1,
+                "element": {
+                    "type": "origins:execute_command",
+                    "command": "particle dust_color_transition 0.61 0.23 0.21 1 1 0.45 0 ~ ~0.3 ~ 0.2 0.2 0.2 0 3"
+                }
+            }
+        ]
+    }
+}

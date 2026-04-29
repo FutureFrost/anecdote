@@ -1,0 +1,16 @@
+{
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/strider_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:self_glow",
+    "bientity_condition": {
+        "type": "origins:can_see"
+    },
+    "use_teams": false,
+    "red": 0.61,
+    "green": 0.23,
+    "blue": 0.21
+}

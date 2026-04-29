@@ -1,0 +1,10 @@
+{
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/strider_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:walk_on_fluid",
+    "fluid": "minecraft:lava"
+}
