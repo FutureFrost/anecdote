@@ -191,6 +191,23 @@
                 },
                 {
                     "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/husk_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "title @s actionbar [{\"text\":\"A conflicting narrative lingers. The new tale must wait its turn.\",\"color\":\"dark_red\"}]"
+                    }
+                },
+                {
+                    "condition": {
                         "type": "origins:constant",
                         "value": true
                     },

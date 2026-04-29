@@ -9,54 +9,45 @@
     "type": "origins:action_over_time",
     "interval": 3,
     "entity_action": {
-        "type": "origins:and",
-        "actions": [
-            {
-                "type": "origins:area_of_effect",
-                "radius": 16,
-                "bientity_condition": {
-                    "type": "origins:target_condition",
-                    "condition": {
-                        "type": "origins:and",
-                        "conditions": [
-                            {
-                                "inverted": true,
-                                "type": "origins:in_tag",
-                                "tag": "anecdote:ff_objects"
-                            },
-                            {
-                                "inverted": true,
-                                "type": "origins:in_tag",
-                                "tag": "anecdote:ff_aquatic"
-                            }
-                        ]
+        "type": "origins:area_of_effect",
+        "radius": 16,
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "inverted": true,
+                        "type": "origins:in_tag",
+                        "tag": "anecdote:ff_objects"
+                    },
+                    {
+                        "inverted": true,
+                        "type": "origins:in_tag",
+                        "tag": "anecdote:ff_aquatic"
                     }
-                },
-                "bientity_action": {
-                    "type": "origins:target_action",
-                    "action": {
-                        "type": "origins:if_else",
-                        "condition": {
-                            "type": "origins:entity_type",
-                            "entity_type": "minecraft:player"
-                        },
-                        "if_action": {
-                            "type": "origins:grant_power",
-                            "power": "anecdote:books/actors/target/force_drown/player",
-                            "source": "force_drown"
-                        },
-                        "else_action": {
-                            "type": "origins:grant_power",
-                            "power": "anecdote:books/actors/target/force_drown/entity",
-                            "source": "force_drown"
-                        }
-                    }
-                }
-            },
-            {
-                "type": "origins:execute_command",
-                "command": "function anecdote:drowned"
+                ]
             }
-        ]
+        },
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                "if_action": {
+                    "type": "origins:grant_power",
+                    "power": "anecdote:books/actors/target/force_drown/player",
+                    "source": "force_drown"
+                },
+                "else_action": {
+                    "type": "origins:grant_power",
+                    "power": "anecdote:books/actors/target/force_drown/entity",
+                    "source": "force_drown"
+                }
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 15,
+        "max": 30,
         "start_value": 0,
         "hud_render": {
             "should_render": true,
