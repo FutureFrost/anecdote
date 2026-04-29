@@ -198,6 +198,12 @@
                                 "resource": "anecdote:books/resources/husk_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/ghast_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },

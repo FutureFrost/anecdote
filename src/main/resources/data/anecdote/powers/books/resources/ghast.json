@@ -4,7 +4,7 @@
     "resource": {
         "type": "origins:resource",
         "min": 0,
-        "max": 15,
+        "max": 16,
         "start_value": 0,
         "hud_render": {
             "should_render": true,
@@ -106,6 +106,150 @@
                                                 }
                                             }
                                         ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/ghast_resource",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.generic.explode",
+                                                    "volume": 1,
+                                                    "pitch": 0.9
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.generic.explode",
+                                                    "volume": 1.3,
+                                                    "pitch": 1
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.generic.explode",
+                                                    "volume": 1.3,
+                                                    "pitch": 1.1
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "origins:block_action_at",
+                                        "block_action": {
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:execute_command",
+                                                    "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": 2,
+                                                    "y": 2,
+                                                    "z": 2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": 2,
+                                                    "y": 2,
+                                                    "z": -2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": -2,
+                                                    "y": 2,
+                                                    "z": 2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": -2,
+                                                    "y": 2,
+                                                    "z": -2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": 2,
+                                                    "y": -2,
+                                                    "z": 2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": 2,
+                                                    "y": -2,
+                                                    "z": -2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": -2,
+                                                    "y": -2,
+                                                    "z": 2
+                                                },
+                                                {
+                                                    "type": "origins:offset",
+                                                    "action": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "particle explosion_emitter ~ ~ ~ 0.5 0.5 0.5 0 1"
+                                                    },
+                                                    "x": -2,
+                                                    "y": -2,
+                                                    "z": -2
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:explode",
+                                        "power": 10,
+                                        "destruction_type": "break",
+                                        "damage_self": false,
+                                        "create_fire": true
                                     }
                                 ]
                             }

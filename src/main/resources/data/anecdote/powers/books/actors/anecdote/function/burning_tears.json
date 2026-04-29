@@ -1,0 +1,51 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/ghast_resource",
+        "comparison": ">=",
+        "compare_to": 2
+    },
+    "type": "origins:action_over_time",
+    "interval": 3,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:area_of_effect",
+                "radius": 8,
+                "bientity_condition": {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "inverted": true,
+                                "type": "origins:in_tag",
+                                "tag": "anecdote:ff_objects"
+                            },
+                            {
+                                "inverted": true,
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:fluid",
+                                    "fluid_condition": {
+                                        "type": "origins:fluid",
+                                        "fluid": "minecraft:water"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "bientity_action": {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:set_on_fire",
+                        "duration": 10
+                    }
+                }
+            }
+        ]
+    }
+}
