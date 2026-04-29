@@ -1,0 +1,31 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/elder_guardian_resource",
+        "comparison": ">=",
+        "compare_to": 60
+    },
+    "type": "origins:action_over_time",
+    "interval": 3,
+    "entity_action": {
+        "type": "origins:area_of_effect",
+        "radius": 8,
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "inverted": true,
+                "type": "origins:in_tag",
+                "tag": "anecdote:ff_objects"
+            }
+        },
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:grant_power",
+                "power": "anecdote:books/actors/target/cursed",
+                "source": "elder_guardian"
+            }
+        }
+    }
+}

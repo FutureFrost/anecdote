@@ -1,0 +1,157 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "actor": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/actors/target/cursed_condition_resource",
+                    "value": 0
+                },
+                {
+                    "type": "origins:area_of_effect",
+                    "radius": 8,
+                    "bientity_condition": {
+                        "type": "origins:target_condition",
+                        "condition": {
+                            "type": "origins:resource",
+                            "resource": "anecdote:books/resources/elder_guardian_resource",
+                            "comparison": ">=",
+                            "compare_to": 60
+                        }
+                    },
+                    "bientity_action": {
+                        "type": "origins:actor_action",
+                        "action": {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/actors/target/cursed_condition_resource",
+                            "value": 1
+                        }
+                    }
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/target/cursed_condition_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:revoke_power",
+                                "power": "anecdote:books/actors/target/cursed",
+                                "source": "elder_guardian"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "condition_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "attack_speed": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "generic.attack_speed",
+            "operation": "multiply_total",
+            "value": -0.75
+        },
+        "update_health": false
+    },
+    "movement_speed": {
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.75
+        },
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "breaking_speed": {
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": -0.75
+        }
+    },
+    "slow_sinking": {
+        "condition": {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:fluid",
+                "fluid_condition": {
+                    "type": "origins:fluid",
+                    "fluid": "minecraft:water"
+                }
+            }
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "slow_falling",
+                "duration": 2,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": false
+            }
+        }
+    },
+    "water_sink_player": {
+        "condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:player"
+        },
+        "type": "origins:ignore_water"
+    },
+    "water_sink_entity": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:entity_type",
+                    "entity_type": "minecraft:player"
+                },
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "type": "origins:fluid",
+                            "fluid": "minecraft:water"
+                        }
+                    }
+                }
+            ]
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "x": 0,
+            "y": -0.1,
+            "z": 0,
+            "space": "local_horizontal",
+            "client": true,
+            "server": true
+        }
+    }
+}
