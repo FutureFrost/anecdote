@@ -1,0 +1,40 @@
+{
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/pillager_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            },
+            {
+                "inverted": true,
+                "type": "origins:inventory",
+                "inventory_types": [
+                    "inventory"
+                ],
+                "process_mode": "items",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "minecraft:arrows"
+                    }
+                },
+                "slots": [],
+                "comparison": "!=",
+                "compare_to": 0
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+        "type": "origins:give",
+        "stack": {
+            "item": "minecraft:arrow",
+            "amount": 1
+        },
+        "preferred_slot": "mainhand"
+    }
+}
