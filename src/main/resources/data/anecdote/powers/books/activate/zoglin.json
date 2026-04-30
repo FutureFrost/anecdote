@@ -210,6 +210,12 @@
                                 "resource": "anecdote:books/resources/phantom_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/vindicator_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },

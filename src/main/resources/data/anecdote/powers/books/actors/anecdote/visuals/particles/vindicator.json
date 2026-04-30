@@ -1,0 +1,313 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/vindicator_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:action_over_time",
+    "interval": 3,
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 16
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.72 ~ 0.24 0.48 0.24 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.72 ~ 0.24 0.48 0.24 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.72 ~ 0.24 0.48 0.24 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 14
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.684 ~ 0.228 0.456 0.228 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.684 ~ 0.228 0.456 0.228 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.684 ~ 0.228 0.456 0.228 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 12
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.649 ~ 0.2165 0.433 0.2165 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.649 ~ 0.2165 0.433 0.2165 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.649 ~ 0.2165 0.433 0.2165 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 10
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.617 ~ 0.2055 0.411 0.2055 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.617 ~ 0.2055 0.411 0.2055 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.617 ~ 0.2055 0.411 0.2055 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 8
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.586 ~ 0.195 0.39 0.195 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.586 ~ 0.195 0.39 0.195 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.586 ~ 0.195 0.39 0.195 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 6
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.557 ~ 0.1855 0.371 0.1855 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.557 ~ 0.1855 0.371 0.1855 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.557 ~ 0.1855 0.371 0.1855 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 4
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.529 ~ 0.176 0.352 0.176 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.529 ~ 0.176 0.352 0.176 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.529 ~ 0.176 0.352 0.176 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">=",
+                    "compare_to": 2
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.502 ~ 0.1675 0.335 0.1675 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.502 ~ 0.1675 0.335 0.1675 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.502 ~ 0.1675 0.335 0.1675 0 3"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:health",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 3,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.477 ~ 0.159 0.318 0.159 0 1"
+                            }
+                        },
+                        {
+                            "weight": 2,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.477 ~ 0.159 0.318 0.159 0 2"
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "command": "particle warped_spore ~ ~0.477 ~ 0.159 0.318 0.159 0 3"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
