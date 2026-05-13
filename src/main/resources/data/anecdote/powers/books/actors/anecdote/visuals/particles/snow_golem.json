@@ -1,0 +1,15 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/snow_golem_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:action_over_time",
+    "interval": 3,
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "function anecdote:snow_golem"
+    }
+}
