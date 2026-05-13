@@ -159,5 +159,190 @@
             }
         ]
     },
-    "type": "origins:simple"
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/villager_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "if_action": {
+            "type": "origins:execute_command",
+            "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+        },
+        "else_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:set_resource",
+                    "resource": "anecdote:books/resources/villager_resource",
+                    "value": 60
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{Tags:{anecdote_mob:villager}}"
+                        }
+                    },
+                    "if_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "MAIN_HAND"
+                            }
+                        ]
+                    },
+                    "else_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "offhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:swing_hand",
+                                "hand": "OFF_HAND"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.fire.extinguish",
+                                "volume": 0.25,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.villager.celebrate",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.villager.celebrate",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "entity.villager.celebrate",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:hero_of_the_village",
+                        "duration": 1200,
+                        "amplifier": 0,
+                        "show_particles": false,
+                        "show_icon": true
+                    }
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "summon firework_rocket ~ ~1 ~ {LifeTime:30,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Flight:2,Explosions:[{Type:1,Flicker:0,Trail:0,Colors:[I;4312372],FadeColors:[I;3887386]}]}}}}"
+                }
+            ]
+        }
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
 }

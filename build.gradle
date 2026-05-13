@@ -91,6 +91,9 @@ dependencies {
 	// Disable Custom Worlds Advice by naritanara
 	modImplementation "maven.modrinth:dcwa:${project.dcwa_version}"
 	include "maven.modrinth:dcwa:${project.dcwa_version}"
+
+	// XXL Packets by Lazuline
+	modImplementation "maven.modrinth:xxl-packets:${project.xxl_packets}"
 }
 
 processResources {
