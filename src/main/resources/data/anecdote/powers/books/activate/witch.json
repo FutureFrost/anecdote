@@ -159,5 +159,333 @@
             }
         ]
     },
-    "type": "origins:simple"
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/axolotl_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The Regenerative Heart still beats within you. You cannot harm while you heal.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/witch_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:constant",
+                    "value": true
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/resources/witch_resource",
+                            "value": 30
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:witch}}"
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "mainhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "MAIN_HAND"
+                                    }
+                                ]
+                            },
+                            "else_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "offhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "OFF_HAND"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.witch.celebrate",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.witch.celebrate",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.witch.celebrate",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:area_of_effect",
+                            "radius": 8,
+                            "include_target": true,
+                            "bientity_condition": {
+                                "type": "origins:target_condition",
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_objects"
+                                }
+                            },
+                            "bientity_action": {
+                                "type": "origins:target_action",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "particle witch ~ ~1 ~ 0.5 0.5 0.5 0.1 10"
+                                        },
+                                        {
+                                            "type": "origins:choice",
+                                            "actions": [
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:swiftness\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:slowness\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:strength\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:weakness\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:healing\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:harming\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:leaping\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:regeneration\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:poison\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:fire_resistance\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:water_breathing\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:night_vision\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:invisibility\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:turtle_master\"}}}"
+                                                    }
+                                                },
+                                                {
+                                                    "weight": 1,
+                                                    "element": {
+                                                        "type": "origins:execute_command",
+                                                        "command": "summon potion ~ ~3 ~ {Item:{id:\"minecraft:splash_potion\",Count:1b,tag:{Potion:\"minecraft:slow_falling\"}}}"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
 }
