@@ -20,10 +20,21 @@
     },
     "clock": {
         "condition": {
-            "type": "origins:resource",
-            "resource": "anecdote:books/resources/skeleton_resource",
-            "comparison": "!=",
-            "compare_to": 0
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/skeleton_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/actors/anecdote/function/bone_conversion_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            ]
         },
         "type": "origins:action_over_time",
         "interval": 20,
