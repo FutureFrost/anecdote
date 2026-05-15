@@ -1,0 +1,145 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "when_hit": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:power",
+                    "power": "anecdote:books/actors/target/grudge",
+                    "source": "grudge"
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "anecdote:books/actors/target/grudge_resource",
+                    "change": 1,
+                    "operation": "add"
+                },
+                "else_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:grant_power",
+                            "power": "anecdote:books/actors/target/grudge",
+                            "source": "grudge"
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "anecdote:books/actors/target/grudge_resource",
+                            "change": 1,
+                            "operation": "add"
+                        }
+                    ]
+                }
+            }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "grudge_1": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "target_condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/grudge_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.2
+        }
+    },
+    "grudge_2": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "target_condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/grudge_resource",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.4
+        }
+    },
+    "grudge_3": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "target_condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/grudge_resource",
+            "comparison": "==",
+            "compare_to": 3
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.6
+        }
+    },
+    "grudge_4": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "target_condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/grudge_resource",
+            "comparison": "==",
+            "compare_to": 4
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.8
+        }
+    },
+    "grudge_5": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_dealt",
+        "target_condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/target/grudge_resource",
+            "comparison": "==",
+            "compare_to": 5
+        },
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 1
+        }
+    }
+}

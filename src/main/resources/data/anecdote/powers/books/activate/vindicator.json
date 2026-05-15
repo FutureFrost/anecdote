@@ -216,6 +216,12 @@
                                 "resource": "anecdote:books/resources/hoglin_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/zombified_piglin_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },

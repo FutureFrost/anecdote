@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/zombified_piglin_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:model_color",
+    "red": 0.79,
+    "green": 0.72,
+    "blue": 0.25,
+    "alpha": 1
+}

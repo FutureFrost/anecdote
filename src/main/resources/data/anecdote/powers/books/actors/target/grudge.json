@@ -1,0 +1,37 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 5,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "type": "origins:action_over_time",
+        "interval": 200,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "anecdote:books/actors/target/grudge_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:revoke_power",
+                "power": "anecdote:books/actors/target/grudge",
+                "source": "grudge"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "anecdote:books/actors/target/grudge_resource",
+                "change": -1,
+                "operation": "add"
+            }
+        }
+    }
+}

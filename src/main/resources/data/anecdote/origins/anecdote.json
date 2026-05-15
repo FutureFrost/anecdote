@@ -169,6 +169,7 @@
         "anecdote:books/actors/anecdote/function/forager",
         "anecdote:books/actors/anecdote/function/force_drown",
         "anecdote:books/actors/anecdote/function/freezing_immune",
+        "anecdote:books/actors/anecdote/function/grudge",
         "anecdote:books/actors/anecdote/function/healing",
         "anecdote:books/actors/anecdote/function/health_increase",
         "anecdote:books/actors/anecdote/function/hide_screen",
@@ -206,6 +207,7 @@
         "anecdote:books/actors/anecdote/visuals/model_color/wither_skeleton",
         "anecdote:books/actors/anecdote/visuals/model_color/zoglin",
         "anecdote:books/actors/anecdote/visuals/model_color/zombie",
+        "anecdote:books/actors/anecdote/visuals/model_color/zombified_piglin",
         "anecdote:books/actors/anecdote/visuals/other/hoglin",
         "anecdote:books/actors/anecdote/visuals/other/zoglin",
         "anecdote:books/actors/anecdote/visuals/outline/axolotl",
@@ -252,6 +254,7 @@
         "anecdote:books/actors/anecdote/visuals/particles/wither",
         "anecdote:books/actors/anecdote/visuals/particles/zoglin",
         "anecdote:books/actors/anecdote/visuals/particles/zombie",
+        "anecdote:books/actors/anecdote/visuals/particles/zombified_piglin",
         "anecdote:books/actors/anecdote/visuals/shader/hoglin",
         "anecdote:books/actors/anecdote/visuals/shader/zoglin"
     ],
