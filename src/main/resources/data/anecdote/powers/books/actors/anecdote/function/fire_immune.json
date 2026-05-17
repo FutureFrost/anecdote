@@ -1,10 +1,30 @@
 {
     "hidden": true,
-    "condition": {
-        "type": "origins:resource",
-        "resource": "anecdote:books/resources/strider_resource",
-        "comparison": "!=",
-        "compare_to": 0
+    "type": "origins:multiple",
+    "strider": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/strider_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:fire_immunity"
     },
-    "type": "origins:fire_immunity"
+    "magma_cube": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/magma_cube_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:in_tag",
+            "tag": "minecraft:is_fire"
+        },
+        "modifier": {
+            "operation": "set_total",
+            "value": 0
+        }
+    }
 }

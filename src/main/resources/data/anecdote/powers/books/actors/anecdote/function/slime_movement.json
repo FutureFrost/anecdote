@@ -1,0 +1,187 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "clock": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/magma_cube_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 2,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:on_block",
+                "block_condition": {
+                    "type": "origins:movement_blocking"
+                }
+            },
+            "if_action": {
+                "type": "origins:modify_resource",
+                "resource": "anecdote:books/actors/anecdote/function/slime_movement_resource",
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": -3
+                }
+            },
+            "else_action": {
+                "type": "origins:modify_resource",
+                "resource": "anecdote:books/actors/anecdote/function/slime_movement_resource",
+                "modifier": {
+                    "operation": "add_base_early",
+                    "value": 1
+                }
+            }
+        }
+    },
+    "movement_speed": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/magma_cube_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "inverted": true,
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifiers": [
+            {
+                "operation": "multiply_base_multiplicative",
+                "value": -0.9
+            },
+            {
+                "operation": "multiply_total_multiplicative",
+                "value": 1,
+                "resource": "anecdote:books/actors/anecdote/function/slime_movement_resource"
+            }
+        ],
+        "axes": [
+            "x",
+            "z"
+        ]
+    },
+    "jump_height": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/magma_cube_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:fluid",
+                        "fluid_condition": {
+                            "inverted": true,
+                            "type": "origins:empty"
+                        }
+                    }
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:fall_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:creative_flying"
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:climbing"
+                }
+            ]
+        },
+        "type": "origins:modify_velocity",
+        "modifiers": [
+            {
+                "operation": "multiply_base_multiplicative",
+                "value": -0.9
+            },
+            {
+                "operation": "multiply_total_multiplicative",
+                "value": 1,
+                "resource": "anecdote:books/actors/anecdote/function/slime_movement_resource"
+            }
+        ],
+        "axes": [
+            "y"
+        ]
+    },
+    "particles": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/magma_cube_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle flame ~ ~0.1 ~ 0.3 0.1 0.3 0.05 5"
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle flame ~ ~0.1 ~ 0.3 0.1 0.3 0.05 10"
+                    }
+                },
+                {
+                    "weight": 1,
+                    "element": {
+                        "type": "origins:execute_command",
+                        "command": "particle flame ~ ~0.1 ~ 0.3 0.1 0.3 0.05 15"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/magma_cube_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:model_color",
+    "red": 0.85,
+    "green": 0.4,
+    "blue": 0.11,
+    "alpha": 1
+}
