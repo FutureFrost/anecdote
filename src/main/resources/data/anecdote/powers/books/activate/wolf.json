@@ -184,7 +184,7 @@
                 "actions": [
                     {
                         "type": "origins:set_resource",
-                        "resource": "anecdote:books/resources/multi/mounts_resource",
+                        "resource": "anecdote:books/resources/wolf_resource",
                         "value": 45
                     },
                     {

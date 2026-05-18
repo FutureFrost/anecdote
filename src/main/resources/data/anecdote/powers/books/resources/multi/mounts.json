@@ -28,12 +28,62 @@
         "type": "origins:action_over_time",
         "interval": 20,
         "entity_action": {
-            "type": "origins:modify_resource",
-            "resource": "anecdote:books/resources/multi/mounts_resource",
-            "modifier": {
-                "operation": "add_base_early",
-                "value": -1
-            }
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/multi/mounts_resource",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:choice",
+                                "actions": [
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "ui.toast.out",
+                                            "volume": 1,
+                                            "pitch": 1.4
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "ui.toast.out",
+                                            "volume": 1,
+                                            "pitch": 1.5
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "ui.toast.out",
+                                            "volume": 1,
+                                            "pitch": 1.6
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:modify_resource",
+                    "resource": "anecdote:books/resources/multi/mounts_resource",
+                    "modifier": {
+                        "operation": "add_base_early",
+                        "value": -1
+                    }
+                }
+            ]
         }
     }
 }

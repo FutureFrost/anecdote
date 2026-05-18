@@ -41,71 +41,34 @@
                                 "compare_to": 1
                             },
                             "action": {
-                                "type": "origins:and",
+                                "type": "origins:choice",
                                 "actions": [
                                     {
-                                        "type": "origins:choice",
-                                        "actions": [
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:play_sound",
-                                                    "sound": "entity.wolf.whine",
-                                                    "volume": 0.25,
-                                                    "pitch": 0.9
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:play_sound",
-                                                    "sound": "entity.wolf.whine",
-                                                    "volume": 0.25,
-                                                    "pitch": 1
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:play_sound",
-                                                    "sound": "entity.wolf.whine",
-                                                    "volume": 0.25,
-                                                    "pitch": 1.1
-                                                }
-                                            }
-                                        ]
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "ui.toast.out",
+                                            "volume": 1,
+                                            "pitch": 1.4
+                                        }
                                     },
                                     {
-                                        "type": "origins:choice",
-                                        "actions": [
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:play_sound",
-                                                    "sound": "ui.toast.out",
-                                                    "volume": 1,
-                                                    "pitch": 1.4
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:play_sound",
-                                                    "sound": "ui.toast.out",
-                                                    "volume": 1,
-                                                    "pitch": 1.5
-                                                }
-                                            },
-                                            {
-                                                "weight": 1,
-                                                "element": {
-                                                    "type": "origins:play_sound",
-                                                    "sound": "ui.toast.out",
-                                                    "volume": 1,
-                                                    "pitch": 1.6
-                                                }
-                                            }
-                                        ]
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "ui.toast.out",
+                                            "volume": 1,
+                                            "pitch": 1.5
+                                        }
+                                    },
+                                    {
+                                        "weight": 1,
+                                        "element": {
+                                            "type": "origins:play_sound",
+                                            "sound": "ui.toast.out",
+                                            "volume": 1,
+                                            "pitch": 1.6
+                                        }
                                     }
                                 ]
                             }
