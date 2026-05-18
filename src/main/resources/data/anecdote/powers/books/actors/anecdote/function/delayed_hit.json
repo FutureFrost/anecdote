@@ -1,0 +1,80 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/vex_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+        "type": "origins:delay",
+        "action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:damage",
+                        "amount": 4,
+                        "source": {
+                            "name": "generic",
+                            "bypasses_armor": true,
+                            "unblockable": true,
+                            "magic": true
+                        }
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "particle dust_color_transition 0.68 0.76 0.86 1 0.42 0.47 0.53 ~ ~1 ~ 0.5 0.5 0.5 0.1 10"
+                    },
+                    {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.vex.charge",
+                                    "volume": 0.5,
+                                    "pitch": 0.9
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.vex.charge",
+                                    "volume": 0.5,
+                                    "pitch": 1
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.vex.charge",
+                                    "volume": 0.5,
+                                    "pitch": 1.1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "ticks": 20
+    },
+    "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+            "inverted": true,
+            "type": "origins:in_tag",
+            "tag": "anecdote:ff_objects"
+        }
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    }
+}
