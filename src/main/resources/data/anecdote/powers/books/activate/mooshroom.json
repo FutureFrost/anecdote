@@ -159,5 +159,551 @@
             }
         ]
     },
-    "type": "origins:simple"
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else_list",
+        "actions": [
+            {
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "anecdote:books/resources/mooshroom_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The tale mends its tatters. Wait for the narrative to settle.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:block_in_radius",
+                    "block_condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:allium"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:azure_bluet"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:blue_orchid"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:dandelion"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:cornflower"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:lily_of_the_valley"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:oxeye_daisy"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:poppy"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:torchflower"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:red_tulip"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:orange_tulip"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:white_tulip"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:pink_tulip"
+                            },
+                            {
+                                "type": "origins:block",
+                                "block": "minecraft:wither_rose"
+                            }
+                        ]
+                    },
+                    "radius": 4,
+                    "shape": "cube",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar [{\"text\":\"The mycelium whispers of nothing. No flowers bloom within reach.\",\"color\":\"dark_red\"}]"
+                }
+            },
+            {
+                "condition": {
+                    "type": "origins:constant",
+                    "value": true
+                },
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:set_resource",
+                            "resource": "anecdote:books/resources/mooshroom_resource",
+                            "value": 30
+                        },
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:nbt",
+                                    "nbt": "{Tags:{anecdote_mob:mooshroom}}"
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "mainhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "MAIN_HAND"
+                                    }
+                                ]
+                            },
+                            "else_action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:equipped_item_action",
+                                        "equipment_slot": "offhand",
+                                        "action": {
+                                            "type": "origins:consume",
+                                            "amount": 1
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:swing_hand",
+                                        "hand": "OFF_HAND"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "item.book.page_turn",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "block.fire.extinguish",
+                                        "volume": 0.25,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:choice",
+                            "actions": [
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.mooshroom.eat",
+                                        "volume": 1,
+                                        "pitch": 0.9
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.mooshroom.eat",
+                                        "volume": 1,
+                                        "pitch": 1
+                                    }
+                                },
+                                {
+                                    "weight": 1,
+                                    "element": {
+                                        "type": "origins:play_sound",
+                                        "sound": "entity.mooshroom.eat",
+                                        "volume": 1,
+                                        "pitch": 1.1
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:allium"
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "fire_resistance",
+                                            "duration": 1200,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:azure_bluet"
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "blindness",
+                                            "duration": 600,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:blue_orchid"
+                                                },
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:dandelion"
+                                                }
+                                            ]
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "saturation",
+                                            "duration": 1200,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:cornflower"
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "jump_boost",
+                                            "duration": 1200,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:lily_of_the_valley"
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "poison",
+                                            "duration": 600,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:oxeye_daisy"
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "regeneration",
+                                            "duration": 1200,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:poppy"
+                                                },
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:torchflower"
+                                                }
+                                            ]
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "night_vision",
+                                            "duration": 1200,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:or",
+                                            "conditions": [
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:red_tulip"
+                                                },
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:orange_tulip"
+                                                },
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:white_tulip"
+                                                },
+                                                {
+                                                    "type": "origins:block",
+                                                    "block": "minecraft:pink_tulip"
+                                                }
+                                            ]
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "weakness",
+                                            "duration": 600,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:if_else_list",
+                            "actions": [
+                                {
+                                    "condition": {
+                                        "type": "origins:block_in_radius",
+                                        "block_condition": {
+                                            "type": "origins:block",
+                                            "block": "minecraft:wither_rose"
+                                        },
+                                        "radius": 4,
+                                        "shape": "cube",
+                                        "comparison": "!=",
+                                        "compare_to": 0
+                                    },
+                                    "action": {
+                                        "type": "origins:apply_effect",
+                                        "effect": {
+                                            "effect": "wither",
+                                            "duration": 600,
+                                            "amplifier": 0,
+                                            "show_particles": true,
+                                            "show_icon": true
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "particle mycelium ~ ~1 ~ 0.5 0.5 0.5 0.1 30"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 20,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.use"
+    }
 }
