@@ -1,163 +1,410 @@
 {
     "hidden": true,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "inverted": true,
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:paper"
+    "type": "origins:multiple",
+    "inventory": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:paper"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:paper"
+                                }
                             }
                         }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:ingredient",
-                            "ingredient": {
-                                "item": "minecraft:paper"
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:shulker}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:shulker}}"
+                                    }
+                                ]
                             }
                         }
-                    }
-                ]
-            },
-            {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:sneaking"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:raycast",
+                            "distance": 4.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "none",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "anecdote:ff_interactable"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
                                     }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:shulker}}"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
                                     }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:shulker}}"
-                                }
-                            ]
+                                ]
+                            }
                         }
-                    }
-                ]
-            },
-            {
-                "type": "origins:or",
-                "conditions": [
-                    {
-                        "type": "origins:sneaking"
-                    },
-                    {
-                        "inverted": true,
-                        "type": "origins:raycast",
-                        "distance": 4.5,
-                        "block": true,
-                        "entity": true,
-                        "shape_type": "collider",
-                        "fluid_handling": "none",
-                        "block_condition": {
-                            "type": "origins:in_tag",
-                            "tag": "anecdote:ff_interactable"
-                        }
-                    }
-                ]
-            },
-            {
-                "inverted": true,
-                "type": "origins:and",
-                "conditions": [
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "mainhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_book:1b}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:warden}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:wither}}"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "type": "origins:equipped_item",
-                        "equipment_slot": "offhand",
-                        "item_condition": {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:ingredient",
-                                    "ingredient": {
-                                        "item": "minecraft:book"
-                                    }
-                                },
-                                {
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_book:1b}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:warden}}"
-                                },
-                                {
-                                    "inverted": true,
-                                    "type": "origins:nbt",
-                                    "nbt": "{Tags:{anecdote_mob:wither}}"
-                                }
-                            ]
-                        }
-                    }
-                ]
-            }
-        ]
+                    ]
+                }
+            ]
+        },
+        "type": "origins:inventory",
+        "title": "The Box That Waits",
+        "container_type": "chest",
+        "key": {
+            "key": "key.use"
+        },
+        "recoverable": true
     },
-    "type": "origins:simple"
+    "sounds": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "inverted": true,
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:paper"
+                                }
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:paper"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:shulker}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:shulker}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:sneaking"
+                        },
+                        {
+                            "inverted": true,
+                            "type": "origins:raycast",
+                            "distance": 4.5,
+                            "block": true,
+                            "entity": true,
+                            "shape_type": "collider",
+                            "fluid_handling": "none",
+                            "block_condition": {
+                                "type": "origins:in_tag",
+                                "tag": "anecdote:ff_interactable"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "inverted": true,
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "mainhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "origins:equipped_item",
+                            "equipment_slot": "offhand",
+                            "item_condition": {
+                                "type": "origins:and",
+                                "conditions": [
+                                    {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "item": "minecraft:book"
+                                        }
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_book:1b}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:warden}}"
+                                    },
+                                    {
+                                        "inverted": true,
+                                        "type": "origins:nbt",
+                                        "nbt": "{Tags:{anecdote_mob:wither}}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "item.book.page_turn",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.shulker_box.open",
+                                "volume": 1,
+                                "pitch": 0.9
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.shulker_box.open",
+                                "volume": 1,
+                                "pitch": 1
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:play_sound",
+                                "sound": "block.shulker_box.open",
+                                "volume": 1,
+                                "pitch": 1.1
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.use"
+        }
+    }
 }
