@@ -195,6 +195,7 @@
         "anecdote:books/actors/anecdote/function/spread_rot",
         "anecdote:books/actors/anecdote/function/step_height",
         "anecdote:books/actors/anecdote/function/swim_fly",
+        "anecdote:books/actors/anecdote/function/wall_climb",
         "anecdote:books/actors/anecdote/function/warden",
         "anecdote:books/actors/anecdote/function/water_breathing",
         "anecdote:books/actors/anecdote/function/water_move_speed",

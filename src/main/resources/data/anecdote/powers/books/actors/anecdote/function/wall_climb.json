@@ -1,0 +1,21 @@
+{
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/spider_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            },
+            {
+                "type": "origins:collided_horizontally"
+            }
+        ]
+    },
+    "type": "origins:climbing",
+    "allow_holding": true,
+    "hold_condition": {
+        "type": "origins:sneaking"
+    }
+}
