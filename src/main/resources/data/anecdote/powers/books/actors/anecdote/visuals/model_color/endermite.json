@@ -2,13 +2,13 @@
     "hidden": true,
     "condition": {
         "type": "origins:resource",
-        "resource": "anecdote:books/resources/allay_resource",
+        "resource": "anecdote:books/resources/endermite_resource",
         "comparison": "!=",
         "compare_to": 0
     },
     "type": "origins:model_color",
-    "red": 0.58,
-    "green": 0.94,
-    "blue": 1,
+    "red": 0.71,
+    "green": 0.32,
+    "blue": 0.88,
     "alpha": 1
 }
