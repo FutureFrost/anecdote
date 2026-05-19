@@ -1,0 +1,2228 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "anecdote:books/resources/ravager_resource",
+                "comparison": "!=",
+                "compare_to": 0
+            },
+            {
+                "inverted": true,
+                "type": "origins:sneaking"
+            }
+        ]
+    },
+    "type": "origins:action_over_time",
+    "interval": 3,
+    "entity_action": {
+        "type": "origins:block_action_at",
+        "block_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 0,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 0,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 0,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 0,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 0,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 0,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 0,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 0,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 0,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 0,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 0,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 0,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 0,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 0,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 0,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 0,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 0,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 0,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 0,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 0,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 0,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 1,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 1,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 1,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 1,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 1,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 1,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 1,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 1,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 1,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 1,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 1,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 1,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 1,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 1,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 1,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 1,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 1,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 1,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 1,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 1,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 1,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 1,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 1,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 1,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 1,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 2,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 2,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 2,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 2,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 2,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 2,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 2,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 2,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 2,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 2,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 2,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 2,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 2,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 2,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 2,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 2,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 2,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 2,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 2,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 2,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 2,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 2,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 2,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 2,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 2,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 3,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 3,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 3,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 3,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 3,
+                    "z": -2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 3,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 3,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 3,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 3,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 3,
+                    "z": -1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 3,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 3,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 3,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 3,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 3,
+                    "z": 0
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 3,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 3,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 3,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 3,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 3,
+                    "z": 1
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -2,
+                    "y": 3,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": -1,
+                    "y": 3,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 0,
+                    "y": 3,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 1,
+                    "y": 3,
+                    "z": 2
+                },
+                {
+                    "type": "origins:offset",
+                    "action": {
+                        "type": "origins:if_else_list",
+                        "actions": [
+                            {
+                                "condition": {
+                                    "inverted": true,
+                                    "type": "origins:in_tag",
+                                    "tag": "anecdote:ff_do_not_break"
+                                },
+                                "action": {
+                                    "type": "origins:execute_command",
+                                    "command": "setblock ~ ~ ~ air destroy"
+                                }
+                            }
+                        ]
+                    },
+                    "x": 2,
+                    "y": 3,
+                    "z": 2
+                }
+            ]
+        }
+    }
+}

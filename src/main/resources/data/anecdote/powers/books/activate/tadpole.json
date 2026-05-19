@@ -252,6 +252,12 @@
                                 "resource": "anecdote:books/resources/endermite_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/ravager_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },
