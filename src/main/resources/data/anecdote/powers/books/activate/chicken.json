@@ -178,7 +178,7 @@
             {
                 "condition": {
                     "type": "origins:resource",
-                    "resource": "anecdote:books/resources/cave_spider_resource",
+                    "resource": "anecdote:books/resources/chicken_resource",
                     "comparison": "!=",
                     "compare_to": 0
                 },
@@ -197,7 +197,7 @@
                     "actions": [
                         {
                             "type": "origins:set_resource",
-                            "resource": "anecdote:books/resources/cave_spider_resource",
+                            "resource": "anecdote:books/resources/chicken_resource",
                             "value": 5
                         },
                         {

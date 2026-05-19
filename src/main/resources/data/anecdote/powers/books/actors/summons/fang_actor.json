@@ -1,0 +1,222 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "actor": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/summons/fang_actor_condition_resource",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:or",
+                        "conditions": [
+                            {
+                                "type": "origins:on_block",
+                                "block_condition": {
+                                    "type": "origins:movement_blocking"
+                                }
+                            },
+                            {
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:movement_blocking"
+                                }
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "anecdote:books/actors/summons/fang_actor_condition_resource",
+                                "change": 1,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "tp @s ^1 ^ ^"
+                            },
+                            {
+                                "type": "origins:spawn_entity",
+                                "entity_type": "evoker_fangs"
+                            },
+                            {
+                                "type": "origins:delay",
+                                "action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "tp @s ^1 ^ ^"
+                                        },
+                                        {
+                                            "type": "origins:spawn_entity",
+                                            "entity_type": "evoker_fangs"
+                                        },
+                                        {
+                                            "type": "origins:delay",
+                                            "action": {
+                                                "type": "origins:and",
+                                                "actions": [
+                                                    {
+                                                        "type": "origins:execute_command",
+                                                        "command": "tp @s ^1 ^ ^"
+                                                    },
+                                                    {
+                                                        "type": "origins:spawn_entity",
+                                                        "entity_type": "evoker_fangs"
+                                                    },
+                                                    {
+                                                        "type": "origins:delay",
+                                                        "action": {
+                                                            "type": "origins:and",
+                                                            "actions": [
+                                                                {
+                                                                    "type": "origins:execute_command",
+                                                                    "command": "tp @s ^1 ^ ^"
+                                                                },
+                                                                {
+                                                                    "type": "origins:spawn_entity",
+                                                                    "entity_type": "evoker_fangs"
+                                                                },
+                                                                {
+                                                                    "type": "origins:delay",
+                                                                    "action": {
+                                                                        "type": "origins:and",
+                                                                        "actions": [
+                                                                            {
+                                                                                "type": "origins:execute_command",
+                                                                                "command": "tp @s ^1 ^ ^"
+                                                                            },
+                                                                            {
+                                                                                "type": "origins:spawn_entity",
+                                                                                "entity_type": "evoker_fangs"
+                                                                            },
+                                                                            {
+                                                                                "type": "origins:delay",
+                                                                                "action": {
+                                                                                    "type": "origins:and",
+                                                                                    "actions": [
+                                                                                        {
+                                                                                            "type": "origins:execute_command",
+                                                                                            "command": "tp @s ^1 ^ ^"
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "origins:spawn_entity",
+                                                                                            "entity_type": "evoker_fangs"
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "origins:delay",
+                                                                                            "action": {
+                                                                                                "type": "origins:and",
+                                                                                                "actions": [
+                                                                                                    {
+                                                                                                        "type": "origins:execute_command",
+                                                                                                        "command": "tp @s ^1 ^ ^"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "type": "origins:spawn_entity",
+                                                                                                        "entity_type": "evoker_fangs"
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "type": "origins:delay",
+                                                                                                        "action": {
+                                                                                                            "type": "origins:and",
+                                                                                                            "actions": [
+                                                                                                                {
+                                                                                                                    "type": "origins:execute_command",
+                                                                                                                    "command": "tp @s ^1 ^ ^"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "type": "origins:spawn_entity",
+                                                                                                                    "entity_type": "evoker_fangs"
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "type": "origins:execute_command",
+                                                                                                                    "command": "kill @s"
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        "ticks": 5
+                                                                                                    }
+                                                                                                ]
+                                                                                            },
+                                                                                            "ticks": 5
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                "ticks": 5
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "ticks": 5
+                                                                }
+                                                            ]
+                                                        },
+                                                        "ticks": 5
+                                                    }
+                                                ]
+                                            },
+                                            "ticks": 5
+                                        }
+                                    ]
+                                },
+                                "ticks": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/actors/summons/fang_actor_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "kill @s"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:constant",
+                        "value": true
+                    },
+                    "action": {
+                        "type": "origins:change_resource",
+                        "resource": "anecdote:books/actors/summons/fang_actor_resource",
+                        "change": -1,
+                        "operation": "add"
+                    }
+                }
+            ]
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 200,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "condition_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    }
+}
