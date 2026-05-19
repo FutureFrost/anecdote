@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/ravager_resource",
+        "comparison": "!=",
+        "compare_to": 0
+    },
+    "type": "origins:model_color",
+    "red": 0.61,
+    "green": 0.61,
+    "blue": 0.59,
+    "alpha": 1
+}
