@@ -1,0 +1,33 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "shaking": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/ender_dragon_resource",
+            "comparison": ">=",
+            "compare_to": 30
+        },
+        "type": "origins:shaking"
+    },
+    "blindness": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/ender_dragon_resource",
+            "comparison": ">=",
+            "compare_to": 45
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "blindness",
+                "duration": 60,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": false
+            }
+        }
+    }
+}

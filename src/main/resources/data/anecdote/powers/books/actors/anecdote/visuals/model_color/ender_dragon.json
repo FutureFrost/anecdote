@@ -1,0 +1,14 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/ender_dragon_resource",
+        "comparison": ">=",
+        "compare_to": 30
+    },
+    "type": "origins:model_color",
+    "red": 0,
+    "green": 0,
+    "blue": 0,
+    "alpha": 1
+}

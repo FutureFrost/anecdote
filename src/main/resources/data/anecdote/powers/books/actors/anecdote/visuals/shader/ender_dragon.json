@@ -1,0 +1,12 @@
+{
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "anecdote:books/resources/ender_dragon_resource",
+        "comparison": ">=",
+        "compare_to": 40
+    },
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/phosphor.json",
+    "toggleable": false
+}

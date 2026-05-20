@@ -210,6 +210,12 @@
                                 "resource": "anecdote:books/resources/drowned_resource",
                                 "comparison": "!=",
                                 "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/resources/ender_dragon_resource",
+                                "comparison": "!=",
+                                "compare_to": 0
                             }
                         ]
                     },

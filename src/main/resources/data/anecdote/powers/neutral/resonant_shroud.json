@@ -2,20 +2,31 @@
     "name": "§eResonant Shroud§r",
     "description": "§b[Passive]\n§fRaw, unassimilated knowledge resonates around your form, coalescing into a palpable swarm of thoughts and truths that clings to you like a shroud.",
     "condition": {
-        "inverted": true,
         "type": "origins:and",
         "conditions": [
             {
-                "type": "origins:resource",
-                "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
-                "comparison": "==",
-                "compare_to": 1
+                "inverted": true,
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/actors/anecdote/function/invisible_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "anecdote:books/resources/ocelot_resource",
+                        "comparison": "!=",
+                        "compare_to": 0
+                    }
+                ]
             },
             {
                 "type": "origins:resource",
-                "resource": "anecdote:books/resources/ocelot_resource",
-                "comparison": "!=",
-                "compare_to": 0
+                "resource": "anecdote:books/resources/ender_dragon_resource",
+                "comparison": "<",
+                "compare_to": 45
             }
         ]
     },
