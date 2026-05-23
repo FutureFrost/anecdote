@@ -58,9 +58,9 @@
         "actions": [
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 16
+                    "compare_to": 1
                 },
                 "action": {
                     "type": "origins:choice",
@@ -118,9 +118,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 14
+                    "compare_to": 0.875
                 },
                 "action": {
                     "type": "origins:choice",
@@ -178,9 +178,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 12
+                    "compare_to": 0.75
                 },
                 "action": {
                     "type": "origins:choice",
@@ -238,9 +238,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 10
+                    "compare_to": 0.625
                 },
                 "action": {
                     "type": "origins:choice",
@@ -298,9 +298,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 8
+                    "compare_to": 0.5
                 },
                 "action": {
                     "type": "origins:choice",
@@ -358,9 +358,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 6
+                    "compare_to": 0.375
                 },
                 "action": {
                     "type": "origins:choice",
@@ -418,9 +418,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 4
+                    "compare_to": 0.25
                 },
                 "action": {
                     "type": "origins:choice",
@@ -478,9 +478,9 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">=",
-                    "compare_to": 2
+                    "compare_to": 0.125
                 },
                 "action": {
                     "type": "origins:choice",
@@ -538,7 +538,7 @@
             },
             {
                 "condition": {
-                    "type": "origins:health",
+                    "type": "origins:relative_health",
                     "comparison": ">",
                     "compare_to": 0
                 },

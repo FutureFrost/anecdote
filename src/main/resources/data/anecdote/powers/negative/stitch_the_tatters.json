@@ -10,58 +10,9 @@
             "type": "origins:and",
             "conditions": [
                 {
-                    "type": "origins:or",
-                    "conditions": [
-                        {
-                            "type": "origins:health",
-                            "comparison": "<",
-                            "compare_to": 16
-                        },
-                        {
-                            "type": "origins:and",
-                            "conditions": [
-                                {
-                                    "type": "origins:health",
-                                    "comparison": "<",
-                                    "compare_to": 24
-                                },
-                                {
-                                    "type": "origins:or",
-                                    "conditions": [
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "anecdote:books/resources/wither_skeleton_resource",
-                                            "comparison": "!=",
-                                            "compare_to": 0
-                                        },
-                                        {
-                                            "type": "origins:resource",
-                                            "resource": "anecdote:books/resources/polar_bear_resource",
-                                            "comparison": "!=",
-                                            "compare_to": 0
-                                        },
-                                        {
-                                            "type": "origins:and",
-                                            "conditions": [
-                                                {
-                                                    "type": "origins:resource",
-                                                    "resource": "anecdote:books/resources/tadpole_resource",
-                                                    "comparison": "<=",
-                                                    "compare_to": 60
-                                                },
-                                                {
-                                                    "type": "origins:resource",
-                                                    "resource": "anecdote:books/resources/tadpole_resource",
-                                                    "comparison": "!=",
-                                                    "compare_to": 0
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+                    "type": "origins:relative_health",
+                    "comparison": "<",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:or",
