@@ -87,6 +87,7 @@
         "anecdote:books/activate/zombified_piglin",
         "anecdote:books/other/death",
         "anecdote:books/other/dual_read_prevent",
+        "anecdote:books/other/prevent_interact",
         "anecdote:books/resources/allay",
         "anecdote:books/resources/axolotl",
         "anecdote:books/resources/bat",

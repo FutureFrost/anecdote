@@ -85,7 +85,7 @@
                             "type": "origins:raycast",
                             "distance": 4.5,
                             "block": true,
-                            "entity": true,
+                            "entity": false,
                             "shape_type": "collider",
                             "fluid_handling": "none",
                             "block_condition": {
