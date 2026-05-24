@@ -10,37 +10,86 @@
         },
         "type": "origins:action_when_hit",
         "bientity_action": {
-            "type": "origins:actor_action",
-            "action": {
-                "type": "origins:if_else",
-                "condition": {
-                    "type": "origins:power",
-                    "power": "anecdote:books/actors/target/grudge",
-                    "source": "grudge"
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:power",
+                                    "power": "anecdote:books/actors/target/grudge",
+                                    "source": "grudge"
+                                },
+                                "if_action": {
+                                    "type": "origins:change_resource",
+                                    "resource": "anecdote:books/actors/target/grudge_resource",
+                                    "change": 1,
+                                    "operation": "add"
+                                },
+                                "else_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:grant_power",
+                                            "power": "anecdote:books/actors/target/grudge",
+                                            "source": "grudge"
+                                        },
+                                        {
+                                            "type": "origins:change_resource",
+                                            "resource": "anecdote:books/actors/target/grudge_resource",
+                                            "change": 1,
+                                            "operation": "add"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle dust_color_transition 0.64 0.6 0.2 1 0.75 0.47 0.45 ~ ~1 ~ 0.5 0.5 0.5 2 10"
+                            }
+                        ]
+                    }
                 },
-                "if_action": {
-                    "type": "origins:change_resource",
-                    "resource": "anecdote:books/actors/target/grudge_resource",
-                    "change": 1,
-                    "operation": "add"
-                },
-                "else_action": {
-                    "type": "origins:and",
-                    "actions": [
-                        {
-                            "type": "origins:grant_power",
-                            "power": "anecdote:books/actors/target/grudge",
-                            "source": "grudge"
-                        },
-                        {
-                            "type": "origins:change_resource",
-                            "resource": "anecdote:books/actors/target/grudge_resource",
-                            "change": 1,
-                            "operation": "add"
-                        }
-                    ]
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.zombified_piglin.angry",
+                                    "volume": 0.75,
+                                    "pitch": 0.9
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.zombified_piglin.angry",
+                                    "volume": 0.75,
+                                    "pitch": 1
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "element": {
+                                    "type": "origins:play_sound",
+                                    "sound": "entity.zombified_piglin.angry",
+                                    "volume": 0.75,
+                                    "pitch": 1.1
+                                }
+                            }
+                        ]
+                    }
                 }
-            }
+            ]
         },
         "cooldown": 1,
         "hud_render": {
@@ -141,5 +190,26 @@
             "operation": "multiply_total_multiplicative",
             "value": 1
         }
+    },
+    "glow": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/resources/zombified_piglin_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:entity_glow",
+        "entity_condition": {
+            "type": "origins:power",
+            "power": "anecdote:books/actors/target/grudge",
+            "source": "grudge"
+        },
+        "bientity_condition": {
+            "type": "origins:can_see"
+        },
+        "use_teams": false,
+        "red": 0.86,
+        "green": 0.34,
+        "blue": 0.3
     }
 }
