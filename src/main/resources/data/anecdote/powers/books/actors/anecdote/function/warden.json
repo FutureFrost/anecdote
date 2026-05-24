@@ -301,68 +301,255 @@
         "type": "origins:action_over_time",
         "interval": 1,
         "rising_action": {
-            "type": "origins:choice",
+            "type": "origins:and",
             "actions": [
                 {
-                    "weight": 1,
-                    "element": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.warden.dig",
-                        "volume": 0.5,
-                        "pitch": 1.4
-                    }
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/function/warden_sound_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.warden.dig",
+                                                    "volume": 0.5,
+                                                    "pitch": 1.4
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.warden.dig",
+                                                    "volume": 0.5,
+                                                    "pitch": 1.5
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.warden.dig",
+                                                    "volume": 0.5,
+                                                    "pitch": 1.6
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "origins:set_resource",
+                                        "resource": "anecdote:books/actors/anecdote/function/warden_sound_resource",
+                                        "value": 3
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 },
                 {
-                    "weight": 1,
-                    "element": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.warden.dig",
-                        "volume": 0.5,
-                        "pitch": 1.5
-                    }
-                },
-                {
-                    "weight": 1,
-                    "element": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.warden.dig",
-                        "volume": 0.5,
-                        "pitch": 1.6
-                    }
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle block sculk ~ ~1 ~ 0.4 0.4 0.4 0.1 25"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle sculk_charge_pop ~ ~1 ~ 0.4 0.4 0.4 0.1 10"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle block sculk ~ ~1 ~ 0.4 0.4 0.4 0.1 30"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle sculk_charge_pop ~ ~1 ~ 0.4 0.4 0.4 0.1 8"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle block sculk ~ ~1 ~ 0.4 0.4 0.4 0.1 35"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle sculk_charge_pop ~ ~1 ~ 0.4 0.4 0.4 0.1 6"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
         },
         "falling_action": {
-            "type": "origins:choice",
+            "type": "origins:and",
             "actions": [
                 {
-                    "weight": 1,
-                    "element": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.warden.dig",
-                        "volume": 0.5,
-                        "pitch": 1.4
-                    }
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "anecdote:books/actors/anecdote/function/warden_sound_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            "action": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:choice",
+                                        "actions": [
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.warden.dig",
+                                                    "volume": 0.5,
+                                                    "pitch": 1.4
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.warden.dig",
+                                                    "volume": 0.5,
+                                                    "pitch": 1.5
+                                                }
+                                            },
+                                            {
+                                                "weight": 1,
+                                                "element": {
+                                                    "type": "origins:play_sound",
+                                                    "sound": "entity.warden.dig",
+                                                    "volume": 0.5,
+                                                    "pitch": 1.6
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "origins:set_resource",
+                                        "resource": "anecdote:books/actors/anecdote/function/warden_sound_resource",
+                                        "value": 3
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 },
                 {
-                    "weight": 1,
-                    "element": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.warden.dig",
-                        "volume": 0.5,
-                        "pitch": 1.5
-                    }
-                },
-                {
-                    "weight": 1,
-                    "element": {
-                        "type": "origins:play_sound",
-                        "sound": "entity.warden.dig",
-                        "volume": 0.5,
-                        "pitch": 1.6
-                    }
+                    "type": "origins:choice",
+                    "actions": [
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle block sculk ~ ~1 ~ 0.4 0.4 0.4 0.1 25"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle sculk_charge_pop ~ ~1 ~ 0.4 0.4 0.4 0.1 10"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle block sculk ~ ~1 ~ 0.4 0.4 0.4 0.1 30"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle sculk_charge_pop ~ ~1 ~ 0.4 0.4 0.4 0.1 8"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "weight": 1,
+                            "element": {
+                                "type": "origins:and",
+                                "actions": [
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle block sculk ~ ~1 ~ 0.4 0.4 0.4 0.1 35"
+                                    },
+                                    {
+                                        "type": "origins:execute_command",
+                                        "command": "particle sculk_charge_pop ~ ~1 ~ 0.4 0.4 0.4 0.1 6"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
                 }
             ]
+        }
+    },
+    "sound_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "sound_clock": {
+        "condition": {
+            "type": "origins:resource",
+            "resource": "anecdote:books/actors/anecdote/function/warden_sound_resource",
+            "comparison": "!=",
+            "compare_to": 0
+        },
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "anecdote:books/actors/anecdote/function/warden_sound_resource",
+            "change": -1,
+            "operation": "add"
         }
     }
 }
