@@ -3,7 +3,7 @@
 	"id": "anecdote",
 	"version": "${version}",
 	"name": "Anecdote",
-	"description": "A reality-bending story teller themed Origin.",
+	"description": "A reality-bending storyteller themed Origin.",
 	"authors": [
 		"Future Frost"
 	],
