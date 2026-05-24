@@ -1,10 +1,10 @@
 {
-  "type": "anecdote:library_type",
+  "type": "anecdote:library",
   "generator": {
     "type": "anecdote:library",
     "biome_source": {
       "type": "anecdote:single_biome",
-      "biome": "anecdote:library_biome"
+      "biome": "anecdote:library"
     },
     "settings": "minecraft:overworld",
     "seed": 0
