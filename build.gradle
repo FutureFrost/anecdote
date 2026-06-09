@@ -78,7 +78,7 @@ dependencies {
 	modImplementation "maven.modrinth:frostedlib:${project.frostedlib_version}"
 
 	// Pehkui by Virtuoel
-	modImplementation "curse.maven:pehkui-319596:5208259"
+	modImplementation "curse.maven:pehkui-319596:${project.pehkui_version}"
 	modImplementation ("com.github.Virtuoel:KanosConfig:${project.kanos_config_tag}")
 
 	// Cardinal Components API for entity data
@@ -92,8 +92,8 @@ dependencies {
 	modImplementation "maven.modrinth:dcwa:${project.dcwa_version}"
 	include "maven.modrinth:dcwa:${project.dcwa_version}"
 
-	// XXL Packets by Lazuline
-	modImplementation "maven.modrinth:xxl-packets:${project.xxl_packets}"
+	// Packet Fixer by Tonimatas
+	modImplementation "curse.maven:packet-fixer-689467:${project.packet_fixer_version}"
 }
 
 processResources {
